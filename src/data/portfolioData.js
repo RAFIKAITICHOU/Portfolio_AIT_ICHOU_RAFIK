@@ -672,69 +672,179 @@ export const portfolioData = {
   ],
 
   certifications: [
+    // IBM
     {
       id: "ibm-cloud",
-      title: "IBM Cloud Computing",
+      title: "IBM – Cloud Computing",
       issuer: "IBM / Coursera",
+      org: "ibm",
       date: "2025",
       url: "https://www.coursera.org/account/accomplishments/verify/DDYTCNO277Z5",
-      icon: "Cloud",
+      icon: "cloud",
       category: "Cloud",
       description: {
-        fr: "Modèles de déploiement Cloud (IaaS, PaaS, SaaS), conteneurisation, sécurité Cloud et architectures hybrides.",
-        en: "Cloud delivery models (IaaS, PaaS, SaaS), containerization, cloud security, and hybrid enterprise architectures."
+        fr: "Modèles de déploiement Cloud (IaaS, PaaS, SaaS), conteneurisation, sécurité Cloud et architectures hybrides d'entreprise.",
+        en: "Cloud delivery models (IaaS, PaaS, SaaS), containerization, cloud security, and enterprise hybrid architectures."
       }
     },
     {
-      id: "ibm-python-ds",
-      title: "IBM Python for Data Science",
+      id: "ibm-python",
+      title: "IBM – Python",
       issuer: "IBM / Cognitive Class",
+      org: "ibm",
       date: "2025",
       url: "https://courses.cognitiveclass.ai/certificates/3ae309edca284d1b9675678083f0fed1",
-      icon: "Code",
+      icon: "python",
       category: "Data & IA",
       description: {
-        fr: "Traitement de données avec Pandas et NumPy, calcul vectoriel, web scraping et analyse statistique.",
-        en: "Data manipulation with Pandas & NumPy, vectorized calculation, web scraping, and exploratory analysis."
+        fr: "Programmation Python pour la Data Science, manipulation avancée avec Pandas et NumPy, calcul vectoriel et structures algorithmiques.",
+        en: "Python programming for data science, advanced manipulation with Pandas and NumPy, vectorized computing, and algorithmic structures."
       }
     },
     {
-      id: "ibm-ds-orientation",
-      title: "IBM Data Science Orientation",
+      id: "ibm-data-science",
+      title: "IBM – Data Science",
       issuer: "IBM / Credly",
+      org: "ibm",
       date: "2025",
       url: "https://www.credly.com/badges/e9e3adbe-ea3b-4769-af58-81ebf63769fa/linked_in_profile",
-      icon: "BarChart3",
+      icon: "barchart3",
       category: "Data & IA",
       description: {
-        fr: "Cycle de vie complet des données, méthodologie Data Science IBM et exploitation prédictive.",
-        en: "Full data science lifecycle, IBM data methodologies, and predictive intelligence modeling."
+        fr: "Méthodologie officielle IBM en science des données, cycle de vie complet des données, analyse statistique exploratoire et modélisation prédictive.",
+        en: "Official IBM data science methodology, complete data lifecycle, exploratory statistical analysis, and predictive modeling."
       }
     },
     {
-      id: "ibm-ml",
-      title: "IBM Machine Learning with Python",
+      id: "ibm-machine-learning",
+      title: "IBM – Machine Learning",
       issuer: "IBM / Cognitive Class",
+      org: "ibm",
       date: "2025",
       url: "https://courses.cognitiveclass.ai/certificates/0c168144a0914975bab82beedfc51d2f",
-      icon: "Brain",
+      icon: "brain",
       category: "IA",
       description: {
-        fr: "Algorithmes de régression, classification (SVM, Arbres), clustering (K-Means) et évaluation de modèles avec Scikit-learn.",
-        en: "Regression, classification algorithms (SVM, Decision Trees), clustering (K-Means), and model evaluation with Scikit-learn."
+        fr: "Algorithmes de régression, classification supervisée (SVM, arbres de décision), clustering non-supervisé (K-Means) et métriques d'évaluation Scikit-learn.",
+        en: "Regression algorithms, supervised classification (SVM, decision trees), unsupervised clustering (K-Means), and Scikit-learn model evaluation."
       }
     },
     {
-      id: "ibm-dl",
-      title: "IBM Deep Learning Fundamentals",
+      id: "ibm-deep-learning",
+      title: "IBM – Deep Learning",
       issuer: "IBM / Credly",
+      org: "ibm",
       date: "2025",
       url: "https://www.credly.com/badges/46b3a29c-f081-43cb-8850-b7775dc109e6/linked_in_profile",
-      icon: "Network",
+      icon: "network",
       category: "IA",
       description: {
-        fr: "Réseaux neuronaux convolutifs (CNN), fonctions d'activation, rétropropagation et vision par ordinateur.",
-        en: "Convolutional Neural Networks (CNNs), activation functions, backpropagation, and deep vision foundations."
+        fr: "Réseaux neuronaux profonds (CNN, feedforward), fonctions d'activation, rétropropagation du gradient et applications en vision par ordinateur.",
+        en: "Deep neural networks (CNN, feedforward), activation functions, gradient backpropagation, and computer vision applications."
+      }
+    },
+    {
+      id: "ibm-nosql",
+      title: "IBM – NoSQL",
+      issuer: "IBM / Coursera",
+      org: "ibm",
+      date: "2025",
+      url: "https://www.coursera.org/account/accomplishments/verify/I48YAKN2P6CT",
+      icon: "database",
+      category: "Bases de Données",
+      description: {
+        fr: "Conception et requêtage de bases NoSQL (MongoDB, Cloudant, Cassandra), modélisation orientée documents, scalabilité horizontale et agrégations JSON.",
+        en: "Design and querying of NoSQL databases (MongoDB, Cloudant, Cassandra), document-oriented modeling, horizontal scaling, and JSON aggregations."
+      }
+    },
+
+    // Cognitive Class
+    {
+      id: "cognitive-data-science",
+      title: "Data Science",
+      issuer: "Cognitive Class",
+      org: "cognitive",
+      date: "2025",
+      url: "https://courses.cognitiveclass.ai/certificates/1c5ead0a86554885b0c11688e80e0e9a",
+      icon: "barchart3",
+      category: "Data & IA",
+      description: {
+        fr: "Fondements de la science des données, structuration de jeux de données volumineux, data cleaning et analyse visuelle exploratoire.",
+        en: "Core data science principles, large dataset structuring, data cleaning workflows, and exploratory visual analytics."
+      }
+    },
+    {
+      id: "cognitive-sql-databases",
+      title: "SQL & Databases",
+      issuer: "Cognitive Class",
+      org: "cognitive",
+      date: "2025",
+      url: "https://courses.cognitiveclass.ai/certificates/c9ba59bf7eb349bda046377e0ca115aa",
+      icon: "database",
+      category: "Bases de Données",
+      description: {
+        fr: "Requêtes relationnelles SQL avancées, jointures complexes, intégrité référentielle, transactions ACID et administration des tables.",
+        en: "Advanced relational SQL queries, complex joins, referential integrity, ACID transactions, and table administration."
+      }
+    },
+    {
+      id: "cognitive-docker-essentials",
+      title: "Docker Essentials",
+      issuer: "Cognitive Class",
+      org: "cognitive",
+      date: "2025",
+      url: "https://courses.cognitiveclass.ai/certificates/8788a507bd16408e88de5b1a6c2e2e6c",
+      icon: "docker",
+      category: "DevOps",
+      description: {
+        fr: "Conteneurisation d'applications logicielles, écriture de Dockerfiles optimisés, gestion des images, conteneurs, volumes persistants et réseaux.",
+        en: "Software application containerization, optimized Dockerfile authoring, managing images, containers, persistent volumes, and networking."
+      }
+    },
+
+    // Coursera (Google & UC San Diego)
+    {
+      id: "google-agile-pm",
+      title: "Google – Agile Project Management",
+      issuer: "Google / Coursera",
+      org: "coursera",
+      date: "2025",
+      url: "https://coursera.org/verify/QV774LQ8XTAP",
+      icon: "google",
+      category: "Gestion de Projet",
+      description: {
+        fr: "Frameworks Agiles (Scrum, Kanban), organisation des sprints, cérémonies d'équipe, gestion de backlog et livraison incrémentale de valeur logicielle.",
+        en: "Agile frameworks (Scrum, Kanban), sprint organization, team ceremonies, backlog prioritization, and iterative software delivery."
+      }
+    },
+    {
+      id: "ucsd-big-data",
+      title: "UC San Diego – Introduction to Big Data",
+      issuer: "UC San Diego / Coursera",
+      org: "coursera",
+      date: "2025",
+      url: "https://coursera.org/verify/Z247RW5CNM72",
+      icon: "server",
+      category: "Big Data",
+      description: {
+        fr: "Architectures distribuées pour données massives (paradigme des 5V), écosystème Hadoop, MapReduce et principes du calcul distribué.",
+        en: "Distributed architectures for big data (5Vs paradigm), Hadoop ecosystem, MapReduce programming, and distributed computing foundations."
+      }
+    },
+
+    // Autres
+    {
+      id: "dubai-future-foundation",
+      title: "One Million Experts – Dubai Future Foundation",
+      issuer: "Dubai Future Foundation",
+      org: "other",
+      date: "2025",
+      url: "https://omp.dub.ai/certificate/dgZp6jCbIFqX",
+      icon: "globe",
+      category: "Innovation & IA",
+      description: {
+        fr: "Programme d'excellence technologique de la Dubai Future Foundation axé sur l'intelligence artificielle, l'innovation de rupture et les compétences d'avenir.",
+        en: "Global tech leadership initiative by Dubai Future Foundation focusing on artificial intelligence, breakthrough innovation, and future engineering skills."
       }
     }
   ],
@@ -915,8 +1025,15 @@ export const portfolioData = {
       certifications: {
         badge: "Accréditations",
         title: "Certifications Officielles",
-        subtitle: "Parcours d'expertise validés auprès d'IBM, Coursera et Credly",
-        verifyCredential: "Vérifier l'accréditation"
+        subtitle: "12 certifications vérifiées auprès d'IBM, Google, Cognitive Class, UC San Diego et Dubai Future Foundation",
+        verifyCredential: "Vérifier l'accréditation",
+        filterAll: "Toutes (12)",
+        filterIbm: "IBM (6)",
+        filterCognitive: "Cognitive Class (3)",
+        filterCoursera: "Google & Coursera (2)",
+        filterOther: "Autres & Innovation (1)",
+        searchPlaceholder: "Rechercher une certification (Docker, Python, Cloud, Big Data...)...",
+        noResults: "Aucune certification trouvée pour cette recherche."
       },
       objectives: {
         badge: "Vision d'Avenir",
@@ -1056,8 +1173,15 @@ export const portfolioData = {
       certifications: {
         badge: "Official Credentials",
         title: "Professional Certifications",
-        subtitle: "Verified accreditations through IBM, Coursera and Credly",
-        verifyCredential: "Verify Credential"
+        subtitle: "12 verified credentials through IBM, Google, Cognitive Class, UC San Diego, and Dubai Future Foundation",
+        verifyCredential: "Verify Credential",
+        filterAll: "All (12)",
+        filterIbm: "IBM (6)",
+        filterCognitive: "Cognitive Class (3)",
+        filterCoursera: "Google & Coursera (2)",
+        filterOther: "Other & Innovation (1)",
+        searchPlaceholder: "Search certification (Docker, Python, Cloud, Big Data...)...",
+        noResults: "No certifications found matching your search."
       },
       objectives: {
         badge: "Future Vision",
