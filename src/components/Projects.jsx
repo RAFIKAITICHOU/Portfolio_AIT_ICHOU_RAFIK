@@ -330,7 +330,24 @@ export function Projects({ lang, uiText, projects }) {
                     </a>
                   )}
 
-                  {project.demoVideo && (
+                  {project.demoVideos && project.demoVideos.length > 0 ? (
+                    project.demoVideos.map((vid, vIdx) => (
+                      <a
+                        key={vIdx}
+                        href={vid.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-sm"
+                        title={`${uiText.projects.demoVideo} - ${vid.title[lang] || vid.title}`}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "0.25rem", padding: "0.35rem 0.55rem" }}
+                      >
+                        <Icon name={vid.platform === "youtube" ? "youtube" : "play"} size={14} />
+                        <span style={{ fontSize: "0.72rem", fontWeight: 700 }}>
+                          {vid.version || `V${vIdx + 1}`}
+                        </span>
+                      </a>
+                    ))
+                  ) : project.demoVideo ? (
                     <a
                       href={project.demoVideo}
                       target="_blank"
@@ -340,7 +357,7 @@ export function Projects({ lang, uiText, projects }) {
                     >
                       <Icon name="play" size={16} />
                     </a>
-                  )}
+                  ) : null}
                 </div>
               </div>
             ))}

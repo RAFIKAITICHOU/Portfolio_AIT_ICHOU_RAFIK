@@ -148,7 +148,7 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
         </div>
 
         {/* Tech Badges */}
-        <div style={{ marginBottom: "2rem" }}>
+        <div style={{ marginBottom: "1.8rem" }}>
           <h4 style={{ fontSize: "0.85rem", textTransform: "uppercase", letterSpacing: "0.05em", color: "var(--text-muted)", marginBottom: "0.6rem" }}>
             {lang === "fr" ? "Technologies Déployées" : "Technologies Used"}
           </h4>
@@ -161,8 +161,99 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
           </div>
         </div>
 
+        {/* Demo Videos Section (V1 and V2) */}
+        {project.demoVideos && project.demoVideos.length > 0 && (
+          <div
+            style={{
+              background: "var(--bg-elevated)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "var(--radius-md)",
+              padding: "1.2rem",
+              marginBottom: "1.8rem"
+            }}
+          >
+            <h4
+              style={{
+                fontSize: "0.95rem",
+                fontWeight: 700,
+                color: "var(--text-primary)",
+                marginBottom: "0.8rem",
+                display: "flex",
+                alignItems: "center",
+                gap: "0.5rem"
+              }}
+            >
+              <Icon name="play" size={16} />
+              <span>{lang === "fr" ? "Vidéos de Démonstration de l'Application" : "Application Demo Videos"}</span>
+            </h4>
+
+            {/* Embedded YouTube player if available */}
+            {project.demoVideos.find((v) => v.embedUrl) && (
+              <div style={{ marginBottom: "1rem", borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
+                <iframe
+                  src={project.demoVideos.find((v) => v.embedUrl).embedUrl}
+                  title="Video Demo"
+                  style={{ width: "100%", height: "260px", border: "none", display: "block" }}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                />
+              </div>
+            )}
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
+              {project.demoVideos.map((video, idx) => (
+                <a
+                  key={idx}
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "0.65rem 0.9rem",
+                    background: "var(--bg-body)",
+                    border: "1px solid var(--border-subtle)",
+                    borderRadius: "var(--radius-sm)",
+                    color: "var(--text-primary)",
+                    textDecoration: "none",
+                    transition: "all 0.2s ease"
+                  }}
+                  className="hover-border-accent"
+                >
+                  <div style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
+                    <div
+                      style={{
+                        width: "30px",
+                        height: "30px",
+                        borderRadius: "50%",
+                        background: video.platform === "youtube" ? "rgba(239, 68, 68, 0.15)" : "rgba(215, 38, 61, 0.12)",
+                        color: video.platform === "youtube" ? "#ef4444" : "var(--accent-primary)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center"
+                      }}
+                    >
+                      <Icon name={video.platform === "youtube" ? "youtube" : "play"} size={14} />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: "0.88rem", fontWeight: 700 }}>
+                        {video.title[lang] || video.title}
+                      </div>
+                      <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
+                        {video.platform === "youtube" ? "YouTube (Lecteur HD)" : "Google Drive"}
+                      </div>
+                    </div>
+                  </div>
+                  <Icon name="external-link" size={14} style={{ color: "var(--text-muted)" }} />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Action Buttons */}
-        <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", gap: "0.8rem", flexWrap: "wrap" }}>
           {project.github && (
             <a
               href={project.github}
@@ -174,7 +265,20 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
               <span>{uiText.projects.codeSource}</span>
             </a>
           )}
-          {project.demoVideo && (
+          {project.demoVideos && project.demoVideos.length > 0 ? (
+            project.demoVideos.map((video, idx) => (
+              <a
+                key={idx}
+                href={video.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary"
+              >
+                <Icon name={video.platform === "youtube" ? "youtube" : "play"} size={16} />
+                <span>{video.label ? (video.label[lang] || video.label) : (video.title[lang] || video.title)}</span>
+              </a>
+            ))
+          ) : project.demoVideo && (
             <a
               href={project.demoVideo}
               target="_blank"

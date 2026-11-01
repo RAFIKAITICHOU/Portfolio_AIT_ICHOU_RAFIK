@@ -409,6 +409,35 @@ export const portfolioData = {
       ],
       github: "https://github.com/RAFIKAITICHOU/Gestion-absence-ENS",
       demoVideo: "https://drive.google.com/file/d/19eoYorQPimVH6lmmgELYJKr7TIFKw5rC/view?usp=sharing",
+      demoVideos: [
+        {
+          version: "V1",
+          label: {
+            fr: "Démo V1",
+            en: "Demo V1"
+          },
+          title: {
+            fr: "Démo V1 (1ère version de l'app)",
+            en: "Demo V1 (1st version of the app)"
+          },
+          url: "https://drive.google.com/file/d/19eoYorQPimVH6lmmgELYJKr7TIFKw5rC/view?usp=sharing",
+          platform: "drive"
+        },
+        {
+          version: "V2",
+          label: {
+            fr: "Démo V2",
+            en: "Demo V2"
+          },
+          title: {
+            fr: "Démo V2 (2ème version de l'app - YouTube)",
+            en: "Demo V2 (2nd version of the app - YouTube)"
+          },
+          url: "https://www.youtube.com/watch?v=AU7alNtM8Ls",
+          embedUrl: "https://www.youtube.com/embed/AU7alNtM8Ls",
+          platform: "youtube"
+        }
+      ],
       badgeColor: "green"
     },
     {
