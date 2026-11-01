@@ -232,13 +232,43 @@ export function Projects({ lang, uiText, projects }) {
                     )}
                   </div>
 
-                  {/* Title & Subtitle */}
-                  <h3 style={{ fontSize: "1.4rem", fontWeight: 800, marginBottom: "0.4rem", lineHeight: 1.25 }}>
-                    {project.title}
-                  </h3>
-                  <p style={{ color: "var(--text-secondary)", fontSize: "0.925rem", marginBottom: "1rem" }}>
-                    {project.subtitle[lang]}
-                  </p>
+                  {/* Title & Subtitle with Project Logo */}
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", marginBottom: "0.8rem" }}>
+                    {project.logo && (
+                      <div
+                        style={{
+                          width: "52px",
+                          height: "52px",
+                          minWidth: "52px",
+                          borderRadius: "var(--radius-md)",
+                          background: "var(--bg-elevated)",
+                          border: "1px solid var(--border-subtle)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          padding: "6px",
+                          overflow: "hidden",
+                          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
+                          marginTop: "2px"
+                        }}
+                      >
+                        <img
+                          src={project.logo}
+                          alt={`${project.title} logo`}
+                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                          loading="lazy"
+                        />
+                      </div>
+                    )}
+                    <div style={{ flex: 1 }}>
+                      <h3 style={{ fontSize: "1.35rem", fontWeight: 800, marginBottom: "0.25rem", lineHeight: 1.25 }}>
+                        {project.title}
+                      </h3>
+                      <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                        {project.subtitle[lang]}
+                      </p>
+                    </div>
+                  </div>
 
                   {/* Hook / Tagline */}
                   <p

@@ -39,27 +39,53 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
           <Icon name="close" size={18} />
         </button>
 
-        {/* Header */}
-        <div style={{ marginBottom: "1.5rem" }}>
-          <span
-            style={{
-              fontSize: "0.8rem",
-              fontWeight: 700,
-              textTransform: "uppercase",
-              letterSpacing: "0.06em",
-              color: "var(--accent-primary)",
-              marginBottom: "0.4rem",
-              display: "block"
-            }}
-          >
-            {project.categoryLabel[lang]}
-          </span>
-          <h3 style={{ fontSize: "1.8rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.4rem" }}>
-            {project.title}
-          </h3>
-          <p style={{ color: "var(--text-secondary)", fontSize: "1rem" }}>
-            {project.subtitle[lang]}
-          </p>
+        {/* Header with Project Logo */}
+        <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.5rem" }}>
+          {project.logo && (
+            <div
+              style={{
+                width: "68px",
+                height: "68px",
+                minWidth: "68px",
+                borderRadius: "var(--radius-md)",
+                background: "var(--bg-elevated)",
+                border: "1px solid var(--border-subtle)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "8px",
+                overflow: "hidden",
+                boxShadow: "0 6px 18px rgba(0,0,0,0.18)"
+              }}
+            >
+              <img
+                src={project.logo}
+                alt={`${project.title} logo`}
+                style={{ width: "100%", height: "100%", objectFit: "contain" }}
+              />
+            </div>
+          )}
+          <div style={{ flex: 1 }}>
+            <span
+              style={{
+                fontSize: "0.8rem",
+                fontWeight: 700,
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                color: "var(--accent-primary)",
+                marginBottom: "0.3rem",
+                display: "block"
+              }}
+            >
+              {project.categoryLabel[lang]}
+            </span>
+            <h3 style={{ fontSize: "1.8rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.3rem" }}>
+              {project.title}
+            </h3>
+            <p style={{ color: "var(--text-secondary)", fontSize: "1rem" }}>
+              {project.subtitle[lang]}
+            </p>
+          </div>
         </div>
 
         {/* Metrics Grid */}

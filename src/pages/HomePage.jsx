@@ -170,12 +170,42 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
                       </span>
                     </div>
 
-                    <h3 style={{ fontSize: "1.35rem", fontWeight: 800, marginBottom: "0.35rem" }}>
-                      {p.title}
-                    </h3>
-                    <p style={{ color: "var(--text-secondary)", fontSize: "0.925rem", marginBottom: "0.8rem" }}>
-                      {p.subtitle[lang]}
-                    </p>
+                    <div style={{ display: "flex", alignItems: "flex-start", gap: "0.9rem", marginBottom: "0.6rem" }}>
+                      {p.logo && (
+                        <div
+                          style={{
+                            width: "48px",
+                            height: "48px",
+                            minWidth: "48px",
+                            borderRadius: "var(--radius-md)",
+                            background: "var(--bg-elevated)",
+                            border: "1px solid var(--border-subtle)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            padding: "5px",
+                            overflow: "hidden",
+                            boxShadow: "0 4px 10px rgba(0,0,0,0.12)",
+                            marginTop: "2px"
+                          }}
+                        >
+                          <img
+                            src={p.logo}
+                            alt={`${p.title} logo`}
+                            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                            loading="lazy"
+                          />
+                        </div>
+                      )}
+                      <div style={{ flex: 1 }}>
+                        <h3 style={{ fontSize: "1.35rem", fontWeight: 800, marginBottom: "0.2rem" }}>
+                          {p.title}
+                        </h3>
+                        <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                          {p.subtitle[lang]}
+                        </p>
+                      </div>
+                    </div>
                     <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", lineHeight: 1.6, marginBottom: "1.2rem", fontStyle: "italic", borderLeft: "2px solid var(--border-strong)", paddingLeft: "0.8rem" }}>
                       "{p.tagline[lang]}"
                     </p>

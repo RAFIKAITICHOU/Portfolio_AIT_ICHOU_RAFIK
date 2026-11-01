@@ -332,6 +332,7 @@ export const portfolioData = {
         { label: "Profils Métier", value: "5 Rôles" }
       ],
       github: "https://github.com/RAFIKAITICHOU/Smart-HSE-360-OCP-Safi",
+      logo: "/assets/logo-application-HSE.png",
       badgeColor: "red"
     },
     {
@@ -370,6 +371,7 @@ export const portfolioData = {
         { label: "Paiements", value: "Stripe & PayPal" }
       ],
       github: "https://github.com/RAFIKAITICHOU/Smart-Parking-System",
+      logo: "/assets/logo-application-Smart-Parking.png",
       badgeColor: "slate"
     },
     {
@@ -438,6 +440,7 @@ export const portfolioData = {
           platform: "youtube"
         }
       ],
+      logo: "/assets/logo-application-ABS-ENS.png",
       badgeColor: "green"
     },
     {
@@ -475,6 +478,24 @@ export const portfolioData = {
         { label: "Mise à jour Or", value: "Temps Réel" }
       ],
       github: "https://github.com/RAFIKAITICHOU/Ring-Sizer",
+      demoVideo: "https://youtube.com/shorts/ZQd7P4ZGUhM?feature=share",
+      demoVideos: [
+        {
+          version: "Démo",
+          label: {
+            fr: "Démo Vidéo (Shorts)",
+            en: "Demo Video (Shorts)"
+          },
+          title: {
+            fr: "Démonstration Tactile Ring Sizer (YouTube Shorts)",
+            en: "Ring Sizer Tactile Demo (YouTube Shorts)"
+          },
+          url: "https://youtube.com/shorts/ZQd7P4ZGUhM?feature=share",
+          embedUrl: "https://www.youtube.com/embed/ZQd7P4ZGUhM",
+          platform: "youtube"
+        }
+      ],
+      logo: "/assets/logo-application-ring_sizer.png",
       badgeColor: "amber"
     },
     {
