@@ -652,7 +652,7 @@ export const portfolioData = {
         fr: "Licence Fondamentale en Informatique",
         en: "Bachelor of Science in Computer Science"
       },
-      institution: "Faculté des Sciences Semlalia – Université Cadi Ayyad",
+      institution: "Université Cadi Ayyad",
       level: "Bac +3 • Obtenue",
       period: "2022 – 2025",
       status: {
