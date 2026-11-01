@@ -209,8 +209,8 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
                 gap: "0.5rem"
               }}
             >
-              <Icon name="play" size={16} />
-              <span>{lang === "fr" ? "Vidéos de Démonstration de l'Application" : "Application Demo Videos"}</span>
+              <Icon name="folder" size={16} />
+              <span>{lang === "fr" ? "Démonstrations & Livrables (Vidéos & Drive)" : "Demo Videos & Drive Deliverables"}</span>
             </h4>
 
             {/* Embedded YouTube player if available */}
@@ -253,21 +253,21 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
                         width: "30px",
                         height: "30px",
                         borderRadius: "50%",
-                        background: video.platform === "youtube" ? "rgba(239, 68, 68, 0.15)" : "rgba(215, 38, 61, 0.12)",
-                        color: video.platform === "youtube" ? "#ef4444" : "var(--accent-primary)",
+                        background: video.platform === "youtube" ? "rgba(239, 68, 68, 0.15)" : (video.platform === "drive" ? "rgba(56, 189, 248, 0.15)" : "rgba(215, 38, 61, 0.12)"),
+                        color: video.platform === "youtube" ? "#ef4444" : (video.platform === "drive" ? "#38bdf8" : "var(--accent-primary)"),
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center"
                       }}
                     >
-                      <Icon name={video.platform === "youtube" ? "youtube" : "play"} size={14} />
+                      <Icon name={video.platform === "youtube" ? "youtube" : (video.platform === "drive" ? "folder" : "play")} size={14} />
                     </div>
                     <div>
                       <div style={{ fontSize: "0.88rem", fontWeight: 700 }}>
                         {video.title[lang] || video.title}
                       </div>
                       <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
-                        {video.platform === "youtube" ? "YouTube (Lecteur HD)" : "Google Drive"}
+                        {video.platform === "youtube" ? "YouTube (Lecteur HD)" : "Google Drive (Dossier & Fichiers)"}
                       </div>
                     </div>
                   </div>
@@ -300,7 +300,7 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
                 rel="noopener noreferrer"
                 className="btn btn-secondary"
               >
-                <Icon name={video.platform === "youtube" ? "youtube" : "play"} size={16} />
+                <Icon name={video.platform === "youtube" ? "youtube" : (video.platform === "drive" ? "folder" : "play")} size={16} />
                 <span>{video.label ? (video.label[lang] || video.label) : (video.title[lang] || video.title)}</span>
               </a>
             ))

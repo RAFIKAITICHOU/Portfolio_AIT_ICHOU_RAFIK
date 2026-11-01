@@ -332,6 +332,23 @@ export const portfolioData = {
         { label: "Profils Métier", value: "5 Rôles" }
       ],
       github: "https://github.com/RAFIKAITICHOU/Smart-HSE-360-OCP-Safi",
+      driveFolder: "https://drive.google.com/drive/folders/1kznI-PHwd0wVVJ7UhIhVUS4BJYekIKI3?usp=sharing",
+      demoVideo: "https://drive.google.com/drive/folders/1kznI-PHwd0wVVJ7UhIhVUS4BJYekIKI3?usp=sharing",
+      demoVideos: [
+        {
+          version: "Drive",
+          label: {
+            fr: "Dossier Drive",
+            en: "Drive Folder"
+          },
+          title: {
+            fr: "Dossier Projet & Livrables Smart HSE OCP (Google Drive)",
+            en: "Smart HSE OCP Deliverables & Project Folder (Google Drive)"
+          },
+          url: "https://drive.google.com/drive/folders/1kznI-PHwd0wVVJ7UhIhVUS4BJYekIKI3?usp=sharing",
+          platform: "drive"
+        }
+      ],
       logo: "/assets/logo-application-HSE.png",
       badgeColor: "red"
     },
@@ -371,6 +388,23 @@ export const portfolioData = {
         { label: "Paiements", value: "Stripe & PayPal" }
       ],
       github: "https://github.com/RAFIKAITICHOU/Smart-Parking-System",
+      driveFolder: "https://drive.google.com/drive/folders/1omjmNUCkTl-uDf6JYT8t_iAA7VpXX-0r",
+      demoVideo: "https://drive.google.com/drive/folders/1omjmNUCkTl-uDf6JYT8t_iAA7VpXX-0r",
+      demoVideos: [
+        {
+          version: "Drive",
+          label: {
+            fr: "Dossier Drive",
+            en: "Drive Folder"
+          },
+          title: {
+            fr: "Dossier Projet Gestion des Parkings 2026 (Google Drive)",
+            en: "Smart Parking 2026 Project Folder (Google Drive)"
+          },
+          url: "https://drive.google.com/drive/folders/1omjmNUCkTl-uDf6JYT8t_iAA7VpXX-0r",
+          platform: "drive"
+        }
+      ],
       logo: "/assets/logo-application-Smart-Parking.png",
       badgeColor: "slate"
     },

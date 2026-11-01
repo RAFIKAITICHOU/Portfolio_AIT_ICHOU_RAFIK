@@ -371,7 +371,7 @@ export function Projects({ lang, uiText, projects }) {
                         title={`${uiText.projects.demoVideo} - ${vid.title[lang] || vid.title}`}
                         style={{ display: "inline-flex", alignItems: "center", gap: "0.25rem", padding: "0.35rem 0.55rem" }}
                       >
-                        <Icon name={vid.platform === "youtube" ? "youtube" : "play"} size={14} />
+                        <Icon name={vid.platform === "youtube" ? "youtube" : (vid.platform === "drive" ? "folder" : "play")} size={14} />
                         <span style={{ fontSize: "0.72rem", fontWeight: 700 }}>
                           {vid.version || `V${vIdx + 1}`}
                         </span>

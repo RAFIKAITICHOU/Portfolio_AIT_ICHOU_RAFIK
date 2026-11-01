@@ -299,6 +299,14 @@ export function Icon({ name, size = 20, className = "", style = {}, ...props }) 
           <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
         </svg>
       );
+    case "folder":
+    case "drive":
+    case "GoogleDrive":
+      return (
+        <svg {...common}>
+          <path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z" />
+        </svg>
+      );
     case "brain":
     case "Brain":
       return (
