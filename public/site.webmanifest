@@ -1,0 +1,27 @@
+{
+  "name": "Rafik Ait Ichou | Portfolio",
+  "short_name": "Rafik Ait Ichou",
+  "description": "Portfolio professionnel de Rafik Ait Ichou — Ingénieur Informatique & Réseaux, Développeur Full Stack",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
