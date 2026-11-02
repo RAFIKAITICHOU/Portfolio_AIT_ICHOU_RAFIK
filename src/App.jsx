@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { Capacitor } from "@capacitor/core";
+import { StatusBar, Style } from "@capacitor/status-bar";
+import { SplashScreen } from "@capacitor/splash-screen";
+import { App as CapApp } from "@capacitor/app";
 import { portfolioData } from "./data/portfolioData";
 import { Navbar } from "./components/Navbar";
 import { RecruiterBanner } from "./components/RecruiterBanner";
@@ -37,11 +41,39 @@ export default function App() {
   const [cvModalOpen, setCvModalOpen] = useState(false);
   const [toast, setToast] = useState({ message: "", visible: false });
 
-  // Update document theme attribute
+  // Update document theme attribute and mobile native status bar
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("portfolio_theme", theme);
+
+    if (Capacitor.isNativePlatform()) {
+      StatusBar.setStyle({ style: theme === "dark" ? Style.Dark : Style.Light }).catch(() => {});
+      if (Capacitor.getPlatform() === "android") {
+        StatusBar.setBackgroundColor({ color: theme === "dark" ? "#0E1117" : "#F7F8FA" }).catch(() => {});
+      }
+    }
   }, [theme]);
+
+  // Native Mobile Initialization (Splash screen & Android back button)
+  useEffect(() => {
+    if (Capacitor.isNativePlatform()) {
+      SplashScreen.hide().catch(() => {});
+
+      const backHandler = CapApp.addListener("backButton", ({ canGoBack }) => {
+        if (cvModalOpen) {
+          setCvModalOpen(false);
+        } else if (canGoBack) {
+          window.history.back();
+        } else {
+          CapApp.exitApp();
+        }
+      });
+
+      return () => {
+        backHandler.then((h) => h.remove()).catch(() => {});
+      };
+    }
+  }, [cvModalOpen]);
 
   // Update language in localStorage
   useEffect(() => {

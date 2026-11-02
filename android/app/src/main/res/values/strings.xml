@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Rafik Ait Ichou</string>
+    <string name="title_activity_main">Rafik Ait Ichou</string>
+    <string name="package_name">com.aitichou.rafik</string>
+    <string name="custom_url_scheme">com.aitichou.rafik</string>
+</resources>
