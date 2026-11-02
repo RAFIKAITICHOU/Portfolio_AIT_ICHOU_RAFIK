@@ -116,3 +116,4 @@ export function FloatingActions({ theme, toggleTheme, lang }) {
     </div>
   );
 }
+

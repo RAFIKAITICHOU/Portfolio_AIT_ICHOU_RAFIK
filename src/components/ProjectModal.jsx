@@ -196,8 +196,86 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
           </div>
         </div>
 
+        {/* Dedicated Google Drive Deliverables Box */}
+        {project.driveFolder && (
+          <div
+            style={{
+              background: "rgba(59, 130, 246, 0.08)",
+              border: "1px solid rgba(59, 130, 246, 0.25)",
+              borderRadius: "var(--radius-md)",
+              padding: "1.2rem",
+              marginBottom: "1.8rem"
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+                flexWrap: "wrap",
+                gap: "1rem"
+              }}
+            >
+              <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", flex: 1, minWidth: "260px" }}>
+                <div
+                  style={{
+                    width: "42px",
+                    height: "42px",
+                    borderRadius: "var(--radius-sm)",
+                    background: "rgba(59, 130, 246, 0.15)",
+                    color: "#3b82f6",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0
+                  }}
+                >
+                  <Icon name="folder" size={20} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: "1rem", fontWeight: 700, marginBottom: "0.2rem", color: "var(--text-primary)" }}>
+                    {lang === "fr" ? "Dossier Projet & Livrables (Google Drive)" : "Project Deliverables Folder (Google Drive)"}
+                  </h4>
+                  <p style={{ fontSize: "0.85rem", color: "var(--text-secondary)", margin: 0, wordBreak: "break-all" }}>
+                    <span style={{ fontWeight: 600 }}>{lang === "fr" ? "Lien Dossier Drive : " : "Drive Folder Link : "}</span>
+                    <a
+                      href={project.driveFolder}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: "#3b82f6", textDecoration: "underline" }}
+                    >
+                      {project.driveFolder}
+                    </a>
+                  </p>
+                </div>
+              </div>
+
+              <a
+                href={project.driveFolder}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary btn-sm"
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.45rem",
+                  background: "#2563eb",
+                  borderColor: "#2563eb",
+                  color: "#ffffff",
+                  padding: "0.55rem 1.1rem",
+                  fontWeight: 700
+                }}
+              >
+                <Icon name="folder" size={16} />
+                <span>{lang === "fr" ? "Ouvrir le Drive" : "Open Drive"}</span>
+                <Icon name="external-link" size={14} />
+              </a>
+            </div>
+          </div>
+        )}
+
         {/* Demo Videos Section (V1 and V2) */}
-        {project.demoVideos && project.demoVideos.length > 0 && (
+        {project.demoVideos && project.demoVideos.filter((v) => v.url !== project.driveFolder).length > 0 && (
           <div
             style={{
               background: "var(--bg-elevated)",
@@ -218,8 +296,8 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
                 gap: "0.5rem"
               }}
             >
-              <Icon name="folder" size={16} />
-              <span>{lang === "fr" ? "Démonstrations & Livrables (Vidéos & Drive)" : "Demo Videos & Drive Deliverables"}</span>
+              <Icon name="play" size={16} />
+              <span>{lang === "fr" ? "Vidéos de Démonstration de l'Application" : "Application Demo Videos"}</span>
             </h4>
 
             {/* Embedded YouTube player if available */}
@@ -236,53 +314,55 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
             )}
 
             <div style={{ display: "flex", flexDirection: "column", gap: "0.6rem" }}>
-              {project.demoVideos.map((video, idx) => (
-                <a
-                  key={idx}
-                  href={video.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-between",
-                    padding: "0.65rem 0.9rem",
-                    background: "var(--bg-body)",
-                    border: "1px solid var(--border-subtle)",
-                    borderRadius: "var(--radius-sm)",
-                    color: "var(--text-primary)",
-                    textDecoration: "none",
-                    transition: "all 0.2s ease"
-                  }}
-                  className="hover-border-accent"
-                >
-                  <div style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
-                    <div
-                      style={{
-                        width: "30px",
-                        height: "30px",
-                        borderRadius: "50%",
-                        background: video.platform === "youtube" ? "rgba(239, 68, 68, 0.15)" : (video.platform === "drive" ? "rgba(56, 189, 248, 0.15)" : "rgba(215, 38, 61, 0.12)"),
-                        color: video.platform === "youtube" ? "#ef4444" : (video.platform === "drive" ? "#38bdf8" : "var(--accent-primary)"),
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center"
-                      }}
-                    >
-                      <Icon name={video.platform === "youtube" ? "youtube" : (video.platform === "drive" ? "folder" : "play")} size={14} />
-                    </div>
-                    <div>
-                      <div style={{ fontSize: "0.88rem", fontWeight: 700 }}>
-                        {video.title[lang] || video.title}
+              {project.demoVideos
+                .filter((v) => v.url !== project.driveFolder)
+                .map((video, idx) => (
+                  <a
+                    key={idx}
+                    href={video.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "0.65rem 0.9rem",
+                      background: "var(--bg-body)",
+                      border: "1px solid var(--border-subtle)",
+                      borderRadius: "var(--radius-sm)",
+                      color: "var(--text-primary)",
+                      textDecoration: "none",
+                      transition: "all 0.2s ease"
+                    }}
+                    className="hover-border-accent"
+                  >
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.65rem" }}>
+                      <div
+                        style={{
+                          width: "30px",
+                          height: "30px",
+                          borderRadius: "50%",
+                          background: video.platform === "youtube" ? "rgba(239, 68, 68, 0.15)" : "rgba(215, 38, 61, 0.12)",
+                          color: video.platform === "youtube" ? "#ef4444" : "var(--accent-primary)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center"
+                        }}
+                      >
+                        <Icon name={video.platform === "youtube" ? "youtube" : "play"} size={14} />
                       </div>
-                      <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
-                        {video.platform === "youtube" ? "YouTube (Lecteur HD)" : "Google Drive (Dossier & Fichiers)"}
+                      <div>
+                        <div style={{ fontSize: "0.88rem", fontWeight: 700 }}>
+                          {video.title[lang] || video.title}
+                        </div>
+                        <div style={{ fontSize: "0.75rem", color: "var(--text-muted)" }}>
+                          {video.platform === "youtube" ? "YouTube (Lecteur HD)" : "Google Drive"}
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <Icon name="external-link" size={14} style={{ color: "var(--text-muted)" }} />
-                </a>
-              ))}
+                    <Icon name="external-link" size={14} style={{ color: "var(--text-muted)" }} />
+                  </a>
+                ))}
             </div>
           </div>
         )}
@@ -300,20 +380,34 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
               <span>{uiText.projects.codeSource}</span>
             </a>
           )}
-          {project.demoVideos && project.demoVideos.length > 0 ? (
-            project.demoVideos.map((video, idx) => (
-              <a
-                key={idx}
-                href={video.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-secondary"
-              >
-                <Icon name={video.platform === "youtube" ? "youtube" : (video.platform === "drive" ? "folder" : "play")} size={16} />
-                <span>{video.label ? (video.label[lang] || video.label) : (video.title[lang] || video.title)}</span>
-              </a>
-            ))
-          ) : project.demoVideo && (
+          {project.driveFolder && (
+            <a
+              href={project.driveFolder}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              style={{ display: "inline-flex", alignItems: "center", gap: "0.45rem" }}
+            >
+              <Icon name="folder" size={16} />
+              <span>Drive</span>
+            </a>
+          )}
+          {project.demoVideos && project.demoVideos.filter((v) => v.url !== project.driveFolder).length > 0 ? (
+            project.demoVideos
+              .filter((v) => v.url !== project.driveFolder)
+              .map((video, idx) => (
+                <a
+                  key={idx}
+                  href={video.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  <Icon name={video.platform === "youtube" ? "youtube" : "play"} size={16} />
+                  <span>{video.label ? (video.label[lang] || video.label) : (video.title[lang] || video.title)}</span>
+                </a>
+              ))
+          ) : project.demoVideo && project.demoVideo !== project.driveFolder ? (
             <a
               href={project.demoVideo}
               target="_blank"
@@ -323,7 +417,7 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
               <Icon name="play" size={16} />
               <span>{uiText.projects.demoVideo}</span>
             </a>
-          )}
+          ) : null}
         </div>
       </div>
     </div>,

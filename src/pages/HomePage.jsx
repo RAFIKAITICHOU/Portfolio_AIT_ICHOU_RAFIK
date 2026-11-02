@@ -217,11 +217,24 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
                     </div>
                   </div>
 
-                  <div style={{ display: "flex", gap: "0.8rem", paddingTop: "1rem", borderTop: "1px solid var(--border-subtle)" }}>
+                  <div style={{ display: "flex", gap: "0.8rem", paddingTop: "1rem", borderTop: "1px solid var(--border-subtle)", flexWrap: "wrap", alignItems: "center" }}>
                     <Link to="/projects" className="btn btn-primary btn-sm" style={{ flex: 1 }}>
                       <span>{uiText.home.viewCaseStudy}</span>
                       <Icon name="chevron-right" size={14} />
                     </Link>
+                    {p.driveFolder && (
+                      <a
+                        href={p.driveFolder}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn btn-secondary btn-sm"
+                        title={lang === "fr" ? "Dossier Google Drive" : "Google Drive Folder"}
+                        style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+                      >
+                        <Icon name="folder" size={15} />
+                        <span>Drive</span>
+                      </a>
+                    )}
                     {p.github && (
                       <a href={p.github} target="_blank" rel="noopener noreferrer" className="btn btn-secondary btn-sm" title="Code GitHub">
                         <Icon name="github" size={16} />
