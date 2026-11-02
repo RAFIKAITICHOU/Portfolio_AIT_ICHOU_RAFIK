@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export function FloatingActions({ theme, toggleTheme, lang }) {
+export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
   const [showScrollTop, setShowScrollTop] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ export function FloatingActions({ theme, toggleTheme, lang }) {
         pointerEvents: "none"
       }}
     >
-      {/* Scroll to Top Button (Image 2 style) */}
+      {/* 1. Scroll to Top Button */}
       <button
         onClick={scrollToTop}
         className="floating-circle-btn"
@@ -58,7 +58,7 @@ export function FloatingActions({ theme, toggleTheme, lang }) {
         </svg>
       </button>
 
-      {/* Dark / Light Mode Toggle Button (Image 2 style) */}
+      {/* 2. Dark / Light Mode Toggle Button */}
       <button
         onClick={toggleTheme}
         className="floating-circle-btn"
@@ -113,7 +113,37 @@ export function FloatingActions({ theme, toggleTheme, lang }) {
           </svg>
         )}
       </button>
+
+      {/* 3. Language Toggle Button (à côté du bouton Dark Mode) */}
+      <button
+        onClick={() => setLang(lang === "fr" ? "en" : "fr")}
+        className="floating-circle-btn"
+        style={{
+          pointerEvents: "auto",
+          transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
+        }}
+        aria-label={lang === "fr" ? "Passer en anglais" : "Switch to French"}
+        title={lang === "fr" ? "Passer en English" : "Passer en Français"}
+      >
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", lineHeight: 1 }}>
+          <svg
+            width="15"
+            height="15"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            style={{ marginBottom: "2px" }}
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="2" y1="12" x2="22" y2="12" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span style={{ fontSize: "0.68rem", fontWeight: 800 }}>{lang.toUpperCase()}</span>
+        </div>
+      </button>
     </div>
   );
 }
-

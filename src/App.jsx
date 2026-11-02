@@ -222,8 +222,8 @@ export default function App() {
         {/* Toast Feedback */}
         <Toast message={toast.message} visible={toast.visible} />
 
-        {/* Floating Circular Action Buttons (Scroll to Top & Dark Mode) */}
-        <FloatingActions theme={theme} toggleTheme={toggleTheme} lang={lang} />
+        {/* Floating Circular Action Buttons (Scroll to Top, Dark Mode & Language Switcher) */}
+        <FloatingActions theme={theme} toggleTheme={toggleTheme} lang={lang} setLang={setLang} />
       </div>
     </Router>
   );

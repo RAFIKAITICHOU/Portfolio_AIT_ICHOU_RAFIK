@@ -130,44 +130,21 @@ export function Navbar({ lang, setLang, theme, toggleTheme, onOpenCv, uiText, pe
               ))}
             </ul>
 
-            {/* Language & Theme & CV Controls */}
+            {/* CV Button */}
             <div
               style={{
                 display: "flex",
                 alignItems: "center",
-                gap: "0.5rem",
                 marginLeft: "0.5rem",
                 flexShrink: 0
               }}
             >
-              {/* Language Switcher */}
-              <button
-                onClick={() => setLang(lang === "fr" ? "en" : "fr")}
-                className="btn btn-secondary btn-sm"
-                title="Changer de langue / Switch language"
-                style={{ padding: "0.35rem 0.65rem", fontSize: "0.78rem", fontWeight: 700 }}
-              >
-                <Icon name="globe" size={13} />
-                <span>{lang.toUpperCase()}</span>
-              </button>
-
-              {/* Theme Switcher */}
-              <button
-                onClick={toggleTheme}
-                className="btn btn-secondary btn-sm"
-                title={theme === "dark" ? "Mode Clair" : "Mode Sombre"}
-                style={{ padding: "0.4rem", width: "34px", height: "34px" }}
-              >
-                <Icon name={theme === "dark" ? "sun" : "moon"} size={15} />
-              </button>
-
-              {/* CV Button */}
               <button
                 onClick={onOpenCv}
                 className="btn btn-primary btn-sm"
-                style={{ padding: "0.38rem 0.85rem", fontSize: "0.825rem", whiteSpace: "nowrap" }}
+                style={{ padding: "0.4rem 1rem", fontSize: "0.85rem", whiteSpace: "nowrap", fontWeight: 700 }}
               >
-                <Icon name="download" size={13} />
+                <Icon name="download" size={14} />
                 <span>CV</span>
               </button>
             </div>
@@ -229,34 +206,13 @@ export function Navbar({ lang, setLang, theme, toggleTheme, onOpenCv, uiText, pe
           </ul>
 
           <div style={{ marginTop: "auto", display: "flex", flexDirection: "column", gap: "0.8rem", paddingTop: "1rem" }}>
-            <div style={{ display: "flex", gap: "0.75rem" }}>
-              <button
-                onClick={() => {
-                  setLang(lang === "fr" ? "en" : "fr");
-                  setMobileMenuOpen(false);
-                }}
-                className="btn btn-secondary"
-                style={{ flex: 1, fontSize: "0.85rem" }}
-              >
-                <Icon name="globe" size={15} />
-                <span>{lang === "fr" ? "Passer en English" : "Passer en Français"}</span>
-              </button>
-              <button
-                onClick={toggleTheme}
-                className="btn btn-secondary"
-                style={{ width: "46px", padding: 0 }}
-              >
-                <Icon name={theme === "dark" ? "sun" : "moon"} size={17} />
-              </button>
-            </div>
-
             <button
               onClick={() => {
                 onOpenCv();
                 setMobileMenuOpen(false);
               }}
               className="btn btn-primary"
-              style={{ width: "100%" }}
+              style={{ width: "100%", padding: "0.75rem", fontSize: "0.95rem", fontWeight: 700 }}
             >
               <Icon name="download" size={16} />
               <span>{uiText.nav.cvButton}</span>
