@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer";
 import { CvModal } from "./components/CvModal";
 import { Toast } from "./components/Toast";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { FloatingActions } from "./components/FloatingActions";
 
 // Dedicated Pages
 import { HomePage } from "./pages/HomePage";
@@ -220,6 +221,9 @@ export default function App() {
 
         {/* Toast Feedback */}
         <Toast message={toast.message} visible={toast.visible} />
+
+        {/* Floating Circular Action Buttons (Scroll to Top & Dark Mode) */}
+        <FloatingActions theme={theme} toggleTheme={toggleTheme} lang={lang} />
       </div>
     </Router>
   );

@@ -135,17 +135,10 @@ export function Footer({ lang, uiText, personal }) {
           <div>
             © {new Date().getFullYear()} {personal.name}. {uiText.footer.rights}
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: "1.5rem" }}>
-            <span>{uiText.footer.designedWith}</span>
-            <button
-              onClick={scrollToTop}
-              className="btn btn-secondary btn-sm"
-              title={uiText.footer.backToTop}
-              style={{ display: "flex", alignItems: "center", gap: "0.4rem", padding: "0.3rem 0.75rem", fontSize: "0.775rem" }}
-            >
-              <Icon name="arrow-up" size={13} />
-              <span>{uiText.footer.backToTop}</span>
-            </button>
+          <div>
+            <span style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
+              {personal.location[lang]}
+            </span>
           </div>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { Icon } from "./Icons";
 
 export function CvModal({ isOpen, onClose, lang, personal }) {
@@ -8,13 +9,18 @@ export function CvModal({ isOpen, onClose, lang, personal }) {
     };
     if (isOpen) {
       window.addEventListener("keydown", handleKeyDown);
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        window.removeEventListener("keydown", handleKeyDown);
+        document.body.style.overflow = prevOverflow;
+      };
     }
-    return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isOpen, onClose]);
 
   if (!isOpen) return null;
 
-  return (
+  return createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: "560px" }}>
         {/* Close Button */}
@@ -131,7 +137,8 @@ export function CvModal({ isOpen, onClose, lang, personal }) {
           ))}
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
 
