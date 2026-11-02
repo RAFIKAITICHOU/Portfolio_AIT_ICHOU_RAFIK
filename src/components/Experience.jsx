@@ -20,7 +20,7 @@ export function Experience({ lang, uiText, experiences }) {
           {experiences.map((exp) => (
             <div
               key={exp.id}
-              className="glass-card"
+              className="glass-card experience-card"
               style={{
                 padding: "2.5rem",
                 borderLeft: exp.featured ? "4px solid #ef4444" : "4px solid var(--accent-primary)",
@@ -123,6 +123,14 @@ export function Experience({ lang, uiText, experiences }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .experience-card {
+            padding: 1.4rem 1.15rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

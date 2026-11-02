@@ -46,10 +46,11 @@ export function Contact({ lang, uiText, personal, onShowToast }) {
 
         {/* 4 Direct Contact Channels */}
         <div
+          className="contact-channels-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-            gap: "1.5rem",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 220px), 1fr))",
+            gap: "1.2rem",
             marginBottom: "3rem"
           }}
         >
@@ -247,7 +248,7 @@ export function Contact({ lang, uiText, personal, onShowToast }) {
 
         {/* Contact Message Form */}
         <div
-          className="glass-card"
+          className="glass-card contact-form-card"
           style={{
             maxWidth: "760px",
             margin: "0 auto",
@@ -391,6 +392,21 @@ export function Contact({ lang, uiText, personal, onShowToast }) {
       <style>{`
         @media (max-width: 640px) {
           .contact-inputs-row {
+            grid-template-columns: 1fr !important;
+          }
+          .contact-channels-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.75rem !important;
+          }
+          .contact-channels-grid .glass-card {
+            padding: 1.2rem 0.75rem !important;
+          }
+          .contact-form-card {
+            padding: 1.4rem 1.15rem !important;
+          }
+        }
+        @media (max-width: 440px) {
+          .contact-channels-grid {
             grid-template-columns: 1fr !important;
           }
         }

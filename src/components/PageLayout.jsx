@@ -46,7 +46,7 @@ export function PageLayout({ lang, uiText, current, prev, next, children }) {
             }}
           >
             {prev ? (
-              <Link to={prev.path} className="btn btn-secondary btn-sm">
+              <Link to={prev.path} className="btn btn-secondary btn-sm" style={{ flex: "1 1 140px", justifyContent: "flex-start" }}>
                 <Icon name="arrow-up" size={14} style={{ transform: "rotate(-90deg)" }} />
                 <span>
                   <small style={{ display: "block", color: "var(--text-muted)", fontSize: "0.725rem", textTransform: "uppercase" }}>
@@ -55,10 +55,10 @@ export function PageLayout({ lang, uiText, current, prev, next, children }) {
                   <strong>{prev.label}</strong>
                 </span>
               </Link>
-            ) : <div />}
+            ) : <div style={{ flex: "1 1 140px" }} />}
 
             {next ? (
-              <Link to={next.path} className="btn btn-primary btn-sm">
+              <Link to={next.path} className="btn btn-primary btn-sm" style={{ flex: "1 1 140px", justifyContent: "flex-end" }}>
                 <span style={{ textAlign: "right" }}>
                   <small style={{ display: "block", color: "rgba(255,255,255,0.75)", fontSize: "0.725rem", textTransform: "uppercase" }}>
                     {lang === "fr" ? "Suivant" : "Next"}
@@ -67,7 +67,7 @@ export function PageLayout({ lang, uiText, current, prev, next, children }) {
                 </span>
                 <Icon name="chevron-right" size={14} />
               </Link>
-            ) : <div />}
+            ) : <div style={{ flex: "1 1 140px" }} />}
           </div>
         </div>
       )}

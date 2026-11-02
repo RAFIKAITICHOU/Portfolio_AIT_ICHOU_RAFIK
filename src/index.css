@@ -151,6 +151,12 @@ h1, h2, h3, .section-title {
   z-index: 1;
 }
 
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
 .section {
   padding: 5rem 0;
   position: relative;
@@ -159,6 +165,12 @@ h1, h2, h3, .section-title {
 @media (max-width: 768px) {
   .section {
     padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2.8rem 0;
   }
 }
 
@@ -281,6 +293,12 @@ h1, h2, h3, .section-title {
   position: relative;
 }
 
+@media (max-width: 640px) {
+  .glass-card {
+    padding: 1.35rem 1.15rem;
+  }
+}
+
 .glass-card:hover {
   border-color: var(--border-hover);
   box-shadow: var(--shadow-md);
@@ -358,16 +376,27 @@ h1, h2, h3, .section-title {
 
 @media (max-width: 640px) {
   .modal-overlay {
-    padding: 1rem 0.6rem;
+    padding: 0.8rem 0.5rem;
   }
   .modal-content {
-    padding: 1.5rem 1.2rem;
-    max-height: calc(100vh - 2rem);
+    padding: 1.35rem 1rem;
+    max-height: calc(100vh - 1.6rem);
     border-radius: var(--radius-md);
   }
 }
 
-/* Floating Circular Action Buttons (Image 2 style: Haut de page + DarkMode) */
+/* Floating Actions Bar (Haut de page + DarkMode + Langue) */
+.floating-actions-bar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 990;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
 .floating-circle-btn {
   width: 48px;
   height: 48px;
@@ -382,6 +411,7 @@ h1, h2, h3, .section-title {
   color: #3b82f6;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.25s ease;
+  flex-shrink: 0;
 }
 
 .floating-circle-btn:hover {
@@ -401,6 +431,30 @@ h1, h2, h3, .section-title {
   background: var(--bg-secondary);
   box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3);
   color: #93c5fd;
+}
+
+@media (max-width: 768px) {
+  .floating-actions-bar {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: 16px;
+    gap: 8px;
+  }
+  .floating-circle-btn {
+    width: 44px;
+    height: 44px;
+  }
+}
+
+@media (max-width: 400px) {
+  .floating-actions-bar {
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    right: 12px;
+    gap: 6px;
+  }
+  .floating-circle-btn {
+    width: 40px;
+    height: 40px;
+  }
 }
 
 @keyframes fadeIn {

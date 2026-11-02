@@ -52,6 +52,7 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
         <div style={{ display: "flex", alignItems: "center", gap: "1.2rem", marginBottom: "1.5rem" }}>
           {project.logo && (
             <div
+              className="modal-project-logo"
               style={{
                 width: "68px",
                 height: "68px",
@@ -74,7 +75,7 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
               />
             </div>
           )}
-          <div style={{ flex: 1 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
             <span
               style={{
                 fontSize: "0.8rem",
@@ -88,10 +89,10 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
             >
               {project.categoryLabel[lang]}
             </span>
-            <h3 style={{ fontSize: "1.8rem", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.3rem" }}>
+            <h3 style={{ fontSize: "clamp(1.35rem, 4vw, 1.8rem)", fontWeight: 800, lineHeight: 1.2, marginBottom: "0.3rem", wordBreak: "break-word" }}>
               {project.title}
             </h3>
-            <p style={{ color: "var(--text-secondary)", fontSize: "1rem" }}>
+            <p style={{ color: "var(--text-secondary)", fontSize: "0.95rem" }}>
               {project.subtitle[lang]}
             </p>
           </div>
@@ -216,7 +217,7 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
                 gap: "1rem"
               }}
             >
-              <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", flex: 1, minWidth: "260px" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "0.85rem", flex: 1, minWidth: "220px" }}>
                 <div
                   style={{
                     width: "42px",
@@ -302,11 +303,11 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
 
             {/* Embedded YouTube player if available */}
             {project.demoVideos.find((v) => v.embedUrl) && (
-              <div style={{ marginBottom: "1rem", borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border-subtle)" }}>
+              <div style={{ marginBottom: "1rem", borderRadius: "var(--radius-sm)", overflow: "hidden", border: "1px solid var(--border-subtle)", background: "#000" }}>
                 <iframe
                   src={project.demoVideos.find((v) => v.embedUrl).embedUrl}
                   title="Video Demo"
-                  style={{ width: "100%", height: "260px", border: "none", display: "block" }}
+                  style={{ width: "100%", aspectRatio: "16 / 9", height: "auto", maxHeight: "320px", border: "none", display: "block" }}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 />
@@ -419,6 +420,17 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
             </a>
           ) : null}
         </div>
+
+        <style>{`
+          @media (max-width: 640px) {
+            .modal-project-logo {
+              width: 50px !important;
+              height: 50px !important;
+              min-width: 50px !important;
+              padding: 5px !important;
+            }
+          }
+        `}</style>
       </div>
     </div>,
     document.body

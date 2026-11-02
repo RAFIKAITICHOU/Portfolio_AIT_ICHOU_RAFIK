@@ -21,6 +21,7 @@ export function Footer({ lang, uiText, personal }) {
 
   return (
     <footer
+      className="portfolio-footer"
       style={{
         borderTop: "1px solid var(--border-subtle)",
         background: "var(--bg-secondary)",
@@ -92,6 +93,7 @@ export function Footer({ lang, uiText, personal }) {
               {lang === "fr" ? "Pages du Portfolio" : "Portfolio Pages"}
             </h4>
             <div
+              className="footer-links-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(140px, 1fr))",
@@ -145,9 +147,16 @@ export function Footer({ lang, uiText, personal }) {
 
       <style>{`
         @media (max-width: 768px) {
+          .portfolio-footer {
+            padding: 3rem 0 calc(5.5rem + env(safe-area-inset-bottom, 0px)) 0 !important;
+          }
           .footer-top-grid {
             grid-template-columns: 1fr !important;
             gap: 2rem !important;
+          }
+          .footer-links-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.65rem !important;
           }
         }
       `}</style>

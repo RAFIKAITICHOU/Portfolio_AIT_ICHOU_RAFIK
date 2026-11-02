@@ -18,7 +18,7 @@ export function About({ lang, uiText, personal, onOpenCv }) {
 
         {/* Narrative Box */}
         <div
-          className="glass-card"
+          className="glass-card about-overview-card"
           style={{
             padding: "2.8rem",
             marginBottom: "3rem",
@@ -133,7 +133,7 @@ export function About({ lang, uiText, personal, onOpenCv }) {
         <div
           style={{
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))",
             gap: "1.5rem"
           }}
         >
@@ -182,6 +182,11 @@ export function About({ lang, uiText, personal, onOpenCv }) {
           .about-overview-grid {
             grid-template-columns: 1fr !important;
             gap: 2rem !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .about-overview-card {
+            padding: 1.4rem 1.15rem !important;
           }
         }
       `}</style>

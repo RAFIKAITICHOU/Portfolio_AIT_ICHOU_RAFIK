@@ -5,6 +5,7 @@ export function Stats({ lang, stats }) {
     <section style={{ padding: "1.5rem 0 4rem 0", position: "relative" }}>
       <div className="container">
         <div
+          className="stats-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
@@ -63,6 +64,27 @@ export function Stats({ lang, stats }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .stats-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.75rem !important;
+          }
+          .stats-grid .glass-card {
+            padding: 1.2rem 0.75rem !important;
+          }
+          .stats-grid .glass-card > div:first-child {
+            font-size: clamp(1.7rem, 6vw, 2.2rem) !important;
+          }
+          .stats-grid .glass-card > div:nth-child(2) {
+            font-size: 0.88rem !important;
+          }
+          .stats-grid .glass-card > div:nth-child(3) {
+            font-size: 0.75rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

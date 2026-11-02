@@ -14,6 +14,24 @@ export function Navbar({ lang, setLang, theme, toggleTheme, onOpenCv, uiText, pe
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const prevOverflow = document.body.style.overflow;
+      document.body.style.overflow = "hidden";
+      return () => {
+        document.body.style.overflow = prevOverflow;
+      };
+    }
+  }, [mobileMenuOpen]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1150) setMobileMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const navLinks = [
     { to: "/", label: uiText.nav.home },
     { to: "/about", label: uiText.nav.about },
@@ -172,11 +190,11 @@ export function Navbar({ lang, setLang, theme, toggleTheme, onOpenCv, uiText, pe
             inset: 0,
             zIndex: 99,
             background: "var(--bg-overlay)",
-            backdropFilter: "blur(16px)",
-            WebkitBackdropFilter: "blur(16px)",
+            backdropFilter: "blur(20px)",
+            WebkitBackdropFilter: "blur(20px)",
             display: "flex",
             flexDirection: "column",
-            padding: "5.2rem 1.8rem 2rem 1.8rem",
+            padding: "calc(var(--nav-height) + 1.2rem) 1.5rem calc(2rem + env(safe-area-inset-bottom, 0px)) 1.5rem",
             gap: "1.2rem",
             overflowY: "auto",
             animation: "fadeIn 0.2s ease"

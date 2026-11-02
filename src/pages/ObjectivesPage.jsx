@@ -28,15 +28,16 @@ export function ObjectivesPage({ lang, uiText, objectives, onOpenCv }) {
           </div>
 
           <div
+            className="objectives-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
               gap: "2.5rem"
             }}
           >
             {/* Card 1: Immediate PFE Objective */}
             <div
-              className="glass-card"
+              className="glass-card objective-card"
               style={{
                 padding: "2.8rem",
                 borderTop: "4px solid var(--accent-primary)",
@@ -107,7 +108,7 @@ export function ObjectivesPage({ lang, uiText, objectives, onOpenCv }) {
 
             {/* Card 2: Long-Term Vision */}
             <div
-              className="glass-card"
+              className="glass-card objective-card"
               style={{
                 padding: "2.8rem",
                 borderTop: "4px solid var(--accent-secondary)",
@@ -177,6 +178,20 @@ export function ObjectivesPage({ lang, uiText, objectives, onOpenCv }) {
             </div>
           </div>
         </div>
+
+        <style>{`
+          @media (max-width: 768px) {
+            .objectives-grid {
+              grid-template-columns: 1fr !important;
+              gap: 1.8rem !important;
+            }
+          }
+          @media (max-width: 640px) {
+            .objective-card {
+              padding: 1.4rem 1.15rem !important;
+            }
+          }
+        `}</style>
       </section>
     </PageLayout>
   );

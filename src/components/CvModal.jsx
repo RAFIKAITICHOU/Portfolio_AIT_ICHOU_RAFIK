@@ -78,6 +78,7 @@ export function CvModal({ isOpen, onClose, lang, personal }) {
           {personal.cvList.map((cv) => (
             <div
               key={cv.id}
+              className="cv-version-row"
               style={{
                 background: "var(--bg-elevated)",
                 border: "1px solid var(--border-subtle)",
@@ -114,7 +115,7 @@ export function CvModal({ isOpen, onClose, lang, personal }) {
                 </div>
               </div>
 
-              <div style={{ display: "flex", gap: "0.5rem", flexShrink: 0 }}>
+              <div className="cv-version-actions" style={{ display: "flex", gap: "0.5rem", flexShrink: 0 }}>
                 <a
                   href={cv.path}
                   target="_blank"
@@ -136,6 +137,20 @@ export function CvModal({ isOpen, onClose, lang, personal }) {
             </div>
           ))}
         </div>
+
+        <style>{`
+          @media (max-width: 480px) {
+            .cv-version-row {
+              flex-direction: column !important;
+              align-items: flex-start !important;
+              gap: 0.8rem !important;
+            }
+            .cv-version-actions {
+              width: 100% !important;
+              justify-content: flex-end !important;
+            }
+          }
+        `}</style>
       </div>
     </div>,
     document.body

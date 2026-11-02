@@ -46,6 +46,7 @@ export function Certifications({ lang, uiText, certifications }) {
 
         {/* Filters and Search Bar */}
         <div
+          className="cert-filter-bar"
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -87,6 +88,7 @@ export function Certifications({ lang, uiText, certifications }) {
 
           {/* Search Box */}
           <div
+            className="cert-search-box"
             style={{
               position: "relative",
               minWidth: "260px",
@@ -151,9 +153,10 @@ export function Certifications({ lang, uiText, certifications }) {
         {/* Certifications Grid */}
         {filteredCerts.length > 0 ? (
           <div
+            className="certifications-grid"
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 300px), 1fr))",
               gap: "1.8rem"
             }}
           >
@@ -276,6 +279,24 @@ export function Certifications({ lang, uiText, certifications }) {
           </div>
         )}
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .certifications-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.2rem !important;
+          }
+          .cert-filter-bar {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 0.9rem !important;
+          }
+          .cert-search-box {
+            min-width: 100% !important;
+            max-width: 100% !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

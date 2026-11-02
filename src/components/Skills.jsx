@@ -107,7 +107,7 @@ export function Skills({ lang, uiText, skillCategories }) {
 
         {/* Active Category Display */}
         <div
-          className="glass-card"
+          className="glass-card skills-main-card"
           style={{
             padding: "2.8rem",
             maxWidth: "980px",
@@ -128,7 +128,7 @@ export function Skills({ lang, uiText, skillCategories }) {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
               gap: "1.2rem"
             }}
             className="skills-grid"
@@ -182,9 +182,14 @@ export function Skills({ lang, uiText, skillCategories }) {
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .skills-grid {
             grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .skills-main-card {
+            padding: 1.4rem 1.15rem !important;
           }
         }
       `}</style>

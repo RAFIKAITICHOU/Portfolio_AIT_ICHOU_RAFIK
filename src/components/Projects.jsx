@@ -51,6 +51,7 @@ export function Projects({ lang, uiText, projects }) {
 
         {/* Filter Bar & Search Input */}
         <div
+          className="projects-filter-bar"
           style={{
             display: "flex",
             flexWrap: "wrap",
@@ -62,6 +63,7 @@ export function Projects({ lang, uiText, projects }) {
         >
           {/* Category Tabs */}
           <div
+            className="projects-tabs-row"
             style={{
               display: "flex",
               flexWrap: "wrap",
@@ -92,6 +94,7 @@ export function Projects({ lang, uiText, projects }) {
 
           {/* Search Box */}
           <div
+            className="projects-search-box"
             style={{
               position: "relative",
               minWidth: "260px",
@@ -172,7 +175,7 @@ export function Projects({ lang, uiText, projects }) {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+              gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
               gap: "2rem"
             }}
             className="projects-grid"
@@ -236,6 +239,7 @@ export function Projects({ lang, uiText, projects }) {
                   <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", marginBottom: "0.8rem" }}>
                     {project.logo && (
                       <div
+                        className="project-card-logo"
                         style={{
                           width: "52px",
                           height: "52px",
@@ -425,6 +429,21 @@ export function Projects({ lang, uiText, projects }) {
         @media (max-width: 640px) {
           .projects-grid {
             grid-template-columns: 1fr !important;
+            gap: 1.4rem !important;
+          }
+          .projects-filter-bar {
+            flex-direction: column !important;
+            align-items: stretch !important;
+            gap: 0.9rem !important;
+          }
+          .projects-search-box {
+            min-width: 100% !important;
+            max-width: 100% !important;
+          }
+          .project-card-logo {
+            width: 44px !important;
+            height: 44px !important;
+            min-width: 44px !important;
           }
         }
       `}</style>

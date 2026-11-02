@@ -25,7 +25,7 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
         <div className="container">
           {/* Engineering Approach Box */}
           <div
-            className="glass-card"
+            className="glass-card home-teaser-card"
             style={{
               padding: "2.8rem",
               marginBottom: "4rem",
@@ -142,9 +142,10 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
             </div>
 
             <div
+              className="home-featured-grid"
               style={{
                 display: "grid",
-                gridTemplateColumns: "repeat(auto-fit, minmax(360px, 1fr))",
+                gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 340px), 1fr))",
                 gap: "2rem"
               }}
             >
@@ -256,6 +257,7 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
             </p>
 
             <div
+              className="home-explore-grid"
               style={{
                 display: "grid",
                 gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
@@ -318,7 +320,7 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
 
           {/* Recruiter Action Banner */}
           <div
-            className="glass-card"
+            className="glass-card home-cta-card"
             style={{
               padding: "3rem 2rem",
               textAlign: "center",
@@ -348,6 +350,31 @@ export function HomePage({ lang, uiText, personal, stats, projects, onOpenCv }) 
       <style>{`
         @media (max-width: 900px) {
           .home-teaser-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+        @media (max-width: 640px) {
+          .home-teaser-card {
+            padding: 1.4rem 1.15rem !important;
+            margin-bottom: 2.5rem !important;
+          }
+          .home-featured-grid {
+            grid-template-columns: 1fr !important;
+            gap: 1.4rem !important;
+          }
+          .home-explore-grid {
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 0.75rem !important;
+          }
+          .home-explore-grid .glass-card {
+            padding: 1.15rem 0.75rem !important;
+          }
+          .home-cta-card {
+            padding: 2rem 1.2rem !important;
+          }
+        }
+        @media (max-width: 440px) {
+          .home-explore-grid {
             grid-template-columns: 1fr !important;
           }
         }

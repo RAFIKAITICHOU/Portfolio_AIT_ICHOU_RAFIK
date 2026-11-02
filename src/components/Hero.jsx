@@ -73,6 +73,7 @@ export function Hero({ lang, uiText, personal, onOpenCv }) {
 
             {/* Two Main Hero Buttons (Phase B) */}
             <div
+              className="hero-cta-group"
               style={{
                 display: "flex",
                 flexWrap: "wrap",
@@ -129,7 +130,7 @@ export function Hero({ lang, uiText, personal, onOpenCv }) {
           {/* Right Column: Clean Profile Card (No duplicate name) */}
           <div style={{ display: "flex", justifyContent: "center" }}>
             <div
-              className="glass-card"
+              className="glass-card hero-profile-card"
               style={{
                 width: "100%",
                 maxWidth: "380px",
@@ -279,11 +280,26 @@ export function Hero({ lang, uiText, personal, onOpenCv }) {
             margin-left: auto;
             margin-right: auto;
           }
+          .hero-cta-group {
+            justify-content: center;
+          }
           .hero-grid .btn {
             justify-content: center;
           }
           .hero-grid > div:first-child > div:last-child {
             justify-content: center;
+          }
+        }
+        @media (max-width: 480px) {
+          .hero-cta-group {
+            flex-direction: column;
+            width: 100%;
+          }
+          .hero-cta-group .btn {
+            width: 100%;
+          }
+          .hero-profile-card {
+            padding: 1.5rem 1.15rem !important;
           }
         }
       `}</style>

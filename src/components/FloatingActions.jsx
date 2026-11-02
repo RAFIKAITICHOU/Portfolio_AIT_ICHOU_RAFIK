@@ -17,18 +17,7 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
   };
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        bottom: "24px",
-        right: "24px",
-        zIndex: 990,
-        display: "flex",
-        alignItems: "center",
-        gap: "12px",
-        pointerEvents: "none"
-      }}
-    >
+    <div className="floating-actions-bar">
       {/* 1. Scroll to Top Button */}
       <button
         onClick={scrollToTop}
@@ -44,8 +33,8 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
         title={lang === "fr" ? "Haut de page" : "Back to top"}
       >
         <svg
-          width="22"
-          height="22"
+          width="20"
+          height="20"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -79,8 +68,8 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
       >
         {theme === "dark" ? (
           <svg
-            width="22"
-            height="22"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -100,8 +89,8 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
           </svg>
         ) : (
           <svg
-            width="22"
-            height="22"
+            width="20"
+            height="20"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -127,8 +116,8 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
       >
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", lineHeight: 1 }}>
           <svg
-            width="15"
-            height="15"
+            width="14"
+            height="14"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

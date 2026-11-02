@@ -20,7 +20,7 @@ export function Formation({ lang, uiText, formation }) {
           {formation.map((item) => (
             <div
               key={item.id}
-              className="glass-card"
+              className="glass-card formation-card"
               style={{
                 padding: "2.5rem",
                 borderLeft: item.id === "emsi-cycle" ? "4px solid #ef4444" : "4px solid var(--accent-primary)"
@@ -96,6 +96,14 @@ export function Formation({ lang, uiText, formation }) {
           ))}
         </div>
       </div>
+
+      <style>{`
+        @media (max-width: 640px) {
+          .formation-card {
+            padding: 1.4rem 1.15rem !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }
