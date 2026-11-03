@@ -605,8 +605,8 @@ export const portfolioData = {
       ],
       github: "https://github.com/RAFIKAITICHOU/Plateforme-E-commerce",
       badgeColor: "rose"
-    }
-        {
+    },
+    {
       id: "masarat-gestion-marchandises",
       title: "Ma'sarat al-Rahma – Gestion de Marchandises",
       subtitle: {
