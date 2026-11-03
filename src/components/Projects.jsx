@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from "react";
 import { Icon } from "./Icons";
 import { ProjectModal } from "./ProjectModal";
+import { ProjectCardBanner } from "./ProjectCardBanner";
 
 export function Projects({ lang, uiText, projects }) {
   const [activeCategory, setActiveCategory] = useState("all");
@@ -193,6 +194,12 @@ export function Projects({ lang, uiText, projects }) {
                 }}
               >
                 <div>
+                  {/* Top Visual Banner / Logo */}
+                  <ProjectCardBanner
+                    project={project}
+                    onClick={() => setSelectedProject(project)}
+                  />
+
                   {/* Top tags */}
                   <div
                     style={{
@@ -200,7 +207,7 @@ export function Projects({ lang, uiText, projects }) {
                       alignItems: "center",
                       justifyContent: "space-between",
                       gap: "0.5rem",
-                      marginBottom: "1rem"
+                      marginBottom: "0.8rem"
                     }}
                   >
                     <span
@@ -235,43 +242,23 @@ export function Projects({ lang, uiText, projects }) {
                     )}
                   </div>
 
-                  {/* Title & Subtitle with Project Logo */}
-                  <div style={{ display: "flex", alignItems: "flex-start", gap: "1rem", marginBottom: "0.8rem" }}>
-                    {project.logo && (
-                      <div
-                        className="project-card-logo"
-                        style={{
-                          width: "52px",
-                          height: "52px",
-                          minWidth: "52px",
-                          borderRadius: "var(--radius-md)",
-                          background: "var(--bg-elevated)",
-                          border: "1px solid var(--border-subtle)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          padding: "6px",
-                          overflow: "hidden",
-                          boxShadow: "0 4px 12px rgba(0,0,0,0.15)",
-                          marginTop: "2px"
-                        }}
-                      >
-                        <img
-                          src={project.logo}
-                          alt={`${project.title} logo`}
-                          style={{ width: "100%", height: "100%", objectFit: "contain" }}
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                    <div style={{ flex: 1 }}>
-                      <h3 style={{ fontSize: "1.35rem", fontWeight: 800, marginBottom: "0.25rem", lineHeight: 1.25 }}>
-                        {project.title}
-                      </h3>
-                      <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
-                        {project.subtitle[lang]}
-                      </p>
-                    </div>
+                  {/* Title & Subtitle (Clean, left-aligned) */}
+                  <div style={{ marginBottom: "0.8rem" }}>
+                    <h3
+                      onClick={() => setSelectedProject(project)}
+                      style={{
+                        fontSize: "1.35rem",
+                        fontWeight: 800,
+                        marginBottom: "0.25rem",
+                        lineHeight: 1.25,
+                        cursor: "pointer"
+                      }}
+                    >
+                      {project.title}
+                    </h3>
+                    <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                      {project.subtitle[lang]}
+                    </p>
                   </div>
 
                   {/* Hook / Tagline */}
