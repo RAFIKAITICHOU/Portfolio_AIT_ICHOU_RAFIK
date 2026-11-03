@@ -606,6 +606,84 @@ export const portfolioData = {
       github: "https://github.com/RAFIKAITICHOU/Plateforme-E-commerce",
       badgeColor: "rose"
     }
+        {
+      id: "masarat-gestion-marchandises",
+      title: "Ma'sarat al-Rahma – Gestion de Marchandises",
+      subtitle: {
+        fr: "Plateforme Sécurisée de Ventes, Stock, Facturation & Règlements",
+        en: "Secure Sales, Inventory, Invoicing & Payments Platform"
+      },
+      category: "fullstack",
+      categoryLabel: {
+        fr: "Web Full-Stack • Gestion Commerciale",
+        en: "Full-Stack Web • Business Management"
+      },
+      featured: true,
+      tagline: {
+        fr: "Gestion commerciale et logistique complète, bilingue FR/AR (RTL), avec contrôle d'accès fin et traçabilité d'audit.",
+        en: "Complete bilingual FR/AR (RTL) commercial and logistics management with fine-grained access control and full audit trail."
+      },
+      problem: {
+        fr: "Une huilerie (ma'sara) gérait ventes, stocks, créances clients et avances salariés sur des supports dispersés, avec des risques d'erreurs de tarification, de dépassement de crédit client et de perte de traçabilité.",
+        en: "An olive-oil mill managed sales, stock, customer receivables and employee advances across scattered tools, with risks of pricing errors, credit overruns and lost traceability."
+      },
+      solution: {
+        fr: "Application Laravel 11 / Livewire 3 conteneurisée avec Docker : circuit de vente à double étage (vendeur → validation direction), tarification contrôlée, plafonds de crédit, validation des règlements avec reçus PDF, avances salariés, approvisionnements, 2FA TOTP, notifications temps réel (Laravel Reverb), factures A4/A5/ticket 80 mm et sauvegardes Google Drive.",
+        en: "Dockerized Laravel 11 / Livewire 3 app: two-step sales workflow (seller → management validation), controlled pricing, credit limits, payment validation with PDF receipts, employee advances, purchasing, TOTP 2FA, real-time notifications (Laravel Reverb), A4/A5/80 mm invoices and Google Drive backups."
+      },
+      result: {
+        fr: "153 tests automatisés (699 assertions) sans échec, séparation stricte des rôles (RBAC/ABAC), numérotation fiscale séquentielle sans trou (verrous pessimistes) et bilinguisme FR/AR natif.",
+        en: "153 automated tests (699 assertions) all passing, strict role separation (RBAC/ABAC), gap-free sequential invoice numbering (pessimistic locks) and native FR/AR bilingual support."
+      },
+      technologies: ["Laravel 11", "Livewire 3", "Tailwind CSS", "MySQL", "Redis", "Docker", "Laravel Reverb", "Spatie Permission", "mPDF / DomPDF", "Chart.js"],
+      metrics: [
+        { label: "Tests Automatisés", value: "153 Tests" },
+        { label: "Assertions", value: "699" },
+        { label: "Sécurité", value: "RBAC + ABAC + 2FA" },
+        { label: "Langues", value: "FR / AR (RTL)" }
+      ],
+      github: "https://github.com/masaratalrahma/gestion-marchandises",
+      badgeColor: "green"
+    },
+    {
+      id: "mes-cheques",
+      title: "MesChèques (شيكاتي)",
+      subtitle: {
+        fr: "Gestion & Traçabilité des Chèques Bancaires — Mobile Offline-First",
+        en: "Bank Cheque Management & Traceability — Offline-First Mobile App"
+      },
+      category: "mobile",
+      categoryLabel: {
+        fr: "Mobile Flutter • Android & iOS",
+        en: "Mobile Flutter • Android & iOS"
+      },
+      featured: false,
+      tagline: {
+        fr: "Suivi du cycle de vie des chèques émis, reçus et endossés, en français et en arabe (RTL).",
+        en: "Lifecycle tracking of issued, received and endorsed cheques, in French and Arabic (RTL)."
+      },
+      problem: {
+        fr: "Les commerçants suivent leurs chèques (échéances, endossements, impayés) sur papier ou tableurs, avec des risques d'oubli, de perte de justificatifs et de confusion entre donneur, titulaire et bénéficiaire.",
+        en: "Merchants track cheques (due dates, endorsements, bounced items) on paper or spreadsheets, risking missed deadlines, lost proofs and confusion between giver, holder and payee."
+      },
+      solution: {
+        fr: "Application Flutter offline-first (SQLite) : photos recto/verso, tableau de bord, recherche normalisée FR/AR, corbeille 15 jours, verrouillage PIN + biométrie, stockage chiffré, sauvegarde Google Drive avec fusion sans perte (tombstones, drop protection) et exports PDF.",
+        en: "Offline-first Flutter app (SQLite): front/back photos, dashboard, normalized FR/AR search, 15-day trash, PIN + biometric lock, encrypted storage, Google Drive backup with lossless merge (tombstones, drop protection) and PDF exports."
+      },
+      result: {
+        fr: "63 tests automatisés, interface bilingue RTL/LTR, synchronisation cloud sans perte de données et fiches chèques imprimables.",
+        en: "63 automated tests, bilingual RTL/LTR UI, lossless cloud sync and printable cheque sheets."
+      },
+      technologies: ["Flutter", "Dart", "SQLite (sqflite)", "Provider", "Google Drive API", "Workmanager", "flutter_secure_storage", "local_auth", "pdf / printing"],
+      metrics: [
+        { label: "Tests Automatisés", value: "63 Tests" },
+        { label: "Sécurité", value: "PIN + Biométrie" },
+        { label: "Langues", value: "FR / AR (RTL)" },
+        { label: "Mode", value: "Offline-First" }
+      ],
+      github: "https://github.com/RAFIKAITICHOU/MesCheques",
+      badgeColor: "amber"
+    }
   ],
 
   skillCategories: [
