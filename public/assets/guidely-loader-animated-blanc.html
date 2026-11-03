@@ -1,0 +1,23 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Guidely — loader</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&display=swap" rel="stylesheet">
+<style>.g{transform-box:view-box;transform-origin:100px 100px}
+.sqa{animation:sqa 5s ease-out infinite}.sqb{animation:sqb 5s ease-out infinite}
+.ndl{animation:ndl 5s ease-out infinite;transform:rotate(45deg)}
+.rip{animation:rip 5s ease-out infinite;opacity:0}
+@keyframes sqa{0%{transform:rotate(-180deg) scale(.3);opacity:0}25%,100%{transform:rotate(0) scale(1);opacity:1}}
+@keyframes sqb{0%{transform:rotate(225deg) scale(.3);opacity:0}25%,100%{transform:rotate(45deg) scale(1);opacity:1}}
+@keyframes ndl{0%,15%{transform:rotate(-240deg);opacity:0}20%{transform:rotate(-200deg);opacity:1}40%{transform:rotate(75deg)}52%{transform:rotate(28deg)}62%{transform:rotate(55deg)}72%{transform:rotate(42deg)}80%,100%{transform:rotate(45deg);opacity:1}}
+@keyframes rip{0%,78%{transform:scale(.4);opacity:0}80%{opacity:.8}100%{transform:scale(2.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.sqa,.sqb,.ndl,.rip{animation:none;opacity:1}.rip{opacity:0}}
+html,body{margin:0;height:100%;background:#FFFFFF;color:#0E1033}
+main{min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px}
+.w{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(64px,14vw,140px);letter-spacing:-.04em;line-height:1;white-space:nowrap}
+.l{display:inline-block;animation:rise 5s cubic-bezier(.2,.9,.3,1) infinite backwards}
+.dot{position:absolute;left:50%;top:.07em;width:.13em;height:.13em;margin-left:-.065em;border-radius:50%;background:#2B2FC4;animation:drop 5s ease-in infinite}
+@keyframes rise{0%{opacity:0;transform:translateY(.5em)}12%,100%{opacity:1;transform:none}}
+@keyframes drop{0%,30%{transform:translateY(-1.6em);opacity:0}34%{opacity:1}42%{transform:translateY(0)}46%{transform:translateY(-.14em)}50%,100%{transform:translateY(0);opacity:1}}
+@media (prefers-reduced-motion:reduce){.l,.dot{animation:none}}</style></head>
+<body><main><svg viewBox="0 0 200 200" width="280" height="280" role="img" aria-label="Guidely logo"><rect x="45" y="45" width="110" height="110" rx="6" class="g sqa" fill="none" stroke="#2B2FC4" stroke-width="6" stroke-linejoin="round"/>
+<rect x="45" y="45" width="110" height="110" rx="6" class="g sqb" fill="none" stroke="#FFB81C" stroke-width="6" stroke-linejoin="round"/>
+<circle class="g rip" cx="100" cy="100" r="30" fill="none" stroke="#FFB81C" stroke-width="3"/>
+<g class="g ndl"><polygon points="100,28 122,100 78,100" fill="#2B2FC4"/><polygon points="78,100 122,100 100,172" fill="#0E1033"/><circle cx="100" cy="72" r="7" fill="#FFFFFF"/><circle cx="100" cy="100" r="8" fill="#FFFFFF" stroke="#0E1033" stroke-width="3"/></g></svg><div class="w"><span class="l" style="animation-delay:1.3s">g</span><span class="l" style="animation-delay:1.39s">u</span><span class="l" style="animation-delay:1.58s;position:relative">ı<span class="dot"></span></span><span class="l" style="animation-delay:1.67s">d</span><span class="l" style="animation-delay:1.76s">e</span><span class="l" style="animation-delay:1.85s">l</span><span class="l" style="animation-delay:1.94s">y</span></div></main></body></html>

@@ -275,6 +275,63 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
           </div>
         )}
 
+        {/* Animated Loader / Identity Preview */}
+        {project.animatedLoader && (
+          <div
+            style={{
+              background: "var(--bg-elevated)",
+              border: "1px solid var(--border-subtle)",
+              borderRadius: "var(--radius-md)",
+              padding: "1.2rem",
+              marginBottom: "1.8rem"
+            }}
+          >
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: "0.8rem", flexWrap: "wrap", gap: "0.5rem" }}>
+              <h4
+                style={{
+                  fontSize: "0.95rem",
+                  fontWeight: 700,
+                  color: "var(--text-primary)",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
+                  margin: 0
+                }}
+              >
+                <Icon name="sparkles" size={16} />
+                <span>{lang === "fr" ? "Animation du Loader & Identité Visuelle" : "Loader Animation & Visual Identity"}</span>
+              </h4>
+              <a
+                href={project.animatedLoader}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary btn-sm"
+                style={{ fontSize: "0.78rem", padding: "0.25rem 0.65rem", display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
+              >
+                <span>{lang === "fr" ? "Plein écran" : "Full screen"}</span>
+                <Icon name="external-link" size={12} />
+              </a>
+            </div>
+            <div
+              style={{
+                borderRadius: "var(--radius-sm)",
+                overflow: "hidden",
+                border: "1px solid var(--border-subtle)",
+                background: "#FFFFFF",
+                height: "260px",
+                position: "relative",
+                boxShadow: "inset 0 2px 6px rgba(0,0,0,0.06)"
+              }}
+            >
+              <iframe
+                src={project.animatedLoader}
+                title={`${project.title} Loader Animation`}
+                style={{ width: "100%", height: "100%", border: "none", display: "block" }}
+              />
+            </div>
+          </div>
+        )}
+
         {/* Demo Videos Section (V1 and V2) */}
         {project.demoVideos && project.demoVideos.filter((v) => v.url !== project.driveFolder).length > 0 && (
           <div
@@ -391,6 +448,18 @@ export function ProjectModal({ project, lang, uiText, onClose }) {
             >
               <Icon name="folder" size={16} />
               <span>Drive</span>
+            </a>
+          )}
+          {project.animatedLoader && (
+            <a
+              href={project.animatedLoader}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary"
+              style={{ display: "inline-flex", alignItems: "center", gap: "0.45rem" }}
+            >
+              <Icon name="sparkles" size={16} />
+              <span>{lang === "fr" ? "Animation Loader" : "Loader Animation"}</span>
             </a>
           )}
           {project.demoVideos && project.demoVideos.filter((v) => v.url !== project.driveFolder).length > 0 ? (

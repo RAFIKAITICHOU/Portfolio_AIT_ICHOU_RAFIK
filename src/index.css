@@ -407,17 +407,49 @@ h1, h2, h3, .section-title {
   cursor: pointer;
   outline: none;
   border: 1px solid rgba(0, 0, 0, 0.08);
-  background: #ffffff;
-  color: #3b82f6;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.25s ease;
+  background: #f8fafc;
+  color: #2563eb;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.25s ease, opacity 0.25s ease, max-width 0.25s ease;
   flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.floating-circle-btn.hidden-scroll {
+  opacity: 0;
+  visibility: hidden;
+  max-width: 0;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  border-width: 0;
+  pointer-events: none;
+  transform: scale(0.6);
+}
+
+.floating-circle-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  max-width: 48px;
+  width: 48px;
+  border-width: 1px;
+  pointer-events: auto;
+  transform: scale(1);
+}
+
+.floating-circle-btn.floating-theme-btn {
+  color: #4f46e5;
 }
 
 .floating-circle-btn:hover {
   transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 8px 24px rgba(59, 130, 246, 0.25);
-  color: #2563eb;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.2);
+  color: #1d4ed8;
+}
+
+.floating-circle-btn.floating-theme-btn:hover {
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.25);
+  color: #4338ca;
 }
 
 [data-theme='dark'] .floating-circle-btn {
@@ -427,10 +459,19 @@ h1, h2, h3, .section-title {
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.45);
 }
 
+[data-theme='dark'] .floating-circle-btn.floating-theme-btn {
+  color: #a5b4fc;
+}
+
 [data-theme='dark'] .floating-circle-btn:hover {
   background: var(--bg-secondary);
   box-shadow: 0 8px 24px rgba(96, 165, 250, 0.3);
   color: #93c5fd;
+}
+
+[data-theme='dark'] .floating-circle-btn.floating-theme-btn:hover {
+  box-shadow: 0 8px 24px rgba(165, 180, 252, 0.3);
+  color: #c7d2fe;
 }
 
 @media (max-width: 768px) {

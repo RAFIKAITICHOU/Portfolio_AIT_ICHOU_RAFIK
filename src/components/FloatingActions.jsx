@@ -21,20 +21,13 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
       {/* 1. Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="floating-circle-btn"
-        style={{
-          pointerEvents: "auto",
-          opacity: showScrollTop ? 1 : 0,
-          transform: showScrollTop ? "scale(1)" : "scale(0.85)",
-          visibility: showScrollTop ? "visible" : "hidden",
-          transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
-        }}
+        className={`floating-circle-btn ${showScrollTop ? "visible" : "hidden-scroll"}`}
         aria-label={lang === "fr" ? "Haut de page" : "Back to top"}
         title={lang === "fr" ? "Haut de page" : "Back to top"}
       >
         <svg
-          width="20"
-          height="20"
+          width="22"
+          height="22"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
@@ -50,11 +43,7 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
       {/* 2. Dark / Light Mode Toggle Button */}
       <button
         onClick={toggleTheme}
-        className="floating-circle-btn"
-        style={{
-          pointerEvents: "auto",
-          transition: "all 0.25s cubic-bezier(0.16, 1, 0.3, 1)"
-        }}
+        className="floating-circle-btn floating-theme-btn"
         aria-label={
           theme === "dark"
             ? lang === "fr" ? "Activer le mode clair" : "Switch to light mode"
@@ -68,8 +57,8 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
       >
         {theme === "dark" ? (
           <svg
-            width="20"
-            height="20"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
@@ -89,8 +78,8 @@ export function FloatingActions({ theme, toggleTheme, lang, setLang }) {
           </svg>
         ) : (
           <svg
-            width="20"
-            height="20"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"

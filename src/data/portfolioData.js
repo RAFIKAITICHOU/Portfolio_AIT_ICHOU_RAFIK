@@ -683,6 +683,84 @@ export const portfolioData = {
       ],
       github: "https://github.com/RAFIKAITICHOU/MesCheques",
       badgeColor: "amber"
+    },
+    {
+      id: "guidely",
+      title: "Guidely",
+      subtitle: {
+        fr: "Assistant Mobile des Visiteurs — Maroc 2030 (Architecture Microservices)",
+        en: "Visitor Assistant Mobile App — Morocco 2030 (Microservices Architecture)"
+      },
+      category: "mobile",
+      categoryLabel: {
+        fr: "Mobile & Microservices • En conception",
+        en: "Mobile & Microservices • In design"
+      },
+      featured: false,
+      tagline: {
+        fr: "Traduction de photos, phrases en darija, packs hors ligne, estimation de taxi et partage de position entre amis.",
+        en: "Photo translation, Darija phrases, offline packs, indicative taxi estimates and friend location sharing."
+      },
+      problem: {
+        fr: "Pendant la Coupe du monde 2030, les visiteurs font face à des panneaux en arabe, à une langue du quotidien en darija, à des informations dispersées et à une connexion instable autour des stades et fan zones.",
+        en: "During the 2030 World Cup, visitors face Arabic signage, Darija-speaking daily life, scattered information and unreliable connectivity around stadiums and fan zones."
+      },
+      solution: {
+        fr: "Application mobile (Flutter) adossée à une passerelle API et 5 microservices (authentification, contenu local, traduction, taxi, groupes) conteneurisés avec Docker Compose. Packs de contenu téléchargeables pour le mode avion, OCR + traduction avec correction du texte reconnu, estimation de taxi uniquement à partir de références vérifiées, et partage de position avec consentement et expiration automatique.",
+        en: "Mobile app (Flutter) backed by an API gateway and 5 microservices (auth, local content, translation, taxi, groups) containerized with Docker Compose. Downloadable offline packs, OCR + translation with user correction of recognized text, taxi estimates only from verified references, and consent-based location sharing with automatic expiry."
+      },
+      result: {
+        fr: "Cahier des charges complet réalisé en équipe de 5 sur un cadre Scrum de 8 semaines : exigences MoSCoW, architecture microservices, stratégie de tests et de sécurité (OWASP), registre de 14 risques et planning en 4 sprints.",
+        en: "Complete specification delivered by a team of 5 within an 8-week Scrum framework: MoSCoW requirements, microservices architecture, testing and security strategy (OWASP), 14-risk register and 4-sprint plan."
+      },
+      technologies: ["Flutter", "Microservices", "FastAPI / Node.js", "PostgreSQL", "Redis", "SQLite", "Docker Compose", "OpenAPI", "Scrum"],
+      metrics: [
+        { label: "Équipe", value: "5 étudiants" },
+        { label: "Durée", value: "8 semaines" },
+        { label: "Architecture", value: "5 services + passerelle" },
+        { label: "Statut", value: "Cahier des charges validé" }
+      ],
+      logo: "/assets/logo-guidely.png",
+      animatedLoader: "/assets/guidely-loader-animated-blanc.html",
+      badgeColor: "red"
+    },
+    {
+      id: "olive-disease-audit",
+      title: "Diagnostic des Maladies de l'Olivier",
+      subtitle: {
+        fr: "Audit de Datasets & Préparation d'un Classifieur YOLOv8",
+        en: "Dataset Audit & YOLOv8 Classifier Preparation"
+      },
+      category: "iot",
+      categoryLabel: {
+        fr: "IA & Deep Learning • Data Quality",
+        en: "AI & Deep Learning • Data Quality"
+      },
+      featured: false,
+      tagline: {
+        fr: "Audit rigoureux de 4 354 images et de données hyperspectrales avant tout entraînement.",
+        en: "Rigorous audit of 4,354 images and hyperspectral data before any training."
+      },
+      problem: {
+        fr: "Entraîner un modèle de diagnostic phytosanitaire sur des données non contrôlées expose à des doublons partagés entre train et test, à des labels ambigus et à des résultats artificiellement optimistes.",
+        en: "Training a plant-disease model on unchecked data exposes it to duplicates shared across train and test, ambiguous labels and artificially optimistic results."
+      },
+      solution: {
+        fr: "Chaîne d'audit reproductible en Python (Pillow, NumPy, openpyxl) : empreintes SHA-256 et pixels, hash perceptuel DCT, contrôle de cohérence du classeur hyperspectral (138 bandes), dépistage visuel sur 69 planches-contact et protocole de nettoyage et de partitionnement par groupes. YOLOv8-cls retenu pour la phase de modélisation.",
+        en: "Reproducible Python audit pipeline (Pillow, NumPy, openpyxl): SHA-256 and pixel fingerprints, DCT perceptual hashing, hyperspectral workbook consistency checks (138 bands), visual screening on 69 contact sheets, and a grouped cleaning and splitting protocol. YOLOv8-cls selected for the modeling phase."
+      },
+      result: {
+        fr: "55 groupes de doublons détectés entre le train et le test du dataset CNN (fuite de données), 3 275 contenus RGB distincts sur 3 400 fichiers, et plan de nettoyage documenté. Phase d'entraînement à venir.",
+        en: "55 duplicate groups found across the CNN dataset's train and test splits (data leakage), 3,275 distinct RGB contents out of 3,400 files, and a documented cleaning plan. Training phase upcoming."
+      },
+      technologies: ["Python", "Pillow", "NumPy", "openpyxl", "YOLOv8 (Ultralytics)", "Hyperspectral data", "LaTeX"],
+      metrics: [
+        { label: "Images Auditées", value: "4 354" },
+        { label: "Doublons Train/Test", value: "55 groupes" },
+        { label: "Variables Spectrales", value: "1 518" },
+        { label: "Statut", value: "Audit terminé" }
+      ],
+      badgeColor: "green"
     }
   ],
 

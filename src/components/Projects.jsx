@@ -378,6 +378,20 @@ export function Projects({ lang, uiText, projects }) {
                     </a>
                   )}
 
+                  {project.animatedLoader && (
+                    <a
+                      href={project.animatedLoader}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary btn-sm"
+                      title={lang === "fr" ? "Animation Loader Guidely" : "Guidely Loader Animation"}
+                      style={{ display: "inline-flex", alignItems: "center", gap: "0.25rem", padding: "0.35rem 0.55rem" }}
+                    >
+                      <Icon name="sparkles" size={14} />
+                      <span style={{ fontSize: "0.72rem", fontWeight: 700 }}>Loader</span>
+                    </a>
+                  )}
+
                   {project.demoVideos && project.demoVideos.length > 0 ? (
                     project.demoVideos
                       .filter((vid) => vid.url !== project.driveFolder)
