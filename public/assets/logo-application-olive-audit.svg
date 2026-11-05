@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071E18" />
+      <stop offset="50%" stop-color="#064E3B" />
+      <stop offset="100%" stop-color="#022018" />
+    </linearGradient>
+    <linearGradient id="cyanAccent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    <linearGradient id="cardDark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B2920" />
+      <stop offset="100%" stop-color="#061B14" />
+    </linearGradient>
+    <filter id="aiGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="aiShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#aiBg)" />
+
+  <!-- Ambient light -->
+  <circle cx="240" cy="120" r="190" fill="#06B6D4" opacity="0.2" filter="url(#aiGlow)" />
+  <circle cx="600" cy="320" r="180" fill="#10B981" opacity="0.18" filter="url(#aiGlow)" />
+
+  <!-- Central Vision Inspection Card -->
+  <g transform="translate(130, 65)" filter="url(#aiShadow)">
+    <rect width="540" height="295" rx="18" fill="url(#cardDark)" stroke="#06B6D4" stroke-width="1.8" stroke-opacity="0.45" />
+
+    <!-- Top Status Bar -->
+    <g transform="translate(26, 22)">
+      <circle cx="0" cy="0" r="5" fill="#EF4444" />
+      <circle cx="15" cy="0" r="5" fill="#F59E0B" />
+      <circle cx="30" cy="0" r="5" fill="#10B981" />
+      <rect x="52" y="-10" width="310" height="20" rx="10" fill="#031610" stroke="#0A3F2E" stroke-width="1" />
+      <text x="207" y="4" font-family="monospace" font-size="9.5" fill="#67E8F9" text-anchor="middle">ai-engine://yolov8-classifier/audit-v2</text>
+    </g>
+
+    <!-- Header Brand Info -->
+    <g transform="translate(28, 56)">
+      <!-- AI Chip Icon -->
+      <rect width="44" height="44" rx="10" fill="url(#cyanAccent)" />
+      <!-- Stylized Neural Brain / Leaf -->
+      <path d="M14,28 C14,18 24,14 32,14 C32,24 22,28 14,28 Z" fill="#FFFFFF" />
+      <circle cx="16" cy="18" r="2.5" fill="#06B6D4" />
+      <circle cx="30" cy="16" r="2.5" fill="#06B6D4" />
+      <circle cx="24" cy="30" r="2.5" fill="#06B6D4" />
+      <path d="M16,18 L24,30 L30,16" stroke="#06B6D4" stroke-width="1.5" fill="none" />
+
+      <text x="56" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="19" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">
+        Diagnostic IA de l'Olivier
+      </text>
+      <text x="56" y="38" font-family="sans-serif" font-size="10" font-weight="700" fill="#67E8F9" letter-spacing="1">
+        AUDIT DE DATASET &amp; PRÉPARATION CLASSIFIEUR YOLOV8
+      </text>
+    </g>
+
+    <!-- Inspection Visual with YOLO Bounding Boxes -->
+    <g transform="translate(28, 122)">
+      <!-- Left: Simulated Leaf Image with Bounding Box -->
+      <rect width="260" height="136" rx="10" fill="#031610" stroke="#083D2C" stroke-width="1.2" />
+      
+      <!-- Leaf drawing -->
+      <path d="M50,110 C50,40 130,25 210,35 C210,105 130,120 50,110 Z" fill="#14532D" opacity="0.6" stroke="#22C55E" stroke-width="1.5" />
+      <path d="M50,110 Q130,70 210,35" stroke="#4ADE80" stroke-width="1.8" fill="none" />
+      
+      <!-- YOLO Detection Box 1 -->
+      <rect x="110" y="45" width="75" height="55" rx="4" fill="#06B6D4" fill-opacity="0.15" stroke="#06B6D4" stroke-width="1.8" stroke-dasharray="3,3" />
+      <rect x="110" y="32" width="75" height="15" rx="3" fill="#06B6D4" />
+      <text x="114" y="43" font-family="monospace" font-size="8.5" font-weight="bold" fill="#0F172A">Oidium: 98.4%</text>
+
+      <!-- Right: Dataset Metrics -->
+      <g transform="translate(280, 0)">
+        <rect width="204" height="62" rx="10" fill="#07241A" stroke="#0D4B36" stroke-width="1" />
+        <text x="14" y="22" font-family="sans-serif" font-size="9" font-weight="700" fill="#67E8F9">IMAGES AUDITÉES</text>
+        <text x="14" y="48" font-family="monospace" font-size="20" font-weight="900" fill="#FFFFFF">4 354 <tspan font-size="11" fill="#34D399">Images</tspan></text>
+
+        <g transform="translate(0, 74)">
+          <rect width="204" height="62" rx="10" fill="#07241A" stroke="#0D4B36" stroke-width="1" />
+          <text x="14" y="22" font-family="sans-serif" font-size="9" font-weight="700" fill="#FCD34D">QUALITÉ DU DATASET</text>
+          <text x="14" y="48" font-family="monospace" font-size="16" font-weight="900" fill="#FFFFFF">Zéro Leakage <tspan font-size="11" fill="#F59E0B">✓</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+
+  <!-- Floating Badge Left: YOLOv8 -->
+  <g transform="translate(50, 185)" filter="url(#aiShadow)">
+    <rect width="135" height="48" rx="12" fill="#041B13" stroke="#06B6D4" stroke-width="1.5" />
+    <circle cx="26" cy="24" r="14" fill="#06B6D4" opacity="0.25" />
+    <path d="M26,14 L34,28 L18,28 Z" stroke="#06B6D4" stroke-width="2" fill="none" />
+    <text x="48" y="21" font-family="sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF">YOLOv8</text>
+    <text x="48" y="34" font-family="sans-serif" font-size="8.5" font-weight="600" fill="#67E8F9">Computer Vision</text>
+  </g>
+
+  <!-- Floating Badge Right: Data Quality -->
+  <g transform="translate(620, 285)" filter="url(#aiShadow)">
+    <rect width="135" height="48" rx="12" fill="#041B13" stroke="#10B981" stroke-width="1.5" />
+    <circle cx="26" cy="24" r="14" fill="#10B981" opacity="0.25" />
+    <path d="M20,24 L25,28 L32,19" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" fill="none" />
+    <text x="48" y="21" font-family="sans-serif" font-size="10.5" font-weight="800" fill="#FFFFFF">DATA QUALITY</text>
+    <text x="48" y="34" font-family="sans-serif" font-size="8.5" font-weight="600" fill="#34D399">Hyperspectral</text>
+  </g>
+</svg>

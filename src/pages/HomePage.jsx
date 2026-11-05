@@ -487,7 +487,7 @@ export function HomePage({
                   key={p.id}
                   className="glass-card"
                   style={{
-                    padding: "2.2rem",
+                    padding: "1.5rem",
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "space-between",
@@ -501,14 +501,23 @@ export function HomePage({
                       onClick={() => setSelectedProject(p)}
                     />
 
-                    {/* Top tags */}
-                    <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "0.8rem" }}>
-                      <span style={{ fontSize: "0.78rem", color: "var(--accent-primary)", fontWeight: 700, textTransform: "uppercase" }}>
+                    {/* Top tags (Pills comme dans la maquette de référence) */}
+                    <div
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        flexWrap: "wrap",
+                        gap: "0.5rem",
+                        marginBottom: "0.85rem"
+                      }}
+                    >
+                      <span className="project-pill project-pill-primary">
                         {p.categoryLabel[lang]}
                       </span>
                       {p.featured && (
-                        <span style={{ color: "var(--warning)", fontSize: "0.75rem", fontWeight: 700, display: "flex", alignItems: "center", gap: "0.2rem" }}>
-                          <Icon name="star" size={12} /> Featured
+                        <span className="project-pill project-pill-featured">
+                          <Icon name="star" size={12} />
+                          <span>Featured</span>
                         </span>
                       )}
                     </div>
@@ -530,10 +539,43 @@ export function HomePage({
                       "{p.tagline[lang]}"
                     </p>
 
+                    {/* Metrics Badges */}
+                    {p.metrics && (
+                      <div
+                        style={{
+                          display: "flex",
+                          flexWrap: "wrap",
+                          gap: "0.45rem",
+                          marginBottom: "1.2rem"
+                        }}
+                      >
+                        {p.metrics.slice(0, 3).map((m, idx) => (
+                          <span
+                            key={idx}
+                            style={{
+                              fontSize: "0.75rem",
+                              padding: "0.22rem 0.55rem",
+                              background: "var(--bg-elevated)",
+                              borderRadius: "var(--radius-sm)",
+                              border: "1px solid var(--border-subtle)",
+                              color: "var(--text-primary)"
+                            }}
+                          >
+                            <strong>{m.value}</strong> <span style={{ color: "var(--text-muted)" }}>• {m.label}</span>
+                          </span>
+                        ))}
+                      </div>
+                    )}
+
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.5rem" }}>
                       {p.technologies.slice(0, 5).map((t) => (
                         <span key={t} className="tech-tag">{t}</span>
                       ))}
+                      {p.technologies.length > 5 && (
+                        <span className="tech-tag" style={{ opacity: 0.75 }}>
+                          +{p.technologies.length - 5}
+                        </span>
+                      )}
                     </div>
                   </div>
 
@@ -552,11 +594,11 @@ export function HomePage({
                         target="_blank"
                         rel="noopener noreferrer"
                         className="btn btn-secondary btn-sm"
-                        title={lang === "fr" ? "Dossier Google Drive" : "Google Drive Folder"}
+                        title={lang === "fr" ? "Dossier & Rapport technique complet" : "Technical Report & Drive Folder"}
                         style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
                       >
-                        <Icon name="folder" size={15} />
-                        <span>Drive</span>
+                        <Icon name="document" size={14} />
+                        <span style={{ fontSize: "0.8rem", fontWeight: 700 }}>{lang === "fr" ? "Voir le rapport" : "View report"}</span>
                       </a>
                     )}
                     {p.github && (

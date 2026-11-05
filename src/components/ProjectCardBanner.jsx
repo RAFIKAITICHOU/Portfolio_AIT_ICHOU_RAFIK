@@ -3,9 +3,15 @@ import { Icon } from "./Icons";
 
 export function ProjectCardBanner({ project, onClick }) {
   if (project.logo) {
+    const isSvg = typeof project.logo === "string" && project.logo.endsWith(".svg");
+    const isFullCover =
+      isSvg ||
+      project.id === "smart-parking" ||
+      project.id === "smart-hse-360";
+
     return (
       <div
-        className="project-card-banner has-logo"
+        className={`project-card-banner has-logo ${isFullCover ? "is-cover" : "is-contain"}`}
         onClick={onClick}
         role={onClick ? "button" : undefined}
         tabIndex={onClick ? 0 : undefined}
@@ -13,8 +19,8 @@ export function ProjectCardBanner({ project, onClick }) {
       >
         <img
           src={project.logo}
-          alt={`${project.title} logo`}
-          className="project-banner-img"
+          alt={`${project.title} banner`}
+          className={isFullCover ? "project-banner-img-cover" : "project-banner-img-contain"}
           loading="lazy"
         />
       </div>
@@ -22,12 +28,12 @@ export function ProjectCardBanner({ project, onClick }) {
   }
 
   // Fallback branded banner configuration for projects without a dedicated logo file
-  const getBannerConfig = (id, badgeColor) => {
+  const getBannerConfig = (id) => {
     switch (id) {
       case "masarat-gestion-marchandises":
         return {
-          bg: "linear-gradient(135deg, rgba(5, 150, 105, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)",
-          border: "rgba(16, 185, 129, 0.28)",
+          bg: "linear-gradient(135deg, rgba(5, 150, 105, 0.16) 0%, rgba(16, 185, 129, 0.05) 100%)",
+          border: "rgba(16, 185, 129, 0.35)",
           color: "#10b981",
           icon: "shield-check",
           label: "Ma'sarat al-Rahma",
@@ -35,8 +41,8 @@ export function ProjectCardBanner({ project, onClick }) {
         };
       case "mes-cheques":
         return {
-          bg: "linear-gradient(135deg, rgba(245, 158, 11, 0.14) 0%, rgba(217, 119, 6, 0.04) 100%)",
-          border: "rgba(245, 158, 11, 0.28)",
+          bg: "linear-gradient(135deg, rgba(245, 158, 11, 0.16) 0%, rgba(217, 119, 6, 0.05) 100%)",
+          border: "rgba(245, 158, 11, 0.35)",
           color: "#f59e0b",
           icon: "shield-check",
           label: "MesChèques (شيكاتي)",
@@ -45,7 +51,7 @@ export function ProjectCardBanner({ project, onClick }) {
       case "olive-disease-audit":
         return {
           bg: "linear-gradient(135deg, rgba(16, 185, 129, 0.16) 0%, rgba(6, 78, 59, 0.06) 100%)",
-          border: "rgba(16, 185, 129, 0.28)",
+          border: "rgba(16, 185, 129, 0.35)",
           color: "#34d399",
           icon: "brain",
           label: "Diagnostic IA de l'Olivier",
@@ -53,8 +59,8 @@ export function ProjectCardBanner({ project, onClick }) {
         };
       case "smartstock":
         return {
-          bg: "linear-gradient(135deg, rgba(59, 130, 246, 0.14) 0%, rgba(37, 99, 235, 0.04) 100%)",
-          border: "rgba(59, 130, 246, 0.28)",
+          bg: "linear-gradient(135deg, rgba(59, 130, 246, 0.16) 0%, rgba(37, 99, 235, 0.05) 100%)",
+          border: "rgba(59, 130, 246, 0.35)",
           color: "#3b82f6",
           icon: "database",
           label: "SmartStock Logistics",
@@ -62,8 +68,8 @@ export function ProjectCardBanner({ project, onClick }) {
         };
       case "one-click-ecommerce":
         return {
-          bg: "linear-gradient(135deg, rgba(244, 63, 94, 0.14) 0%, rgba(225, 29, 72, 0.04) 100%)",
-          border: "rgba(244, 63, 94, 0.28)",
+          bg: "linear-gradient(135deg, rgba(244, 63, 94, 0.16) 0%, rgba(225, 29, 72, 0.05) 100%)",
+          border: "rgba(244, 63, 94, 0.35)",
           color: "#f43f5e",
           icon: "rocket",
           label: "One-Click E-Commerce",
@@ -71,7 +77,7 @@ export function ProjectCardBanner({ project, onClick }) {
         };
       default:
         return {
-          bg: "linear-gradient(135deg, rgba(215, 38, 61, 0.12) 0%, rgba(215, 38, 61, 0.02) 100%)",
+          bg: "linear-gradient(135deg, rgba(225, 29, 72, 0.14) 0%, rgba(225, 29, 72, 0.03) 100%)",
           border: "var(--border-subtle)",
           color: "var(--accent-primary)",
           icon: "code",
@@ -81,7 +87,7 @@ export function ProjectCardBanner({ project, onClick }) {
     }
   };
 
-  const config = getBannerConfig(project.id, project.badgeColor);
+  const config = getBannerConfig(project.id);
 
   return (
     <div

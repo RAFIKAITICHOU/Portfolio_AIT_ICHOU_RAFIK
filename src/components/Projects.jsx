@@ -189,7 +189,7 @@ export function Projects({ lang, uiText, projects }) {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  padding: "2.2rem",
+                  padding: "1.5rem",
                   borderTop: project.featured ? "4px solid var(--accent-primary)" : "1px solid var(--border-subtle)"
                 }}
               >
@@ -200,42 +200,21 @@ export function Projects({ lang, uiText, projects }) {
                     onClick={() => setSelectedProject(project)}
                   />
 
-                  {/* Top tags */}
+                  {/* Top tags (Pills comme dans la maquette de référence) */}
                   <div
                     style={{
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "space-between",
+                      flexWrap: "wrap",
                       gap: "0.5rem",
-                      marginBottom: "0.8rem"
+                      marginBottom: "0.85rem"
                     }}
                   >
-                    <span
-                      style={{
-                        fontSize: "0.775rem",
-                        fontWeight: 700,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.06em",
-                        color: "var(--accent-primary)"
-                      }}
-                    >
+                    <span className="project-pill project-pill-primary">
                       {project.categoryLabel[lang]}
                     </span>
                     {project.featured && (
-                      <span
-                        style={{
-                          display: "inline-flex",
-                          alignItems: "center",
-                          gap: "0.3rem",
-                          fontSize: "0.75rem",
-                          fontWeight: 700,
-                          padding: "0.2rem 0.6rem",
-                          borderRadius: "var(--radius-full)",
-                          background: "rgba(245, 158, 11, 0.15)",
-                          color: "#f59e0b",
-                          border: "1px solid rgba(245, 158, 11, 0.3)"
-                        }}
-                      >
+                      <span className="project-pill project-pill-featured">
                         <Icon name="star" size={12} />
                         <span>Featured</span>
                       </span>
@@ -357,11 +336,11 @@ export function Projects({ lang, uiText, projects }) {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="btn btn-secondary btn-sm"
-                      title={lang === "fr" ? "Dossier Google Drive" : "Google Drive Folder"}
+                      title={lang === "fr" ? "Dossier & Rapport technique complet" : "Technical Report & Drive Folder"}
                       style={{ display: "inline-flex", alignItems: "center", gap: "0.35rem" }}
                     >
-                      <Icon name="folder" size={15} />
-                      <span style={{ fontSize: "0.78rem", fontWeight: 700 }}>Drive</span>
+                      <Icon name="document" size={14} />
+                      <span style={{ fontSize: "0.8rem", fontWeight: 700 }}>{lang === "fr" ? "Voir le rapport" : "View report"}</span>
                     </a>
                   )}
 

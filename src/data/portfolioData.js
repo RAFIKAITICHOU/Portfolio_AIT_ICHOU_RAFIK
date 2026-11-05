@@ -567,6 +567,7 @@ export const portfolioData = {
         { label: "Architecture", value: "MVC + DAO" }
       ],
       github: "https://github.com/RAFIKAITICHOU/SmartStock",
+      logo: "/assets/logo-application-smartstock.svg",
       badgeColor: "blue"
     },
     {
@@ -604,6 +605,7 @@ export const portfolioData = {
         { label: "Analytics", value: "Graphiques Temps Réel" }
       ],
       github: "https://github.com/RAFIKAITICHOU/Plateforme-E-commerce",
+      logo: "/assets/logo-application-ecommerce.svg",
       badgeColor: "rose"
     },
     {
@@ -643,6 +645,7 @@ export const portfolioData = {
         { label: "Langues", value: "FR / AR (RTL)" }
       ],
       github: "https://github.com/masaratalrahma/gestion-marchandises",
+      logo: "/assets/logo-application-masarat.svg",
       badgeColor: "green"
     },
     {
@@ -682,6 +685,7 @@ export const portfolioData = {
         { label: "Mode", value: "Offline-First" }
       ],
       github: "https://github.com/RAFIKAITICHOU/MesCheques",
+      logo: "/assets/logo-application-mescheques.svg",
       badgeColor: "amber"
     },
     {
@@ -760,6 +764,7 @@ export const portfolioData = {
         { label: "Variables Spectrales", value: "1 518" },
         { label: "Statut", value: "Audit terminé" }
       ],
+      logo: "/assets/logo-application-olive-audit.svg",
       badgeColor: "green"
     }
   ],

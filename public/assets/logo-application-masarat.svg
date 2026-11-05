@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="masaratBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#061A14" />
+      <stop offset="50%" stop-color="#064E3B" />
+      <stop offset="100%" stop-color="#022C22" />
+    </linearGradient>
+
+    <!-- Emerald Glow Gradient -->
+    <linearGradient id="emeraldTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="50%" stop-color="#14B8A6" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Card Dark Glass Gradient -->
+    <linearGradient id="cardGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F291E" />
+      <stop offset="100%" stop-color="#081C14" />
+    </linearGradient>
+
+    <!-- Gold Accent -->
+    <linearGradient id="amberGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#FCD34D" />
+    </linearGradient>
+
+    <filter id="mGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="mShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.5" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="450" fill="url(#masaratBg)" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="200" cy="140" r="180" fill="#10B981" opacity="0.18" filter="url(#mGlow)" />
+  <circle cx="650" cy="320" r="160" fill="#14B8A6" opacity="0.16" filter="url(#mGlow)" />
+
+  <!-- Subtle Industrial Grid -->
+  <g opacity="0.08" stroke="#10B981" stroke-width="1.2" fill="none">
+    <pattern id="gridPattern" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" />
+    </pattern>
+    <rect width="800" height="450" fill="url(#gridPattern)" />
+  </g>
+
+  <!-- Central ERP Dashboard Mockup Card -->
+  <g transform="translate(130, 65)" filter="url(#mShadow)">
+    <!-- Main Card Body -->
+    <rect width="540" height="295" rx="18" fill="url(#cardGlass)" stroke="#10B981" stroke-width="1.8" stroke-opacity="0.4" />
+    
+    <!-- Top Window Controls -->
+    <g transform="translate(24, 20)">
+      <circle cx="0" cy="0" r="5" fill="#EF4444" />
+      <circle cx="16" cy="0" r="5" fill="#F59E0B" />
+      <circle cx="32" cy="0" r="5" fill="#10B981" />
+      <rect x="58" y="-9" width="320" height="18" rx="9" fill="#041F16" stroke="#0D533C" stroke-width="1" />
+      <text x="218" y="4" font-family="monospace" font-size="9" fill="#6EE7B7" text-anchor="middle">https://masarat.app/admin/dashboard</text>
+    </g>
+
+    <!-- Brand Row -->
+    <g transform="translate(28, 56)">
+      <!-- Olive & Logistics Icon -->
+      <rect width="44" height="44" rx="10" fill="url(#emeraldTeal)" />
+      <!-- Stylized Olive Branch & Box -->
+      <path d="M12,28 C12,18 22,14 32,14 C32,24 22,28 12,28 Z" fill="#FFFFFF" opacity="0.9" />
+      <circle cx="28" cy="22" r="3.5" fill="#064E3B" />
+      <path d="M14,32 L30,32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" />
+      
+      <text x="56" y="22" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="900" fill="#FFFFFF" letter-spacing="-0.5">
+        Ma'sarat al-Rahma
+      </text>
+      <!-- Arabic Title -->
+      <text x="260" y="23" font-family="'Traditional Arabic', 'Segoe UI', sans-serif" font-size="21" font-weight="bold" fill="#6EE7B7">
+        (معصرة الرحمة)
+      </text>
+      <text x="56" y="38" font-family="sans-serif" font-size="10" font-weight="700" fill="#A7F3D0" letter-spacing="1">
+        ERP GESTION COMMERCIALE, VENTES &amp; STOCK • LARAVEL 11 &amp; LIVEWIRE 3
+      </text>
+    </g>
+
+    <!-- Mini Dashboard Grid Inside Card -->
+    <g transform="translate(28, 122)">
+      <!-- KPI Box 1: Stock Total -->
+      <rect width="150" height="74" rx="10" fill="#09281C" stroke="#0E4833" stroke-width="1" />
+      <text x="14" y="24" font-family="sans-serif" font-size="10" font-weight="700" fill="#6EE7B7">STOCK DISPONIBLE</text>
+      <text x="14" y="52" font-family="monospace" font-size="20" font-weight="900" fill="#FFFFFF">12 450 <tspan font-size="12" fill="#6EE7B7">KG</tspan></text>
+      <path d="M100,50 L115,40 L125,44 L140,30" stroke="#10B981" stroke-width="2" fill="none" stroke-linecap="round" />
+
+      <!-- KPI Box 2: Facturation / CA -->
+      <g transform="translate(166, 0)">
+        <rect width="150" height="74" rx="10" fill="#09281C" stroke="#0E4833" stroke-width="1" />
+        <text x="14" y="24" font-family="sans-serif" font-size="10" font-weight="700" fill="#FCD34D">CHIFFRE D'AFFAIRES</text>
+        <text x="14" y="52" font-family="monospace" font-size="20" font-weight="900" fill="#FFFFFF">+845K <tspan font-size="12" fill="#FCD34D">DH</tspan></text>
+        <path d="M100,48 L115,38 L125,42 L140,26" stroke="#F59E0B" stroke-width="2" fill="none" stroke-linecap="round" />
+      </g>
+
+      <!-- KPI Box 3: Sécurité & Rôles -->
+      <g transform="translate(332, 0)">
+        <rect width="150" height="74" rx="10" fill="#09281C" stroke="#0E4833" stroke-width="1" />
+        <text x="14" y="24" font-family="sans-serif" font-size="10" font-weight="700" fill="#38BDF8">RÔLES &amp; AUDIT</text>
+        <text x="14" y="52" font-family="monospace" font-size="17" font-weight="900" fill="#FFFFFF">RBAC + 2FA</text>
+        <circle cx="125" cy="42" r="10" fill="#0284C7" opacity="0.3" />
+        <path d="M121,42 L124,45 L130,39" stroke="#38BDF8" stroke-width="1.8" fill="none" />
+      </g>
+    </g>
+
+    <!-- Bottom Status Bar -->
+    <g transform="translate(28, 222)">
+      <rect width="484" height="48" rx="10" fill="#061F16" stroke="#0B3E2B" stroke-width="1" />
+      <!-- Bilingual pill -->
+      <rect x="14" y="12" width="130" height="24" rx="12" fill="#044733" />
+      <text x="79" y="28" font-family="sans-serif" font-size="10" font-weight="800" fill="#A7F3D0" text-anchor="middle">BILINGUE FR / AR (RTL)</text>
+      
+      <!-- Assertions pill -->
+      <g transform="translate(158, 12)">
+        <rect width="145" height="24" rx="12" fill="#0B2F22" stroke="#10B981" stroke-width="1" />
+        <text x="72" y="28" font-family="sans-serif" font-size="10" font-weight="800" fill="#6EE7B7" text-anchor="middle">699 ASSERTIONS TESTS</text>
+      </g>
+
+      <!-- Traçabilité pill -->
+      <g transform="translate(316, 12)">
+        <rect width="154" height="24" rx="12" fill="#0B2F22" stroke="#F59E0B" stroke-width="1" />
+        <text x="77" y="28" font-family="sans-serif" font-size="10" font-weight="800" fill="#FCD34D" text-anchor="middle">TRAÇABILITÉ LOGS AUDIT</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- Floating Badge Left: 153 Tests Automatisés -->
+  <g transform="translate(50, 180)" filter="url(#mShadow)">
+    <rect width="138" height="50" rx="12" fill="#051D14" stroke="#10B981" stroke-width="1.6" />
+    <circle cx="28" cy="25" r="15" fill="#10B981" opacity="0.25" />
+    <path d="M22,25 L26,29 L34,20" stroke="#10B981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+    <text x="50" y="22" font-family="sans-serif" font-size="11" font-weight="900" fill="#FFFFFF">153 TESTS</text>
+    <text x="50" y="36" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#34D399">100% Automatisés</text>
+  </g>
+
+  <!-- Floating Badge Right: Featured Star Badge -->
+  <g transform="translate(625, 280)" filter="url(#mShadow)">
+    <rect width="130" height="50" rx="12" fill="#051D14" stroke="#F59E0B" stroke-width="1.6" />
+    <circle cx="26" cy="25" r="15" fill="#F59E0B" opacity="0.25" />
+    <polygon points="26,14 29,22 37,22 31,27 33,35 26,30 19,35 21,27 15,22 23,22" fill="#F59E0B" />
+    <text x="48" y="22" font-family="sans-serif" font-size="11" font-weight="900" fill="#FFFFFF">FEATURED</text>
+    <text x="48" y="36" font-family="sans-serif" font-size="8.5" font-weight="700" fill="#FCD34D">Production-Ready</text>
+  </g>
+</svg>
