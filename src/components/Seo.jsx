@@ -30,3 +30,4 @@ export function Seo({ title, description, path = "/", lang = "fr" }) {
 }
 
 export default Seo;
+

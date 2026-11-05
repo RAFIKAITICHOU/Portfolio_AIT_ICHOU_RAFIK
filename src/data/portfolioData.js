@@ -107,10 +107,10 @@ export const portfolioData = {
       }
     },
     {
-      value: "5",
+      value: "12+",
       label: {
-        fr: "Certifications IBM & Cloud",
-        en: "IBM & Cloud Certifications"
+        fr: "Certifications",
+        en: "Certifications"
       },
       sub: {
         fr: "Accréditations vérifiables en Cloud, Data Science & Deep Learning",
@@ -889,7 +889,7 @@ export const portfolioData = {
     {
       id: "fs-licence",
       degree: {
-        fr: "Licence Fondamentale en Informatique",
+        fr: "Licence en Informatique",
         en: "Bachelor of Science in Computer Science"
       },
       institution: "Université Cadi Ayyad",

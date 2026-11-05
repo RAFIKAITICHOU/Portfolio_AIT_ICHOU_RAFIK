@@ -55,7 +55,7 @@ export function About({ lang, uiText, personal, onOpenCv }) {
       badge: isFr ? "En cours · Promo 2027" : "In progress · Class of 2027"
     },
     {
-      period: "Fév. 2024 – Juil. 2024",
+      period: "Déc. 2024 – Juin. 2025",
       title: isFr
         ? "Stage Ingénieur Junior — Projet absENS (6 mois)"
         : "Junior Software Engineer Intern — absENS Project (6 months)",
@@ -66,7 +66,7 @@ export function About({ lang, uiText, personal, onOpenCv }) {
       badge: isFr ? "Stage validé 6 mois" : "6-month validated internship"
     },
     {
-      period: "2023 – 2024",
+      period: "2024 – 2026",
       title: isFr
         ? "Président du Club Technologique E-TEAM ENS"
         : "President of E-TEAM ENS Technology Club",
@@ -77,11 +77,11 @@ export function About({ lang, uiText, personal, onOpenCv }) {
       badge: isFr ? "Leadership & Gestion" : "Leadership & Management"
     },
     {
-      period: "2020 – 2024",
+      period: "2022 – 2025",
       title: isFr
-        ? "Licence en Sciences Mathématiques & Informatique (SMI)"
-        : "Bachelor of Science in Mathematics & Computer Science",
-      org: "Faculté des Sciences Semlalia — Université Cadi Ayyad",
+        ? "Licence en Informatique"
+        : "Bachelor of Science in Computer Science",
+      org: "Université Cadi Ayyad",
       desc: isFr
         ? "Bases théoriques solides : algorithmique avancée, structures de données, POO (C++, Java), bases de données relationnelles et systèmes d'exploitation."
         : "Comprehensive theoretical foundation: advanced algorithms, data structures, OOP (C++, Java), relational databases, and OS fundamentals.",
