@@ -135,6 +135,8 @@ export default function App() {
                   personal={portfolioData.personal}
                   stats={portfolioData.stats}
                   projects={portfolioData.projects}
+                  skillCategories={portfolioData.skillCategories}
+                  certifications={portfolioData.certifications}
                   onOpenCv={() => setCvModalOpen(true)}
                 />
               }

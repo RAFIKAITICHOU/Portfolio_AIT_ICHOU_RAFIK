@@ -1,6 +1,19 @@
 {
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "www.aitichou.com" }],
+      "destination": "https://aitichou.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "aitichou.vercel.app" }],
+      "destination": "https://aitichou.com/$1",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/" }
   ]
 }
-

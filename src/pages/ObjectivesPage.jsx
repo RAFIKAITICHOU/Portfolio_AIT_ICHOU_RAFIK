@@ -2,8 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { PageLayout } from "../components/PageLayout";
 import { Icon } from "../components/Icons";
+import { Seo } from "../components/Seo";
 
 export function ObjectivesPage({ lang, uiText, objectives, onOpenCv }) {
+  const isFr = lang === "fr";
   const imm = objectives.immediate;
   const lt = objectives.longTerm;
 
@@ -15,6 +17,20 @@ export function ObjectivesPage({ lang, uiText, objectives, onOpenCv }) {
       prev={{ label: uiText.nav.skills, path: "/skills" }}
       next={{ label: uiText.nav.contact, path: "/contact" }}
     >
+      <Seo
+        title={
+          isFr
+            ? "Objectifs Professionnels & PFE 2027 | Rafik Ait Ichou"
+            : "Career Goals & Graduation Internship | Rafik Ait Ichou"
+        }
+        description={
+          isFr
+            ? "Objectif prioritaire : Stage PFE de 4 à 6 mois dès le 25 janvier 2027 en ingénierie logicielle, architectures réactives et plateformes cloud."
+            : "Primary goal: 4 to 6-month graduation internship (PFE) starting Jan 25, 2027 in software engineering, reactive architectures, and cloud systems."
+        }
+        path="/objectives"
+        lang={lang}
+      />
       <section className="section" style={{ paddingTop: "1.5rem" }}>
         <div className="container">
           {/* Section Header */}

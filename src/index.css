@@ -6,28 +6,30 @@
   --font-mono: 'JetBrains Mono', monospace;
 
   /* Engineering Identity: Red (Logo </>) & Slate Blue */
-  --accent-primary: #D7263D;   /* Rouge corporate : actions, liens, badges */
-  --accent-primary-hover: #b81d31;
-  --accent-secondary: #51607A; /* Gris-bleu : titres secondaires, bordures */
-  --accent-gradient: linear-gradient(135deg, #D7263D 0%, #A31D2E 100%);
-  --accent-glow: rgba(215, 38, 61, 0.18);
+  --accent: #E11D48;           /* Rouge corporate demandé : #e11d48 */
+  --accent-primary: #E11D48;
+  --accent-primary-hover: #BE123C;
+  --accent-secondary: #64748B; /* Gris-bleu : #64748b */
+  --accent-gradient: linear-gradient(135deg, #E11D48 0%, #BE123C 100%);
+  --accent-glow: rgba(225, 29, 72, 0.22);
   
+  --muted: #64748B;
   --success: #10B981;
   --warning: #F59E0B;
   --danger: #EF4444;
 
   /* Dark Theme (Default) */
-  --bg-primary: #0E1117;
-  --bg-secondary: #151A23;
-  --bg-card: rgba(21, 26, 35, 0.9);
-  --bg-card-hover: rgba(28, 35, 48, 0.98);
-  --bg-elevated: #1C2330;
-  --bg-overlay: rgba(10, 15, 26, 0.85);
-  --nav-bg: rgba(14, 17, 23, 0.88);
-  --nav-bg-scrolled: rgba(21, 26, 35, 0.96);
+  --bg-primary: #0F172A;       /* Fond sombre corporate : #0f172a */
+  --bg-secondary: #1E293B;
+  --bg-card: rgba(30, 41, 59, 0.85);
+  --bg-card-hover: rgba(30, 41, 59, 0.98);
+  --bg-elevated: #1E293B;
+  --bg-overlay: rgba(15, 23, 42, 0.88);
+  --nav-bg: rgba(15, 23, 42, 0.9);
+  --nav-bg-scrolled: rgba(15, 23, 42, 0.98);
   
   --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(215, 38, 61, 0.45);
+  --border-hover: rgba(225, 29, 72, 0.5);
   --border-strong: rgba(255, 255, 255, 0.16);
 
   --text-primary: #F8FAFC;

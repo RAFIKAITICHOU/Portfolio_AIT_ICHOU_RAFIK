@@ -4,12 +4,12 @@ export const portfolioData = {
     shortName: "Rafik AIT ICHOU",
     brandText: "ICHOU.IT",
     title: {
-      fr: "Ingénieur d'État en Informatique & Réseaux — Développement Digital & Systèmes d'Information",
-      en: "State Engineer in Computer Science & Networks — Digital Development & Information Systems"
+      fr: "Ingénieur Logiciel & Systèmes d'Information",
+      en: "Software Engineer & Information Systems"
     },
     subTitleSchool: {
-      fr: "École Marocaine des Sciences de l'Ingénieur (EMSI Marrakech)",
-      en: "Moroccan School of Engineering Sciences (EMSI Marrakech)"
+      fr: "Élève-Ingénieur en Informatique et Réseaux — EMSI Marrakech",
+      en: "Engineering Student in Computer Science & Networks — EMSI Marrakech"
     },
     status: {
       fr: "Stage PFE · 4 à 6 mois · Dès le 25 janvier 2027",
