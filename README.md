@@ -12,7 +12,7 @@ Ce portfolio a été spécialement structuré en **véritable application multi-
 | :--- | :--- | :--- |
 | `/` | **Accueil (Home)** | Hero immersif, disponibilité PFE 2027, KPI stats, aperçu des projets phares et accès direct aux rubriques. |
 | `/about` | **À Propos** | Rigueur d'ingénierie, démarche agile, les 4 piliers de valeur PFE et faits marquants. |
-| `/formation` | **Formation Académique** | Cursus complet : Cycle Ingénieur EMSI (2025-2027) et Licence Fondamentale en Informatique (2022-2025). |
+| `/formation` | **Formation Académique** | Cursus complet : Cycle Ingénieur EMSI (2025-2027) et Licence en Informatique (2022-2025). |
 | `/certifications` | **Certifications** | Accréditations officielles vérifiables IBM (Cloud, Data Science, Machine Learning, Deep Learning) avec liens Coursera & Credly. |
 | `/experience` | **Expérience Professionnelle** | Stage DSI OCP Safi (*Smart HSE 360*), Présidence Club E-TEAM ENS, stage de 6 mois à l'ENS Marrakech (*absENS*) et Formateur Green AI. |
 | `/projects` | **Projets & Études de Cas** | Filtrage par catégories, recherche en temps réel et **modal d'étude de cas d'ingénierie complète** (problème, solution, métriques). |

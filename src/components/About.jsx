@@ -44,7 +44,7 @@ export function About({ lang, uiText, personal, onOpenCv }) {
 
   const timeline = [
     {
-      period: "2024 – 2027",
+      period: "2025 – 2027",
       title: isFr
         ? "Cycle Ingénieur d'État en Informatique & Réseaux"
         : "State Engineering Degree in Computer Science & Networks",
