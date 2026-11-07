@@ -40,8 +40,8 @@ export function HomePage({
       <Seo
         title={
           isFr
-            ? "Rafik Ait Ichou | Ingénieur Logiciel & Systèmes d'Information"
-            : "Rafik Ait Ichou | Software Engineer & Information Systems"
+            ? "AIT ICHOU Rafik | Ingénieur Logiciel & Systèmes d'Information"
+            : "AIT ICHOU Rafik | Software Engineer & Information Systems"
         }
         description={
           isFr
@@ -200,21 +200,10 @@ export function HomePage({
 
                     {/* Problème */}
                     <div style={{ marginBottom: "1.1rem" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.45rem",
-                          fontSize: "0.85rem",
-                          fontWeight: 800,
-                          color: "var(--danger)",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.04em",
-                          marginBottom: "0.25rem"
-                        }}
-                      >
-                        <span style={{ fontSize: "0.9rem" }}>🔴</span>
-                        <span>{isFr ? "Le Problème Industriel" : "The Industrial Problem"}</span>
+                      <div style={{ marginBottom: "0.35rem" }}>
+                        <span className="step-pill step-pill-danger">
+                          {isFr ? "Problème Industriel" : "Industrial Problem"}
+                        </span>
                       </div>
                       <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.6, margin: 0 }}>
                         {hseProject.problem[lang]}
@@ -223,21 +212,10 @@ export function HomePage({
 
                     {/* Solution */}
                     <div style={{ marginBottom: "1.1rem" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.45rem",
-                          fontSize: "0.85rem",
-                          fontWeight: 800,
-                          color: "var(--warning)",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.04em",
-                          marginBottom: "0.25rem"
-                        }}
-                      >
-                        <span style={{ fontSize: "0.9rem" }}>🟡</span>
-                        <span>{isFr ? "La Solution d'Ingénierie" : "The Engineering Solution"}</span>
+                      <div style={{ marginBottom: "0.35rem" }}>
+                        <span className="step-pill step-pill-warning">
+                          {isFr ? "Solution d'Ingénierie" : "Engineering Solution"}
+                        </span>
                       </div>
                       <p style={{ fontSize: "0.9rem", color: "var(--text-muted)", lineHeight: 1.6, margin: 0 }}>
                         {hseProject.solution[lang]}
@@ -246,21 +224,10 @@ export function HomePage({
 
                     {/* Résultat */}
                     <div style={{ marginBottom: "1.4rem" }}>
-                      <div
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "0.45rem",
-                          fontSize: "0.85rem",
-                          fontWeight: 800,
-                          color: "var(--success)",
-                          textTransform: "uppercase",
-                          letterSpacing: "0.04em",
-                          marginBottom: "0.25rem"
-                        }}
-                      >
-                        <span style={{ fontSize: "0.9rem" }}>🟢</span>
-                        <span>{isFr ? "Le Résultat Mesurable" : "Measurable Result"}</span>
+                      <div style={{ marginBottom: "0.35rem" }}>
+                        <span className="step-pill step-pill-success">
+                          {isFr ? "Impact Mesurable" : "Measurable Result"}
+                        </span>
                       </div>
                       <p style={{ fontSize: "0.9rem", color: "var(--text-secondary)", lineHeight: 1.6, margin: 0, fontWeight: 500 }}>
                         {hseProject.result[lang]}
@@ -347,8 +314,7 @@ export function HomePage({
                     padding: "2rem",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between",
-                    borderTop: "3px solid var(--accent-primary)"
+                    justifyContent: "space-between"
                   }}
                 >
                   <div>
@@ -490,8 +456,7 @@ export function HomePage({
                     padding: "1.5rem",
                     display: "flex",
                     flexDirection: "column",
-                    justifyContent: "space-between",
-                    borderTop: p.featured ? "4px solid var(--accent-primary)" : "1px solid var(--border-subtle)"
+                    justifyContent: "space-between"
                   }}
                 >
                   <div>
@@ -523,70 +488,55 @@ export function HomePage({
                     </div>
 
                     {/* Title & Subtitle */}
-                    <div style={{ marginBottom: "0.8rem" }}>
+                    <div style={{ marginBottom: "0.75rem" }}>
                       <h3
                         onClick={() => setSelectedProject(p)}
-                        style={{ fontSize: "1.35rem", fontWeight: 800, marginBottom: "0.2rem", cursor: "pointer" }}
+                        style={{ fontSize: "1.3rem", fontWeight: 800, marginBottom: "0.25rem", cursor: "pointer", lineHeight: 1.25 }}
                       >
                         {p.title}
                       </h3>
-                      <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                      <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.4 }}>
                         {p.subtitle[lang]}
                       </p>
                     </div>
 
-                    <p style={{ color: "var(--text-muted)", fontSize: "0.875rem", lineHeight: 1.6, marginBottom: "1.2rem", fontStyle: "italic", borderLeft: "2px solid var(--border-strong)", paddingLeft: "0.8rem" }}>
-                      "{p.tagline[lang]}"
+                    {/* Description claire et lisible (Anti-Slop sans citation ni italique) */}
+                    <p style={{ color: "var(--text-secondary)", fontSize: "0.89rem", lineHeight: 1.55, marginBottom: "1.15rem" }}>
+                      {p.tagline[lang]}
                     </p>
 
-                    {/* Metrics Badges */}
+                    {/* Metrics Badges en Chips Pro */}
                     {p.metrics && (
-                      <div
-                        style={{
-                          display: "flex",
-                          flexWrap: "wrap",
-                          gap: "0.45rem",
-                          marginBottom: "1.2rem"
-                        }}
-                      >
+                      <div className="metric-chip-row">
                         {p.metrics.slice(0, 3).map((m, idx) => (
-                          <span
-                            key={idx}
-                            style={{
-                              fontSize: "0.75rem",
-                              padding: "0.22rem 0.55rem",
-                              background: "var(--bg-elevated)",
-                              borderRadius: "var(--radius-sm)",
-                              border: "1px solid var(--border-subtle)",
-                              color: "var(--text-primary)"
-                            }}
-                          >
-                            <strong>{m.value}</strong> <span style={{ color: "var(--text-muted)" }}>• {m.label}</span>
-                          </span>
+                          <div key={idx} className="metric-chip">
+                            <span className="metric-chip-value">{m.value}</span>
+                            <span className="metric-chip-label">{m.label}</span>
+                          </div>
                         ))}
                       </div>
                     )}
 
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.5rem" }}>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.4rem" }}>
                       {p.technologies.slice(0, 5).map((t) => (
                         <span key={t} className="tech-tag">{t}</span>
                       ))}
                       {p.technologies.length > 5 && (
-                        <span className="tech-tag" style={{ opacity: 0.75 }}>
+                        <span className="tech-tag-more">
                           +{p.technologies.length - 5}
                         </span>
                       )}
                     </div>
                   </div>
 
-                  <div style={{ display: "flex", gap: "0.8rem", paddingTop: "1rem", borderTop: "1px solid var(--border-subtle)", flexWrap: "wrap", alignItems: "center" }}>
+                  <div style={{ display: "flex", gap: "0.75rem", paddingTop: "1rem", borderTop: "1px solid var(--border-subtle)", flexWrap: "wrap", alignItems: "center" }}>
                     <button
                       onClick={() => setSelectedProject(p)}
                       className="btn btn-primary btn-sm"
-                      style={{ flex: 1 }}
+                      style={{ flex: 1, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.45rem" }}
                     >
                       <span>{uiText.home.viewCaseStudy}</span>
-                      <Icon name="chevron-right" size={14} />
+                      <Icon name="arrow-right" size={14} />
                     </button>
                     {p.driveFolder && (
                       <a

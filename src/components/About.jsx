@@ -230,20 +230,40 @@ export function About({ lang, uiText, personal, onOpenCv }) {
             {personal.bioLong[lang]}
           </p>
 
-          <p
+          <div
             style={{
-              fontSize: "1rem",
-              color: "var(--text-secondary)",
-              lineHeight: 1.75,
-              borderLeft: "3px solid var(--accent-primary)",
-              paddingLeft: "1.2rem",
-              fontStyle: "italic"
+              padding: "1.25rem 1.5rem",
+              borderRadius: "12px",
+              background: "var(--bg-elevated)",
+              border: "1px solid var(--border-subtle)",
+              display: "flex",
+              alignItems: "flex-start",
+              gap: "0.85rem"
             }}
           >
-            {isFr
-              ? "« Mon approche repose sur des architectures rigoureuses (Clean Architecture, DDD, tests automatisés en continu) pour garantir que chaque ligne de code livrée soit maintenable, scalable et directement créatrice de valeur industrielle mesurable. »"
-              : "“My approach relies on rock-solid architectural fundamentals (Clean Architecture, DDD, continuous automated testing) ensuring every line of delivered code is maintainable, scalable, and creates real industrial value.”"}
-          </p>
+            <div
+              style={{
+                color: "var(--accent-primary)",
+                flexShrink: 0,
+                marginTop: "2px"
+              }}
+            >
+              <Icon name="check-circle" size={18} />
+            </div>
+            <p
+              style={{
+                fontSize: "0.95rem",
+                color: "var(--text-secondary)",
+                lineHeight: 1.65,
+                margin: 0,
+                fontWeight: 500
+              }}
+            >
+              {isFr
+                ? "Mon approche repose sur des architectures rigoureuses (Clean Architecture, DDD, tests automatisés en continu) pour garantir que chaque ligne de code livrée soit maintenable, scalable et directement créatrice de valeur industrielle mesurable."
+                : "My approach relies on rock-solid architectural fundamentals (Clean Architecture, DDD, continuous automated testing) ensuring every line of delivered code is maintainable, scalable, and creates real industrial value."}
+            </p>
+          </div>
         </div>
 
         {/* BLOC 3 : Les Trois Piliers (en cartes) */}

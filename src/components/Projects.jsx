@@ -189,8 +189,7 @@ export function Projects({ lang, uiText, projects }) {
                   display: "flex",
                   flexDirection: "column",
                   justifyContent: "space-between",
-                  padding: "1.5rem",
-                  borderTop: project.featured ? "4px solid var(--accent-primary)" : "1px solid var(--border-subtle)"
+                  padding: "1.5rem"
                 }}
               >
                 <div>
@@ -222,11 +221,11 @@ export function Projects({ lang, uiText, projects }) {
                   </div>
 
                   {/* Title & Subtitle (Clean, left-aligned) */}
-                  <div style={{ marginBottom: "0.8rem" }}>
+                  <div style={{ marginBottom: "0.75rem" }}>
                     <h3
                       onClick={() => setSelectedProject(project)}
                       style={{
-                        fontSize: "1.35rem",
+                        fontSize: "1.3rem",
                         fontWeight: 800,
                         marginBottom: "0.25rem",
                         lineHeight: 1.25,
@@ -235,63 +234,44 @@ export function Projects({ lang, uiText, projects }) {
                     >
                       {project.title}
                     </h3>
-                    <p style={{ color: "var(--text-secondary)", fontSize: "0.9rem" }}>
+                    <p style={{ color: "var(--text-secondary)", fontSize: "0.88rem", lineHeight: 1.4 }}>
                       {project.subtitle[lang]}
                     </p>
                   </div>
 
-                  {/* Hook / Tagline */}
+                  {/* Description claire et lisible (Anti-Slop sans citation ni italique) */}
                   <p
                     style={{
-                      fontSize: "0.9rem",
-                      color: "var(--text-muted)",
-                      lineHeight: 1.6,
-                      marginBottom: "1.4rem",
-                      borderLeft: "2px solid var(--border-strong)",
-                      paddingLeft: "0.8rem",
-                      fontStyle: "italic"
+                      fontSize: "0.89rem",
+                      color: "var(--text-secondary)",
+                      lineHeight: 1.55,
+                      marginBottom: "1.15rem"
                     }}
                   >
-                    "{project.tagline[lang]}"
+                    {project.tagline[lang]}
                   </p>
 
-                  {/* Metrics Badges */}
+                  {/* Metrics Badges en Chips Pro */}
                   {project.metrics && (
-                    <div
-                      style={{
-                        display: "flex",
-                        flexWrap: "wrap",
-                        gap: "0.5rem",
-                        marginBottom: "1.4rem"
-                      }}
-                    >
+                    <div className="metric-chip-row">
                       {project.metrics.slice(0, 3).map((m, idx) => (
-                        <span
-                          key={idx}
-                          style={{
-                            fontSize: "0.775rem",
-                            padding: "0.25rem 0.6rem",
-                            background: "var(--bg-elevated)",
-                            borderRadius: "var(--radius-sm)",
-                            border: "1px solid var(--border-subtle)",
-                            color: "var(--text-primary)"
-                          }}
-                        >
-                          <strong>{m.value}</strong> <span style={{ color: "var(--text-muted)" }}>• {m.label}</span>
-                        </span>
+                        <div key={idx} className="metric-chip">
+                          <span className="metric-chip-value">{m.value}</span>
+                          <span className="metric-chip-label">{m.label}</span>
+                        </div>
                       ))}
                     </div>
                   )}
 
                   {/* Tech stack */}
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.8rem" }}>
+                  <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "1.5rem" }}>
                     {project.technologies.slice(0, 6).map((tech) => (
                       <span key={tech} className="tech-tag">
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 6 && (
-                      <span className="tech-tag" style={{ opacity: 0.7 }}>
+                      <span className="tech-tag-more">
                         +{project.technologies.length - 6}
                       </span>
                     )}
@@ -303,8 +283,8 @@ export function Projects({ lang, uiText, projects }) {
                   style={{
                     display: "flex",
                     alignItems: "center",
-                    gap: "0.8rem",
-                    paddingTop: "1.2rem",
+                    gap: "0.75rem",
+                    paddingTop: "1.1rem",
                     borderTop: "1px solid var(--border-subtle)",
                     flexWrap: "wrap"
                   }}
@@ -312,10 +292,10 @@ export function Projects({ lang, uiText, projects }) {
                   <button
                     onClick={() => setSelectedProject(project)}
                     className="btn btn-primary btn-sm"
-                    style={{ flex: 1 }}
+                    style={{ flex: 1, display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.45rem" }}
                   >
-                    <Icon name="search" size={14} />
                     <span>{uiText.projects.viewDetails}</span>
+                    <Icon name="arrow-right" size={14} />
                   </button>
 
                   {project.github && (

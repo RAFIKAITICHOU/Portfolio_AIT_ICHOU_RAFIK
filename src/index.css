@@ -21,20 +21,20 @@
   /* Dark Theme (Default) */
   --bg-primary: #0F172A;       /* Fond sombre corporate : #0f172a */
   --bg-secondary: #1E293B;
-  --bg-card: rgba(30, 41, 59, 0.85);
-  --bg-card-hover: rgba(30, 41, 59, 0.98);
-  --bg-elevated: #1E293B;
+  --bg-card: #151F33;
+  --bg-card-hover: #1A2740;
+  --bg-elevated: #1A263D;
   --bg-overlay: rgba(15, 23, 42, 0.88);
   --nav-bg: rgba(15, 23, 42, 0.9);
   --nav-bg-scrolled: rgba(15, 23, 42, 0.98);
   
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(225, 29, 72, 0.5);
-  --border-strong: rgba(255, 255, 255, 0.16);
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-hover: rgba(225, 29, 72, 0.45);
+  --border-strong: rgba(255, 255, 255, 0.18);
 
   --text-primary: #F8FAFC;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
+  --text-secondary: #CBD5E1;
+  --text-muted: #94A3B8;
   --text-inverted: #0F172A;
 
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.25);
@@ -43,7 +43,7 @@
   --shadow-glow: 0 0 25px rgba(215, 38, 61, 0.22);
 
   --radius-sm: 6px;
-  --radius-md: 12px;
+  --radius-md: 14px;
   --radius-lg: 18px;
   --radius-full: 9999px;
 
@@ -51,21 +51,21 @@
 }
 
 [data-theme='light'] {
-  --bg-primary: #F7F8FA;
+  --bg-primary: #F8FAFC;
   --bg-secondary: #FFFFFF;
-  --bg-card: rgba(255, 255, 255, 0.96);
+  --bg-card: #FFFFFF;
   --bg-card-hover: #FFFFFF;
-  --bg-elevated: #EEF2F6;
+  --bg-elevated: #F1F5F9;
   --bg-overlay: rgba(15, 23, 42, 0.72);
-  --nav-bg: rgba(247, 248, 250, 0.92);
+  --nav-bg: rgba(248, 250, 252, 0.92);
   --nav-bg-scrolled: rgba(255, 255, 255, 0.98);
 
-  --border-subtle: rgba(0, 0, 0, 0.08);
-  --border-hover: rgba(215, 38, 61, 0.45);
-  --border-strong: rgba(0, 0, 0, 0.14);
+  --border-subtle: rgba(15, 23, 42, 0.08);
+  --border-hover: rgba(225, 29, 72, 0.4);
+  --border-strong: rgba(15, 23, 42, 0.14);
 
   --text-primary: #0F172A;
-  --text-secondary: #475569;
+  --text-secondary: #334155;
   --text-muted: #64748B;
   --text-inverted: #F8FAFC;
 
@@ -616,24 +616,25 @@ h1, h2, h3, .section-title {
   align-items: center;
 }
 
-/* Project Card Top Banner (Logo en haut comme dans la maquette) */
+/* Project Card Top Banner (Logo en haut comme dans la maquette de référence) */
 .project-card-banner {
   width: 100%;
-  height: 155px;
-  border-radius: var(--radius-md);
+  height: 165px;
+  border-radius: 12px;
   background: var(--bg-elevated);
   border: 1px solid var(--border-subtle);
   display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.15rem;
   position: relative;
   cursor: pointer;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
               border-color 0.25s ease,
               box-shadow 0.25s ease,
               background-color 0.25s ease;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .project-card-banner.has-logo {
@@ -645,9 +646,12 @@ h1, h2, h3, .section-title {
   padding: 0;
 }
 
+[data-theme='light'] .project-card-banner {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
 [data-theme='light'] .project-card-banner.has-logo {
   background: #FFFFFF;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
 [data-theme='light'] .project-card-banner.is-cover {
@@ -657,15 +661,15 @@ h1, h2, h3, .section-title {
 
 .glass-card:hover .project-card-banner {
   border-color: var(--accent-primary);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .project-banner-img,
 .project-banner-img-contain {
   width: 100%;
   height: 100%;
-  max-height: 115px;
-  max-width: 82%;
+  max-height: 125px;
+  max-width: 86%;
   object-fit: contain;
   padding: 12px;
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -681,11 +685,11 @@ h1, h2, h3, .section-title {
 
 .glass-card:hover .project-banner-img,
 .glass-card:hover .project-banner-img-contain {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 
 .glass-card:hover .project-banner-img-cover {
-  transform: scale(1.04);
+  transform: scale(1.03);
 }
 
 /* Modern Project Pill Badges (Style Image de Référence) */
@@ -695,7 +699,7 @@ h1, h2, h3, .section-title {
   gap: 0.35rem;
   font-size: 0.74rem;
   font-weight: 700;
-  padding: 0.28rem 0.75rem;
+  padding: 0.26rem 0.7rem;
   border-radius: var(--radius-full);
   line-height: 1.3;
   letter-spacing: 0.02em;
@@ -712,7 +716,7 @@ h1, h2, h3, .section-title {
 [data-theme='dark'] .project-pill-primary {
   background: rgba(56, 189, 248, 0.12);
   color: #38BDF8;
-  border-color: rgba(56, 189, 248, 0.25);
+  border-color: rgba(56, 189, 248, 0.28);
 }
 
 .project-pill-subtle {
@@ -731,6 +735,80 @@ h1, h2, h3, .section-title {
   background: rgba(245, 158, 11, 0.18);
   color: #FBBF24;
   border-color: rgba(245, 158, 11, 0.4);
+}
+
+/* Metric Chips (Discrétion, contraste et alignement pro) */
+.metric-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
+}
+
+.metric-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.24rem 0.58rem;
+  background: var(--bg-elevated);
+  border-radius: 6px;
+  border: 1px solid var(--border-subtle);
+  font-size: 0.76rem;
+  line-height: 1.2;
+}
+
+.metric-chip-value {
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.metric-chip-label {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  margin-left: 0.3rem;
+}
+
+.tech-tag-more {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.28rem 0.55rem;
+  border-radius: 6px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  background: var(--bg-elevated);
+  color: var(--accent-primary);
+  border: 1px solid var(--border-subtle);
+}
+
+/* Step Badges (Remplacement moderne des emojis 🔴 🟡 🟢) */
+.step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.2rem 0.55rem;
+  border-radius: 6px;
+  line-height: 1.2;
+}
+
+.step-pill-danger {
+  background: rgba(239, 68, 68, 0.12);
+  color: var(--danger);
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.step-pill-warning {
+  background: rgba(245, 158, 11, 0.12);
+  color: var(--warning);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.step-pill-success {
+  background: rgba(16, 185, 129, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(16, 185, 129, 0.25);
 }
 
 /* Fallback Branded Banner */

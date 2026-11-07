@@ -1,0 +1,127 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="guidelyBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080B1E" />
+      <stop offset="50%" stop-color="#111638" />
+      <stop offset="100%" stop-color="#070918" />
+    </linearGradient>
+
+    <!-- Royal Blue Gradient -->
+    <linearGradient id="guidelyBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <!-- Moroccan Gold Gradient -->
+    <linearGradient id="moroccoGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="50%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <!-- Glass Mockup Gradient -->
+    <linearGradient id="guidelyGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#161C42" />
+      <stop offset="100%" stop-color="#0D1129" />
+    </linearGradient>
+
+    <filter id="gGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+    <filter id="gShadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000000" flood-opacity="0.55" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="450" fill="url(#guidelyBg)" />
+
+  <!-- Ambient Light Orbs -->
+  <circle cx="210" cy="130" r="190" fill="#2563EB" opacity="0.22" filter="url(#gGlow)" />
+  <circle cx="630" cy="310" r="170" fill="#F59E0B" opacity="0.16" filter="url(#gGlow)" />
+
+  <!-- Geometric Grid Pattern -->
+  <g opacity="0.06" stroke="#3B82F6" stroke-width="1.2" fill="none">
+    <pattern id="guidelyGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" />
+    </pattern>
+    <rect width="800" height="450" fill="url(#guidelyGrid)" />
+  </g>
+
+  <!-- Central Device / Product Preview Mockup -->
+  <g transform="translate(130, 65)" filter="url(#gShadow)">
+    <rect width="540" height="295" rx="18" fill="url(#guidelyGlass)" stroke="#3B82F6" stroke-width="1.8" stroke-opacity="0.4" />
+
+    <!-- Window / Phone Header Bar -->
+    <g transform="translate(24, 20)">
+      <circle cx="0" cy="0" r="5" fill="#EF4444" />
+      <circle cx="16" cy="0" r="5" fill="#F59E0B" />
+      <circle cx="32" cy="0" r="5" fill="#10B981" />
+      <rect x="58" y="-9" width="320" height="18" rx="9" fill="#0A0E24" stroke="#1E2958" stroke-width="1" />
+      <text x="218" y="4" font-family="monospace" font-size="9" fill="#93C5FD" text-anchor="middle">api.guidely.ma/v1/services/visitor-hub</text>
+    </g>
+
+    <!-- Brand & App Icon Row -->
+    <g transform="translate(28, 54)">
+      <!-- Animated / Stylized Guidely Logo Mark -->
+      <rect width="48" height="48" rx="12" fill="url(#guidelyBlue)" />
+      <!-- Stylized Compass / Navigation needle inside icon -->
+      <g transform="translate(24, 24)">
+        <rect x="-14" y="-14" width="28" height="28" rx="4" fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.75" />
+        <rect x="-14" y="-14" width="28" height="28" rx="4" fill="none" stroke="url(#moroccoGold)" stroke-width="2" transform="rotate(45)" />
+        <polygon points="0,-10 6,4 0,2 -6,4" fill="#FFFFFF" />
+        <polygon points="0,10 6,4 0,2 -6,4" fill="url(#moroccoGold)" />
+        <circle cx="0" cy="2" r="2.5" fill="#0F172A" />
+      </g>
+
+      <text x="62" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" letter-spacing="-0.02em">Guidely</text>
+      <text x="62" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#93C5FD">Assistant Mobile Visiteurs — Maroc 2030</text>
+
+      <!-- Badge Morocco 2030 -->
+      <rect x="365" y="8" width="112" height="24" rx="12" fill="rgba(245, 158, 11, 0.16)" stroke="#F59E0B" stroke-width="1" />
+      <text x="421" y="24" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9.5" font-weight="800" fill="#FBBF24" text-anchor="middle">🇲🇦 FIFA 2030 READY</text>
+    </g>
+
+    <!-- App Feature Grid Inside Mockup -->
+    <g transform="translate(28, 122)">
+      <!-- Box 1: Darija & Translation OCR -->
+      <g transform="translate(0, 0)">
+        <rect width="150" height="90" rx="10" fill="#0B102B" stroke="#232E66" stroke-width="1" />
+        <text x="14" y="24" font-family="sans-serif" font-size="10" font-weight="800" fill="#60A5FA">TRADUCTION OCR</text>
+        <text x="14" y="44" font-family="sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Darija &amp; Arabe</text>
+        <text x="14" y="64" font-family="sans-serif" font-size="10" fill="#94A3B8">Packs hors-ligne</text>
+        <circle cx="132" cy="22" r="4" fill="#10B981" />
+      </g>
+
+      <!-- Box 2: Taxi & Tarifs Vérifiés -->
+      <g transform="translate(166, 0)">
+        <rect width="150" height="90" rx="10" fill="#0B102B" stroke="#232E66" stroke-width="1" />
+        <text x="14" y="24" font-family="sans-serif" font-size="10" font-weight="800" fill="#FBBF24">ESTIMATION TAXI</text>
+        <text x="14" y="44" font-family="sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Tarifs Référents</text>
+        <text x="14" y="64" font-family="sans-serif" font-size="10" fill="#94A3B8">Gares, Stades &amp; Aéroports</text>
+        <circle cx="132" cy="22" r="4" fill="#F59E0B" />
+      </g>
+
+      <!-- Box 3: Architecture Microservices -->
+      <g transform="translate(332, 0)">
+        <rect width="150" height="90" rx="10" fill="#0B102B" stroke="#232E66" stroke-width="1" />
+        <text x="14" y="24" font-family="sans-serif" font-size="10" font-weight="800" fill="#34D399">ARCHITECTURE</text>
+        <text x="14" y="44" font-family="sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">5 Microservices</text>
+        <text x="14" y="64" font-family="sans-serif" font-size="10" fill="#94A3B8">Docker Compose &amp; OWASP</text>
+        <circle cx="132" cy="22" r="4" fill="#3B82F6" />
+      </g>
+    </g>
+
+    <!-- Bottom Metrics Strip Inside Card -->
+    <g transform="translate(28, 230)">
+      <line x1="0" y1="0" x2="484" y2="0" stroke="#1E2958" stroke-width="1" />
+      <text x="0" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#E2E8F0">Scrum 8 semaines</text>
+      <text x="130" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#E2E8F0">Équipe 5 étudiants</text>
+      <text x="270" y="26" font-family="sans-serif" font-size="10.5" font-weight="700" fill="#E2E8F0">14 Risques Atténués</text>
+      <text x="430" y="26" font-family="monospace" font-size="10" font-weight="700" fill="#FBBF24">OWASP Top 10</text>
+    </g>
+  </g>
+</svg>

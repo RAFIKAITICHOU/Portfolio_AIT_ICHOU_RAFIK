@@ -474,7 +474,7 @@ export const portfolioData = {
           platform: "youtube"
         }
       ],
-      logo: "/assets/logo-application-ABS-ENS.png",
+      logo: "/assets/logo-application-absens.svg",
       badgeColor: "green"
     },
     {
@@ -529,7 +529,7 @@ export const portfolioData = {
           platform: "youtube"
         }
       ],
-      logo: "/assets/logo-application-ring_sizer.png",
+      logo: "/assets/logo-application-ring-sizer.svg",
       badgeColor: "amber"
     },
     {
@@ -724,7 +724,7 @@ export const portfolioData = {
         { label: "Architecture", value: "5 services + passerelle" },
         { label: "Statut", value: "Cahier des charges validé" }
       ],
-      logo: "/assets/logo-guidely.png",
+      logo: "/assets/logo-application-guidely.svg",
       animatedLoader: "/assets/guidely-loader-animated-blanc.html",
       badgeColor: "red"
     },
