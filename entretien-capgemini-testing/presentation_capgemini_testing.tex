@@ -250,49 +250,44 @@
 \end{frame}
 
 % ------------------------------------------------------------------------------
-% DIAPOSITIVE 4 : Autres Projets — Concurrence, Sécurité & Microservices
+% DIAPOSITIVE 4 : Systèmes Connectés, IoT & Stage ENS Marrakech
 % ------------------------------------------------------------------------------
-\begin{frame}{Tests Transactionnels, Sécurité \& Microservices}{Cas concrets : intégrité financière, sécurité OWASP et persistance locale}
+\begin{frame}{Tests IoT, Systèmes Connectés \& Stage ENS}{Validation matériel-logiciel : vision par ordinateur, capteurs et tests d'intégration}
     \begin{columns}[c]
-        % Carte Projet 1 : Ma'sarat al-Rahma
+        % Carte Projet 1 : Smart Parking System
         \begin{column}{0.49\textwidth}
             \begin{tikzpicture}
                 \node[card, text width=0.94\linewidth] {
-                    \textbf{\color{CapgeminiBlue}\small Ma'sarat al-Rahma (ERP Commercial)}
+                    \textbf{\color{CapgeminiBlue}\small Smart Parking (IoT, Vision \& Next.js)}
                     \vspace{0.08cm}
                     \begin{itemize}\setlength{\itemsep}{2pt}\scriptsize
-                        \item \textbf{153 tests automatisés / 699 assertions} (Pest / PHPUnit).
-                        \item \textbf{Tests de concurrence financière} : utilisation de verrous en base pour éviter les doublons ou sauts de numéro sur les factures.
-                        \item \textbf{Tests de droits d'accès} : contrôle strict des rôles (RBAC/ABAC) et double authentification (2FA TOTP).
+                        \item \textbf{Électronique \& Capteurs} : Caméras ESP32-CAM et Raspberry Pi exécutant des modèles OpenCV / YOLOv8.
+                        \item \textbf{Tests d'intégration IoT} : validation des flux WebSockets et MQTT en temps réel (latence $< 500$ ms).
+                        \item \textbf{Tests unitaires \& E2E} : logique de réservation sous JUnit 5 et parcours de paiement simulés avec Selenium.
+                        \item \textbf{Résilience réseau} : tests de déconnexion temporaire des caméras sans perte d'état.
                     \end{itemize}
                     \vspace{0.05cm}
                     \centering
-                    \tikz{\node[chip, fill=TestSuccess!10, text=TestSuccess, draw=TestSuccess!30]{153 tests passants \textbullet\ 100\% intégrité fiscale};}
+                    \tikz{\node[chip, fill=CapgeminiBlue!10, text=CapgeminiBlue, draw=CapgeminiBlue!30]{IoT ESP32 \textbullet\ YOLOv8 \textbullet\ Tests Selenium};}
                 };
             \end{tikzpicture}
         \end{column}
 
-        % Carte Projet 2 : Guidely & MesChèques
+        % Carte Projet 2 : absENS (Stage 6 mois ENS Marrakech)
         \begin{column}{0.49\textwidth}
             \begin{tikzpicture}
                 \node[card, text width=0.94\linewidth] {
-                    \textbf{\color{CapgeminiBlue}\small Guidely (Microservices) \& MesChèques}
+                    \textbf{\color{CapgeminiBlue}\small absENS — Stage de 6 Mois (ENS Marrakech)}
                     \vspace{0.08cm}
                     \begin{itemize}\setlength{\itemsep}{2pt}\scriptsize
-                        \item \textbf{Guidely (5 Microservices Docker)} :
-                        \begin{itemize}\scriptsize
-                            \item Projet mené en équipe selon le cadre Scrum (8 semaines).
-                            \item Tests de sécurité des API selon le standard \textbf{OWASP Top 10} (tokens JWT, validation des entrées).
-                        \end{itemize}
-                        \item \textbf{MesChèques (Flutter Offline-First)} :
-                        \begin{itemize}\scriptsize
-                            \item \textbf{63 tests automatisés} sur base SQLite locale.
-                            \item Gestion des synchronisations pour ne perdre aucune donnée lors des coupures réseau.
-                        \end{itemize}
+                        \item \textbf{Borne IoT \& Vision} : Module Raspberry Pi avec caméra OpenCV scannant des QR codes rotatifs chiffrés.
+                        \item \textbf{Tests anti-fraude} : validation de l'impossibilité d'émarger par photo d'écran (durée de validité QR $< 3$ s).
+                        \item \textbf{Tests de charge amphi} : émargement de 1\,200+ étudiants sans saturation de l'API Laravel / MySQL.
+                        \item \textbf{Livrable académique} : attestation officielle de stage de 6 mois délivrée par l'ENS Marrakech.
                     \end{itemize}
                     \vspace{0.05cm}
                     \centering
-                    \tikz{\node[chip, fill=CapgeminiBlue!10, text=CapgeminiBlue, draw=CapgeminiBlue!30]{OWASP Top 10 \textbullet\ Tests d'API REST \textbullet\ SQLite};}
+                    \tikz{\node[chip, fill=TestSuccess!10, text=TestSuccess, draw=TestSuccess!30]{Stage 6 mois validé \textbullet\ Scan $< 3$s \textbullet\ 0\% Fraude};}
                 };
             \end{tikzpicture}
         \end{column}

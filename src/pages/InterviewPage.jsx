@@ -213,46 +213,49 @@ export function InterviewPage({ lang = "fr", personal }) {
     },
     {
       num: 4,
-      tag: isFr ? "Diapo 4 • Projets Critiques & Sécurité" : "Slide 4 • Critical Systems & Security",
+      tag: isFr ? "Diapo 4 • Systèmes Connectés, IoT & Stage ENS" : "Slide 4 • Connected Systems, IoT & ENS Internship",
       title: isFr
-        ? "Tests de Concurrence, Sécurité & Microservices"
-        : "Concurrency, Security & Microservices Testing",
+        ? "Tests IoT, Systèmes Connectés & Stage ENS"
+        : "IoT Testing, Connected Systems & ENS Internship",
       subtitle: isFr
-        ? "Validation de cas complexes : concurrence financière, standard OWASP Top 10 et mode offline"
-        : "Validating complex cases: financial concurrency, OWASP Top 10 and offline synchronization",
+        ? "Validation matériel-logiciel : vision par ordinateur, capteurs et tests d'intégration"
+        : "Hardware-software validation: computer vision, sensors, and integration testing",
       content: (
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1.2rem" }}>
           <div style={{ padding: "1.1rem", background: "var(--bg-card)", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
             <h4 style={{ color: "#0070AD", fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.5rem" }}>
-              Ma'sarat al-Rahma (ERP Commercial)
+              Smart Parking (IoT, Vision & Next.js)
             </h4>
             <ul style={{ paddingLeft: "1.1rem", fontSize: "0.85rem", color: "var(--text-secondary)", display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0 }}>
-              <li><strong>153 tests automatisés / 699 assertions</strong> sans échec.</li>
-              <li><strong>Tests de concurrence financière :</strong> verrous pessimistes en base pour garantir une numérotation des factures sans doublon ni trou.</li>
-              <li><strong>Sécurité des rôles :</strong> matrice de tests RBAC + ABAC + 2FA TOTP.</li>
+              <li><strong>Électronique & Capteurs :</strong> caméras ESP32-CAM et Raspberry Pi exécutant des modèles OpenCV / YOLOv8.</li>
+              <li><strong>Tests d'intégration IoT :</strong> validation des flux WebSockets et MQTT en temps réel (latence &lt; 500 ms).</li>
+              <li><strong>Tests unitaires & E2E :</strong> logique de réservation sous JUnit 5 et parcours de paiement simulés avec Selenium.</li>
+              <li><strong>Résilience réseau :</strong> tests de déconnexion temporaire des caméras sans perte d'état.</li>
             </ul>
             <div style={{ marginTop: "0.8rem" }}>
-              <span className="project-pill project-pill-primary">153 tests passants • 100% intégrité</span>
+              <span className="project-pill project-pill-primary">IoT ESP32 • YOLOv8 • Tests Selenium</span>
             </div>
           </div>
 
           <div style={{ padding: "1.1rem", background: "var(--bg-card)", borderRadius: "10px", border: "1px solid var(--border-subtle)" }}>
             <h4 style={{ color: "#0070AD", fontSize: "0.95rem", fontWeight: 800, marginBottom: "0.5rem" }}>
-              Guidely (Microservices) & MesChèques
+              absENS — Stage de 6 Mois (ENS Marrakech)
             </h4>
             <ul style={{ paddingLeft: "1.1rem", fontSize: "0.85rem", color: "var(--text-secondary)", display: "flex", flexDirection: "column", gap: "0.35rem", margin: 0 }}>
-              <li><strong>Guidely (5 Microservices Docker) :</strong> tests d'API et sécurité selon l'<strong>OWASP Top 10</strong> (injections, JWT, BOLA/IDOR) et registre de 14 risques.</li>
-              <li><strong>MesChèques (Flutter) :</strong> <strong>63 tests automatisés</strong> sur SQLite et stratégie de réconciliation sans perte lors de coupures réseau.</li>
+              <li><strong>Borne IoT & Vision :</strong> module Raspberry Pi avec caméra OpenCV scannant des QR codes rotatifs chiffrés.</li>
+              <li><strong>Tests anti-fraude :</strong> validation de l'impossibilité d'émarger par photo d'écran (durée de validité QR &lt; 3 s).</li>
+              <li><strong>Tests de charge amphi :</strong> émargement de 1 200+ étudiants sans saturation de l'API Laravel / MySQL.</li>
+              <li><strong>Livrable validé :</strong> attestation officielle de stage de 6 mois délivrée par l'ENS Marrakech.</li>
             </ul>
             <div style={{ marginTop: "0.8rem" }}>
-              <span className="project-pill project-pill-primary">OWASP Top 10 • Offline-First</span>
+              <span className="project-pill project-pill-primary">Stage 6 mois validé • Scan &lt; 3s • 0% Fraude</span>
             </div>
           </div>
         </div>
       ),
       pitch: isFr
-        ? "« Sur Ma'sarat al-Rahma, j'ai automatisé 153 tests et 699 assertions avec des tests de concurrence via verrous pessimistes pour garantir une numérotation fiscale sans faille. Sur Guidely, j'ai appliqué les standards OWASP Top 10 sur une architecture de 5 microservices. »"
-        : "“On Ma'sarat al-Rahma ERP, I automated 153 tests and 699 assertions including database concurrency locks for tax compliance. On Guidely, I tested microservices against OWASP Top 10 security standards.”"
+        ? "« Au-delà du logiciel pur, j'ai une vraie expérience du test sur des systèmes physiques et IoT. Sur Smart Parking, j'ai validé la chaîne complète : capteurs ESP32, vision YOLOv8, flux WebSockets et tests E2E Selenium. Et lors de mon stage de 6 mois à l'ENS Marrakech sur le projet absENS, j'ai conçu et testé une borne Raspberry Pi / OpenCV pour sécuriser l'émargement de plus de 1 200 étudiants sans aucune fraude. »"
+        : "“Beyond pure software, I test physical and connected systems. On Smart Parking, I validated the entire loop: ESP32 sensors, YOLOv8 vision, WebSocket streaming, and Selenium E2E booking tests. During my 6-month internship at ENS Marrakech on absENS, I tested an anti-fraud Raspberry Pi/OpenCV station serving 1,200+ students.”"
     },
     {
       num: 5,
