@@ -60,6 +60,16 @@ export function RecruiterBanner({ lang, uiText, personal }) {
         </div>
 
         <div style={{ display: "flex", alignItems: "center", gap: "0.6rem" }}>
+          <a
+            href="/presentations/presentation_capgemini_testing.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-secondary btn-sm"
+            style={{ padding: "0.3rem 0.8rem", fontSize: "0.78rem" }}
+          >
+            <Icon name="document" size={13} />
+            <span>{lang === "fr" ? "Présentation QA (PDF)" : "QA Slides (PDF)"}</span>
+          </a>
           {personal.calendarBookingLink && (
             <a
               href={personal.calendarBookingLink}

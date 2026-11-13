@@ -23,6 +23,7 @@ import { ProjectsPage } from "./pages/ProjectsPage";
 import { SkillsPage } from "./pages/SkillsPage";
 import { ObjectivesPage } from "./pages/ObjectivesPage";
 import { ContactPage } from "./pages/ContactPage";
+import { InterviewPage } from "./pages/InterviewPage";
 
 export default function App() {
   const [lang, setLang] = useState(() => {
@@ -232,6 +233,27 @@ export default function App() {
                 />
               }
             />
+
+            {/* Dedicated QA & Testing Interview Presentation Page (Capgemini) */}
+            <Route
+              path="/entretien"
+              element={
+                <InterviewPage
+                  lang={lang}
+                  personal={portfolioData.personal}
+                />
+              }
+            />
+            <Route
+              path="/interview"
+              element={
+                <InterviewPage
+                  lang={lang}
+                  personal={portfolioData.personal}
+                />
+              }
+            />
+            <Route path="/capgemini" element={<Navigate to="/entretien" replace />} />
 
             {/* Catch-all: redirect any unknown URL back to / */}
             <Route path="*" element={<Navigate to="/" replace />} />

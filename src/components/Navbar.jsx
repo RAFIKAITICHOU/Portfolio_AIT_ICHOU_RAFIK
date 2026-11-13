@@ -40,6 +40,7 @@ export function Navbar({ lang, setLang, theme, toggleTheme, onOpenCv, uiText, pe
     { to: "/experience", label: uiText.nav.experience },
     { to: "/projects", label: uiText.nav.projects },
     { to: "/skills", label: uiText.nav.skills },
+    { to: "/entretien", label: lang === "fr" ? "Entretien QA" : "QA Interview" },
     { to: "/objectives", label: uiText.nav.objectives },
     { to: "/contact", label: uiText.nav.contact }
   ];

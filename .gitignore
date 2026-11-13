@@ -23,3 +23,18 @@ dist-ssr
 *.sln
 *.sw?
 
+# Entretien & Présentations (ignorer uniquement les fichiers auxiliaires de build)
+entretien-capgemini-testing/*.aux
+entretien-capgemini-testing/*.log
+entretien-capgemini-testing/*.nav
+entretien-capgemini-testing/*.out
+entretien-capgemini-testing/*.snm
+entretien-capgemini-testing/*.toc
+entretien-capgemini-testing/*.vrb
+*.aux
+*.nav
+*.out
+*.snm
+*.toc
+*.vrb
+

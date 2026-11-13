@@ -1,0 +1,503 @@
+\documentclass[aspectratio=169, 10pt]{beamer}
+
+% --- Packages fondamentaux ---
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{amssymb}
+\usepackage{tikz}
+\usepackage{xcolor}
+\usepackage{hyperref}
+
+% --- Bibliothèques TikZ ---
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, shadows, fit}
+
+% --- Palette Corporate Capgemini & Assurance Qualité ---
+\definecolor{CapgeminiBlue}{RGB}{0, 112, 173}       % Bleu officiel Capgemini #0070AD
+\definecolor{CapgeminiDark}{RGB}{11, 25, 44}        % Bleu nuit #0B192C
+\definecolor{CapgeminiVibrant}{RGB}{0, 163, 224}    % Cyan dynamique #00A3E0
+\definecolor{TestSuccess}{RGB}{16, 185, 129}        % Vert validation #10B981
+\definecolor{TestWarning}{RGB}{245, 158, 11}        % Orange attention #F59E0B
+\definecolor{CardBg}{RGB}{248, 250, 252}            % Fond carte #F8FAFC
+\definecolor{BorderColor}{RGB}{226, 232, 240}       % Bordure #E2E8F0
+\definecolor{TextPrimary}{RGB}{15, 23, 42}          % Texte foncé #0F172A
+\definecolor{TextSecondary}{RGB}{100, 116, 139}     % Texte gris #64748B
+
+% --- Configuration des marges Beamer standards (pour éviter les débordements) ---
+\setbeamersize{text margin left=0.8cm, text margin right=0.8cm}
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{background canvas}{bg=white}
+\setbeamercolor{normal text}{fg=TextPrimary}
+
+% --- En-tête propre sans débordement ---
+\setbeamertemplate{frametitle}{
+    \vspace*{0.35cm}
+    \begin{minipage}{\textwidth}
+        {\color{CapgeminiBlue}\bfseries\large\insertframetitle}
+        \ifx\insertframesubtitle\@empty\else
+            \\[0.06cm]{\color{TextSecondary}\scriptsize\insertframesubtitle}
+        \fi
+        \\[0.12cm]
+        {\color{CapgeminiBlue}\rule{2.8cm}{1.6pt}}
+    \end{minipage}
+    \vspace*{-0.15cm}
+}
+
+% --- Pied de page ---
+\setbeamertemplate{footline}{
+    \begin{beamercolorbox}[wd=\paperwidth, ht=0.55cm, dp=0.2cm, leftskip=0.8cm, rightskip=0.8cm]{footline}
+        \begin{tikzpicture}[remember picture, overlay]
+            \draw[BorderColor, line width=0.5pt] ($(current page.south west)+(0.8cm,0.55cm)$) -- ($(current page.south east)+(-0.8cm,0.55cm)$);
+            \node[anchor=south west, xshift=0.8cm, yshift=0.15cm] at (current page.south west) {
+                \tiny\color{TextSecondary}\textbf{Rafik AIT ICHOU} \ \textbar\ \ Stage PFE QA \& Test Logiciel \ \textbar\ \ \textbf{Capgemini}
+            };
+            \node[anchor=south east, xshift=-0.8cm, yshift=0.15cm] at (current page.south east) {
+                \tiny\color{CapgeminiBlue}\textbf{\insertframenumber} \color{TextSecondary}/ \inserttotalframenumber
+            };
+        \end{tikzpicture}
+    \end{beamercolorbox}
+}
+
+% --- Style de boîte carte ---
+\tikzset{
+    card/.style={
+        rectangle, rounded corners=5pt, draw=BorderColor, fill=CardBg,
+        inner sep=6pt, text=TextPrimary
+    },
+    chip/.style={
+        rectangle, rounded corners=3pt, fill=CapgeminiBlue!10, draw=CapgeminiBlue!40,
+        inner sep=3pt, font=\scriptsize\bfseries, text=CapgeminiBlue
+    }
+}
+
+% ==============================================================================
+% DÉBUT DU DOCUMENT
+% ==============================================================================
+\begin{document}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 1 : Titre & Introduction
+% ------------------------------------------------------------------------------
+\begin{frame}[plain]
+    \begin{tikzpicture}[remember picture, overlay]
+        % Fond sombre exécutif
+        \fill[CapgeminiDark] (current page.north west) rectangle (current page.south east);
+        
+        % Cercles décoratifs Capgemini
+        \fill[CapgeminiBlue, opacity=0.85] ($(current page.north east)+(-2.8cm, 0.5cm)$) circle (4cm);
+        \fill[CapgeminiVibrant, opacity=0.35] ($(current page.south east)+(-1.2cm, -0.5cm)$) circle (3cm);
+
+        % Contenu centré verticalement
+        \node[anchor=west, xshift=1cm, yshift=0.1cm] at (current page.west) {
+            \begin{minipage}{0.78\paperwidth}
+                % Badge haut
+                \begin{tikzpicture}
+                    \node[rectangle, rounded corners=3pt, fill=CapgeminiVibrant!20, draw=CapgeminiVibrant, text=white, inner sep=4pt] {
+                        \scriptsize\bfseries CANDIDATURE STAGE DE FIN D'ÉTUDES (PFE 2027) \textbullet\ CAPGEMINI
+                    };
+                \end{tikzpicture}
+                \vspace{0.35cm}
+                
+                % Titre principal
+                {\fontsize{20}{24}\selectfont \color{white}\bfseries Ingénierie QA, Automatisation\\[0.1cm] des Tests \& Pratiques Scrum}\\[0.3cm]
+                {\fontsize{10.5}{13}\selectfont \color{CapgeminiVibrant}\textbf{Assurer la qualité, la fiabilité et la sécurité des logiciels critiques}}\\[0.45cm]
+                
+                % Barre de séparation
+                {\color{CapgeminiVibrant}\rule{4cm}{1.8pt}}\\[0.35cm]
+                
+                % Profil candidat
+                {\large\color{white}\textbf{Rafik AIT ICHOU}}\\[0.08cm]
+                {\small\color{gray!30} Élève-Ingénieur en Informatique \& Réseaux — \textbf{EMSI Marrakech}}\\[0.06cm]
+                {\scriptsize\color{gray!40} Disponible pour stage de 6 mois dès le \textbf{25 Janvier 2027} \textbullet\ Mobilité : Casablanca, Rabat, International}
+                \vspace{0.45cm}
+
+                % Boîte métriques clés (Fond foncé, texte clair et lisible)
+                \begin{tikzpicture}
+                    \node[rectangle, rounded corners=4pt, fill=white!12, draw=CapgeminiVibrant!50, inner sep=5pt] {
+                        \footnotesize\color{white}
+                        \textbf{380+} Tests Automatisés \ \textbar\ \ 
+                        \textbf{86.8\%} Couverture SonarQube (OCP Safi) \ \textbar\ \ 
+                        \textbf{Scrum \& ISTQB} Mindset
+                    };
+                \end{tikzpicture}
+            \end{minipage}
+        };
+    \end{tikzpicture}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 2 : Philosophie QA & Pyramide des Tests
+% ------------------------------------------------------------------------------
+\begin{frame}{Philosophie QA \& Stratégie de Test}{Approche Shift-Left : tester tôt pour corriger vite et à moindre coût}
+    \begin{columns}[c]
+        % Colonne Gauche : Schéma TikZ Pyramide bien proportionnée
+        \begin{column}{0.48\textwidth}
+            \centering
+            \begin{tikzpicture}[scale=0.82]
+                % Étage 3 (Sommet) : Tests E2E & Sécurité
+                \draw[fill=CapgeminiDark, draw=CapgeminiDark] (-1.0, 2.7) -- (1.0, 2.7) -- (0, 3.8) -- cycle;
+                \node at (0, 3.15) {\color{white}\bfseries\scriptsize Tests E2E \& Sécurité};
+                \node at (0, 2.85) {\color{CapgeminiVibrant}\fontsize{5.5}{6.5}\selectfont Selenium \textbullet\ OWASP \textbullet\ JMeter};
+
+                % Étage 2 (Milieu) : Tests d'Intégration & API
+                \draw[fill=CapgeminiBlue, draw=CapgeminiBlue] (-1.9, 1.4) -- (1.9, 1.4) -- (1.05, 2.65) -- (-1.05, 2.65) -- cycle;
+                \node at (0, 2.1) {\color{white}\bfseries\scriptsize Tests d'Intégration \& API};
+                \node at (0, 1.65) {\color{white!90}\fontsize{5.8}{7}\selectfont Postman \textbullet\ Spring Boot Test \textbullet\ SQL};
+
+                % Étage 1 (Base) : Tests Unitaires
+                \draw[fill=TestSuccess, draw=TestSuccess] (-2.7, 0.0) -- (2.7, 0.0) -- (1.95, 1.35) -- (-1.95, 1.35) -- cycle;
+                \node at (0, 0.8) {\color{white}\bfseries\small Tests Unitaires \& Mocking};
+                \node at (0, 0.35) {\color{white!95}\fontsize{6}{7}\selectfont JUnit 5 \textbullet\ Mockito \textbullet\ Pest (86.8\% couverture)};
+
+                % Flèche gauche : Coût
+                \draw[-{Stealth[length=2mm]}, thick, CapgeminiBlue] (-3.1, 0.1) -- (-3.1, 3.6)
+                    node[midway, left=1pt, rotate=90, font=\tiny\bfseries, color=CapgeminiBlue] {Coût et Temps de test};
+                
+                % Flèche droite : Vélocité
+                \draw[-{Stealth[length=2mm]}, thick, TestSuccess] (3.1, 3.6) -- (3.1, 0.1)
+                    node[midway, right=1pt, rotate=-90, font=\tiny\bfseries, color=TestSuccess] {Rapidité et Fréquence};
+            \end{tikzpicture}
+        \end{column}
+
+        % Colonne Droite : Explications simples et claires
+        \begin{column}{0.52\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.94\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\footnotesize 1. Le principe du Shift-Left}
+                    \vspace{0.08cm}
+                    \begin{itemize}\setlength{\itemsep}{2pt}\scriptsize
+                        \item Définir les tests \textbf{dès la rédaction des User Stories}.
+                        \item Automatiser pendant le sprint, pas à la fin du projet.
+                        \item Corriger les défauts immédiatement quand c'est simple.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+            \vspace{0.15cm}
+
+            \begin{tikzpicture}
+                \node[card, text width=0.94\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\footnotesize 2. Les règles de qualité appliquées}
+                    \vspace{0.08cm}
+                    \begin{itemize}\setlength{\itemsep}{2pt}\scriptsize
+                        \item \textbf{Priorité par le risque} : tester d'abord les flux critiques.
+                        \item \textbf{Non-régression} : tests rejoués à chaque modification.
+                        \item \textbf{Quality Gate} : aucun code déployé sans validation SonarQube.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 3 : Projet Phare — Smart HSE 360 (OCP Safi)
+% ------------------------------------------------------------------------------
+\begin{frame}{Projet Phare : Smart HSE 360 (OCP Safi)}{Plateforme industrielle de gestion des incidents HSE \textbullet\ Automatisation \& Quality Gate}
+    \begin{columns}[c]
+        % Colonne Gauche : Rôle et réalisations concrètes
+        \begin{column}{0.50\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.94\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\small Mon Rôle \& Actions QA :}
+                    \vspace{0.1cm}
+                    \begin{itemize}\setlength{\itemsep}{3pt}\scriptsize
+                        \item \textbf{Plan de test complet} : Validation de l'API Spring Boot, du web Angular et de l'app mobile Flutter.
+                        \item \textbf{164 Tests Unitaires (JUnit 5, Mockito)} : Vérification des calculs de gravité et des règles de notification.
+                        \item \textbf{58 Tests E2E (Selenium WebDriver)} : Parcours complet de la déclaration d'incident à sa clôture.
+                        \item \textbf{Quality Gate SonarQube} : 0 bug bloquant, 0 faille de sécurité, couverture validée à \textbf{86.8\%}.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+            \vspace{0.15cm}
+
+            \begin{tikzpicture}
+                \node[card, fill=TestSuccess!8, draw=TestSuccess!40, text width=0.94\linewidth] {
+                    \centering
+                    \scriptsize
+                    \textbf{\color{TestSuccess}Résultat mesurable :} 222 tests passants en intégration continue\\
+                    \textbf{Attestation officielle de satisfaction délivrée par l'OCP Safi}.
+                };
+            \end{tikzpicture}
+        \end{column}
+
+        % Colonne Droite : Pipeline CI/CD simple et clair
+        \begin{column}{0.50\textwidth}
+            \centering
+            {\footnotesize\textbf{\color{CapgeminiDark}Pipeline de Validation Déployé}}\\[0.15cm]
+            \begin{tikzpicture}[
+                node distance=0.28cm,
+                pipe/.style={rectangle, rounded corners=3pt, draw=BorderColor, fill=white, minimum width=4.8cm, minimum height=0.48cm, font=\scriptsize, align=center}
+            ]
+                \node[pipe, fill=gray!8] (p1) {\textbf{1. Git Push / PR} \color{TextSecondary}(Branche de travail)};
+                \node[pipe, below=of p1, fill=CapgeminiBlue!8, draw=CapgeminiBlue!30] (p2) {\textbf{2. Build Maven} \color{CapgeminiBlue}(Compilation et Lint)};
+                \node[pipe, below=of p2, fill=TestSuccess!12, draw=TestSuccess!40] (p3) {\textbf{3. Tests Unitaires} \color{TextPrimary}(164 tests JUnit 5 / Mockito)};
+                \node[pipe, below=of p3, fill=CapgeminiVibrant!12, draw=CapgeminiVibrant!40] (p4) {\textbf{4. Tests E2E Selenium} \color{TextPrimary}(58 scénarios d'usage)};
+                \node[pipe, below=of p4, fill=TestWarning!15, draw=TestWarning!50] (p5) {\textbf{5. SonarQube Gate} \color{TextPrimary}(Couverture $\ge 85\%$)};
+                \node[pipe, below=of p5, fill=CapgeminiDark, draw=CapgeminiDark] (p6) {\color{white}\textbf{6. Déploiement Docker Staging}};
+
+                \draw[-{Stealth[length=1.8mm]}, thick, CapgeminiBlue] (p1) -- (p2);
+                \draw[-{Stealth[length=1.8mm]}, thick, CapgeminiBlue] (p2) -- (p3);
+                \draw[-{Stealth[length=1.8mm]}, thick, TestSuccess] (p3) -- (p4);
+                \draw[-{Stealth[length=1.8mm]}, thick, CapgeminiVibrant] (p4) -- (p5);
+                \draw[-{Stealth[length=1.8mm]}, thick, TestWarning] (p5) -- (p6);
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 4 : Autres Projets — Concurrence, Sécurité & Microservices
+% ------------------------------------------------------------------------------
+\begin{frame}{Tests Transactionnels, Sécurité \& Microservices}{Cas concrets : intégrité financière, sécurité OWASP et persistance locale}
+    \begin{columns}[c]
+        % Carte Projet 1 : Ma'sarat al-Rahma
+        \begin{column}{0.49\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.94\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\small Ma'sarat al-Rahma (ERP Commercial)}
+                    \vspace{0.08cm}
+                    \begin{itemize}\setlength{\itemsep}{2pt}\scriptsize
+                        \item \textbf{153 tests automatisés / 699 assertions} (Pest / PHPUnit).
+                        \item \textbf{Tests de concurrence financière} : utilisation de verrous en base pour éviter les doublons ou sauts de numéro sur les factures.
+                        \item \textbf{Tests de droits d'accès} : contrôle strict des rôles (RBAC/ABAC) et double authentification (2FA TOTP).
+                    \end{itemize}
+                    \vspace{0.05cm}
+                    \centering
+                    \tikz{\node[chip, fill=TestSuccess!10, text=TestSuccess, draw=TestSuccess!30]{153 tests passants \textbullet\ 100\% intégrité fiscale};}
+                };
+            \end{tikzpicture}
+        \end{column}
+
+        % Carte Projet 2 : Guidely & MesChèques
+        \begin{column}{0.49\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.94\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\small Guidely (Microservices) \& MesChèques}
+                    \vspace{0.08cm}
+                    \begin{itemize}\setlength{\itemsep}{2pt}\scriptsize
+                        \item \textbf{Guidely (5 Microservices Docker)} :
+                        \begin{itemize}\scriptsize
+                            \item Projet mené en équipe selon le cadre Scrum (8 semaines).
+                            \item Tests de sécurité des API selon le standard \textbf{OWASP Top 10} (tokens JWT, validation des entrées).
+                        \end{itemize}
+                        \item \textbf{MesChèques (Flutter Offline-First)} :
+                        \begin{itemize}\scriptsize
+                            \item \textbf{63 tests automatisés} sur base SQLite locale.
+                            \item Gestion des synchronisations pour ne perdre aucune donnée lors des coupures réseau.
+                        \end{itemize}
+                    \end{itemize}
+                    \vspace{0.05cm}
+                    \centering
+                    \tikz{\node[chip, fill=CapgeminiBlue!10, text=CapgeminiBlue, draw=CapgeminiBlue!30]{OWASP Top 10 \textbullet\ Tests d'API REST \textbullet\ SQLite};}
+                };
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 5 : La QA au Cœur de l'Agilité Scrum
+% ------------------------------------------------------------------------------
+\begin{frame}{La QA au Cœur de l'Agilité Scrum}{Le rôle actif du testeur dans chaque étape du sprint}
+    \centering
+    \begin{tikzpicture}[
+        scale=0.88,
+        stepbox/.style={rectangle, rounded corners=5pt, draw=BorderColor, fill=white, minimum width=3.3cm, minimum height=3.3cm, inner sep=5pt}
+    ]
+        % Étape 1 : Planning
+        \node[stepbox] (s1) at (0,0) {
+            \begin{minipage}{3.1cm}
+                \centering
+                {\color{CapgeminiBlue}\textbf{\footnotesize 1. Sprint Planning}}\\[0.1cm]
+                \begin{itemize}\setlength{\itemsep}{1pt}\tiny\raggedright
+                    \item Écrire les critères d'acceptation (\textit{Given-When-Then}).
+                    \item Estimer l'effort de test avec les développeurs.
+                    \item Vérifier la \textbf{Definition of Ready (DoR)}.
+                \end{itemize}
+            \end{minipage}
+        };
+
+        % Étape 2 : Développement & Test
+        \node[stepbox, right=0.35cm of s1] (s2) {
+            \begin{minipage}{3.1cm}
+                \centering
+                {\color{CapgeminiBlue}\textbf{\footnotesize 2. En Cours de Sprint}}\\[0.1cm]
+                \begin{itemize}\setlength{\itemsep}{1pt}\tiny\raggedright
+                    \item Écrire les tests unitaires et d'API en parallèle du dev.
+                    \item Tester les endpoints dès qu'ils sont prêts (Postman).
+                    \item Partager les points de blocage au \textbf{Daily Scrum}.
+                \end{itemize}
+            \end{minipage}
+        };
+
+        % Étape 3 : Review & DoD
+        \node[stepbox, right=0.35cm of s2] (s3) {
+            \begin{minipage}{3.1cm}
+                \centering
+                {\color{TestSuccess}\textbf{\footnotesize 3. Sprint Review \& DoD}}\\[0.1cm]
+                \begin{itemize}\setlength{\itemsep}{1pt}\tiny\raggedright
+                    \item Vérifier la \textbf{Definition of Done (DoD)} :
+                    \begin{itemize}\tiny
+                        \item Tests unitaires passants à 100\%.
+                        \item Couverture $\ge 80\%$.
+                        \item Zéro anomalie bloquante.
+                    \end{itemize}
+                    \item Valider la démonstration client.
+                \end{itemize}
+            \end{minipage}
+        };
+
+        % Étape 4 : Rétrospective
+        \node[stepbox, right=0.35cm of s3] (s4) {
+            \begin{minipage}{3.1cm}
+                \centering
+                {\color{TestWarning}\textbf{\footnotesize 4. Rétrospective}}\\[0.1cm]
+                \begin{itemize}\setlength{\itemsep}{1pt}\tiny\raggedright
+                    \item Analyser les bugs trouvés pour comprendre leur cause.
+                    \item Améliorer la suite de non-régression.
+                    \item Optimiser le temps d'exécution des tests.
+                \end{itemize}
+            \end{minipage}
+        };
+
+        % Flèches de flux
+        \draw[-{Stealth[length=2mm]}, line width=1.3pt, CapgeminiBlue] (s1.east) -- (s2.west);
+        \draw[-{Stealth[length=2mm]}, line width=1.3pt, CapgeminiBlue] (s2.east) -- (s3.west);
+        \draw[-{Stealth[length=2mm]}, line width=1.3pt, TestSuccess] (s3.east) -- (s4.west);
+        \draw[-{Stealth[length=2mm]}, dashed, line width=1pt, TextSecondary] 
+            ($(s4.south)+(0,0.2)$) -- ++(0,-0.3) -| ($(s1.south)+(0,0.2)$)
+            node[pos=0.25, below, font=\tiny\bfseries, color=TextSecondary] {Amélioration Continue};
+    \end{tikzpicture}
+    
+    \vspace{0.2cm}
+    \begin{tikzpicture}
+        \node[card, fill=CapgeminiBlue!5, draw=CapgeminiBlue!20, text width=0.96\linewidth] {
+            \scriptsize
+            \textbf{\color{CapgeminiBlue}Expérience Scrum (Président Club E-TEAM ENS) :} Animation des rituels agiles, coordination d'équipes de projets et culture du résultat testé et validé.
+        };
+    \end{tikzpicture}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 6 : Boîte à Outils QA & Stack Technologique
+% ------------------------------------------------------------------------------
+\begin{frame}{Boîte à Outils QA \& Stack Technologique}{Maîtrise pratique des outils de test et d'automatisation}
+    \begin{columns}[c]
+        % Quadrant 1 : Tests Fonctionnels & Qualité
+        \begin{column}{0.49\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.93\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\footnotesize $\blacktriangleright$ Tests Fonctionnels \& API}
+                    \vspace{0.06cm}
+                    \begin{itemize}\setlength{\itemsep}{1.5pt}\scriptsize
+                        \item \textbf{Selenium WebDriver} : Automatisation web (Page Object Model).
+                        \item \textbf{Postman \& Newman} : Tests d'API REST et validation des réponses HTTP.
+                        \item \textbf{Apache JMeter} : Tests de charge et mesure des temps de réponse.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+            \vspace{0.12cm}
+
+            \begin{tikzpicture}
+                \node[card, text width=0.93\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\footnotesize $\blacktriangleright$ Qualité de Code \& Analyse}
+                    \vspace{0.06cm}
+                    \begin{itemize}\setlength{\itemsep}{1.5pt}\scriptsize
+                        \item \textbf{SonarQube} : Détection des bugs, failles de sécurité et code smells.
+                        \item \textbf{JaCoCo} : Mesure exacte du taux de couverture de code.
+                        \item \textbf{Clean Code} : Refactoring sûr et sans régression.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+        \end{column}
+
+        % Quadrant 2 : Tests Unitaires & CI/CD
+        \begin{column}{0.49\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.93\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\footnotesize $\blacktriangleright$ Tests Unitaires \& Mocking}
+                    \vspace{0.06cm}
+                    \begin{itemize}\setlength{\itemsep}{1.5pt}\scriptsize
+                        \item \textbf{JUnit 5 / AssertJ} : Tests unitaires, assertions claires et complètes.
+                        \item \textbf{Mockito} : Isolation des composants par simulation des dépendances.
+                        \item \textbf{Pest / PHPUnit} : Tests rapides de logique métier.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+            \vspace{0.12cm}
+
+            \begin{tikzpicture}
+                \node[card, text width=0.93\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\footnotesize $\blacktriangleright$ Intégration Continue \& Environnement}
+                    \vspace{0.06cm}
+                    \begin{itemize}\setlength{\itemsep}{1.5pt}\scriptsize
+                        \item \textbf{GitHub Actions} : Exécution automatique des tests à chaque PR.
+                        \item \textbf{Docker} : Environnements de test identiques et reproductibles.
+                        \item \textbf{Maven \& Git} : Gestion propre des dépendances et versions.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+% ------------------------------------------------------------------------------
+% DIAPOSITIVE 7 : Pourquoi Rafik chez Capgemini ?
+% ------------------------------------------------------------------------------
+\begin{frame}{Pourquoi Capgemini \& Quelle Valeur Immédiate ?}{Motivation, rigueur technique et disponibilité pour le stage PFE}
+    \begin{columns}[c]
+        % Colonne 1 : Atouts pour Capgemini
+        \begin{column}{0.58\textwidth}
+            \begin{tikzpicture}
+                \node[card, text width=0.95\linewidth] {
+                    \textbf{\color{CapgeminiBlue}\small Ce que j'apporte à vos équipes :}
+                    \vspace{0.12cm}
+                    \begin{itemize}\setlength{\itemsep}{3.5pt}\scriptsize
+                        \item \textbf{Double compétence Dév \& Test} : Capacité à lire et comprendre le code pour écrire des tests unitaires et d'API pertinents.
+                        \item \textbf{Rigueur éprouvée sur le terrain} : Expérience réussie en milieu industriel chez OCP Safi (222 tests, SonarQube à 86.8\%).
+                        \item \textbf{Pratique agile naturelle} : Habitué aux rituels Scrum, à la communication claire et au travail d'équipe.
+                        \item \textbf{Motivation forte pour la QA} : Envie d'apprendre des méthodologies de la Testing Factory de Capgemini.
+                    \end{itemize}
+                };
+            \end{tikzpicture}
+        \end{column}
+
+        % Colonne 2 : Modalités pratiques & Contact
+        \begin{column}{0.42\textwidth}
+            \begin{tikzpicture}
+                \node[card, fill=CapgeminiBlue!6, draw=CapgeminiBlue!30, text width=0.92\linewidth] {
+                    \centering
+                    \textbf{\color{CapgeminiBlue}\normalsize Stage PFE 2027}\\[0.1cm]
+                    \scriptsize
+                    \textbf{Durée :} 6 mois (Plein temps)\\[0.05cm]
+                    \textbf{Démarrage :} \textbf{25 Janvier 2027}\\[0.05cm]
+                    \textbf{Mobilité :} Casablanca, Rabat, International\\[0.1cm]
+                    {\color{CapgeminiBlue!40}\rule{2.5cm}{0.5pt}}\\[0.1cm]
+                    \textbf{École :} EMSI Marrakech\\[0.05cm]
+                    \textbf{Profil :} Ingénieur QA / Testeur Logiciel
+                };
+            \end{tikzpicture}
+            \vspace{0.15cm}
+
+            \begin{tikzpicture}
+                \node[card, text width=0.92\linewidth] {
+                    \centering
+                    \textbf{\scriptsize Rafik AIT ICHOU}\\[0.04cm]
+                    \tiny\color{TextSecondary}
+                    \href{mailto:rafikaitichou@gmail.com}{rafikaitichou@gmail.com} \ \textbullet\ \ +212 600-607637\\[0.04cm]
+                    \href{https://aitichou.com}{aitichou.com} \ \textbullet\ \ \href{https://linkedin.com/in/rafik-ait-ichou}{linkedin.com/in/rafik-ait-ichou}
+                };
+            \end{tikzpicture}
+        \end{column}
+    \end{columns}
+
+    \vspace{0.25cm}
+    \centering
+    {\small\color{CapgeminiBlue}\bfseries Merci pour votre attention — Je suis ravi d'échanger avec vous !}
+\end{frame}
+
+\end{document}
