@@ -236,11 +236,40 @@ export function Icon({ name, size = 20, className = "", style = {}, ...props }) 
           <polyline points="5 12 12 5 19 12" />
         </svg>
       );
+    case "arrow-left":
+    case "chevron-left":
+      return (
+        <svg {...common}>
+          <path d="m15 18-6-6 6-6" />
+        </svg>
+      );
     case "arrow-right":
     case "chevron-right":
       return (
         <svg {...common}>
           <path d="m9 18 6-6-6-6" />
+        </svg>
+      );
+    case "maximize":
+      return (
+        <svg {...common}>
+          <path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3" />
+        </svg>
+      );
+    case "minimize":
+      return (
+        <svg {...common}>
+          <path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3" />
+        </svg>
+      );
+    case "file-text":
+      return (
+        <svg {...common}>
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="16" y1="13" x2="8" y2="13" />
+          <line x1="16" y1="17" x2="8" y2="17" />
+          <polyline points="10 9 9 9 8 9" />
         </svg>
       );
     case "chevron-down":

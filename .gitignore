@@ -37,4 +37,6 @@ entretien-capgemini-testing/*.vrb
 *.snm
 *.toc
 *.vrb
+__pycache__/
+*.pyc
 

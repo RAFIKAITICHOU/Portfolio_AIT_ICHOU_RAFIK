@@ -911,6 +911,12 @@ h1, h2, h3, .section-title {
   background: var(--accent-primary);
 }
 
+@media (max-width: 640px) {
+  .hide-on-mobile {
+    display: none !important;
+  }
+}
+
 /* Accessibility: Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
