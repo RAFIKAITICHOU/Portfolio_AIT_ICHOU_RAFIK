@@ -22,8 +22,8 @@ export function CertificationsPage({ lang, uiText, certifications }) {
         }
         description={
           isFr
-            ? "Certifications vérifiées : IBM Cloud, Google Agile Project Management, Data Science & Machine Learning, Cognitive Class, UC San Diego."
-            : "Verified certifications: IBM Cloud, Google Agile Project Management, Data Science & Machine Learning, Cognitive Class, UC San Diego."
+            ? "Certifications vérifiées : Azure DevOps & Agile, IBM Cloud, Google Agile Project Management, Data Science & Machine Learning, Cognitive Class, UC San Diego."
+            : "Verified certifications: Azure DevOps & Agile, IBM Cloud, Google Agile Project Management, Data Science & Machine Learning, Cognitive Class, UC San Diego."
         }
         path="/certifications"
         lang={lang}

@@ -107,14 +107,14 @@ export const portfolioData = {
       }
     },
     {
-      value: "12+",
+      value: "13+",
       label: {
         fr: "Certifications",
         en: "Certifications"
       },
       sub: {
-        fr: "Accréditations vérifiables en Cloud, Data Science & Deep Learning",
-        en: "Verified credentials in Cloud, Data Science & Deep Learning"
+        fr: "Accréditations vérifiables en Cloud, DevOps, Agile & Data",
+        en: "Verified credentials in Cloud, DevOps, Agile & Data"
       }
     }
   ],
@@ -824,6 +824,8 @@ export const portfolioData = {
         { name: "SonarQube & Clean Code", level: "Maîtrisé", usedIn: "86.8% de couverture validée à l'OCP" },
         { name: "JUnit 5 & Mockito", level: "Maîtrisé", usedIn: "164 tests unitaires industriels" },
         { name: "Selenium WebDriver", level: "Maîtrisé", usedIn: "58 tests E2E automatisés" },
+        { name: "Azure DevOps (Pipelines, Boards, Repos)", level: "Maîtrisé", usedIn: "Certifié Coursera LearnKartS & CI/CD" },
+        { name: "Gestion de Projet Agile & Scrum", level: "Maîtrisé", usedIn: "Certifié Coursera & Google, Présidence E-TEAM" },
         { name: "Docker & Conteneurisation", level: "Pratiqué", usedIn: "Déploiement MinIO & PostgreSQL" },
         { name: "Git, GitHub & CI/CD", level: "Maîtrisé", usedIn: "Gestion de versions & pipelines" }
       ]
@@ -1047,7 +1049,24 @@ export const portfolioData = {
       }
     },
 
-    // Coursera (Google & UC San Diego)
+    // Coursera (Google, LearnKartS & UC San Diego)
+    {
+      id: "azure-devops-agile-pm",
+      title: "Azure DevOps Fundamentals & Agile Project Management",
+      issuer: "LearnKartS / Coursera",
+      org: "coursera",
+      date: "2026",
+      url: "https://coursera.org/share/25bd6e4e3f3abbaa7461518ce23040cf",
+      verifyUrl: "https://coursera.org/verify/09MQ4YS3B95D",
+      credentialId: "09MQ4YS3B95D",
+      pdfUrl: "/certificates/Coursera-Azure-DevOps-09MQ4YS3B95D.pdf",
+      icon: "azure",
+      category: "DevOps & Agile",
+      description: {
+        fr: "Fondamentaux d'Azure DevOps (Boards, Repos, Pipelines CI/CD, Test Plans, Artifacts), gestion de projet Agile, framework Scrum, planification de sprints et cycle de vie logiciel.",
+        en: "Azure DevOps fundamentals (Boards, Repos, CI/CD Pipelines, Test Plans, Artifacts), Agile project management, Scrum framework, sprint planning, and software lifecycle."
+      }
+    },
     {
       id: "google-agile-pm",
       title: "Google – Agile Project Management",
@@ -1270,14 +1289,14 @@ export const portfolioData = {
       certifications: {
         badge: "Accréditations",
         title: "Certifications Officielles",
-        subtitle: "12 certifications vérifiées auprès d'IBM, Google, Cognitive Class, UC San Diego et Dubai Future Foundation",
+        subtitle: "13 certifications vérifiées auprès d'IBM, Google, Coursera, Cognitive Class, UC San Diego et Dubai Future Foundation",
         verifyCredential: "Vérifier l'accréditation",
-        filterAll: "Toutes (12)",
+        filterAll: "Toutes (13)",
         filterIbm: "IBM (6)",
         filterCognitive: "Cognitive Class (3)",
-        filterCoursera: "Google & Coursera (2)",
+        filterCoursera: "Coursera & Google (3)",
         filterOther: "Autres & Innovation (1)",
-        searchPlaceholder: "Rechercher une certification (Docker, Python, Cloud, Big Data...)...",
+        searchPlaceholder: "Rechercher une certification (Azure, DevOps, Docker, Python, Cloud...)...",
         noResults: "Aucune certification trouvée pour cette recherche."
       },
       objectives: {
@@ -1418,14 +1437,14 @@ export const portfolioData = {
       certifications: {
         badge: "Official Credentials",
         title: "Professional Certifications",
-        subtitle: "12 verified credentials through IBM, Google, Cognitive Class, UC San Diego, and Dubai Future Foundation",
+        subtitle: "13 verified credentials through IBM, Google, Coursera, Cognitive Class, UC San Diego, and Dubai Future Foundation",
         verifyCredential: "Verify Credential",
-        filterAll: "All (12)",
+        filterAll: "All (13)",
         filterIbm: "IBM (6)",
         filterCognitive: "Cognitive Class (3)",
-        filterCoursera: "Google & Coursera (2)",
+        filterCoursera: "Coursera & Google (3)",
         filterOther: "Other & Innovation (1)",
-        searchPlaceholder: "Search certification (Docker, Python, Cloud, Big Data...)...",
+        searchPlaceholder: "Search certification (Azure, DevOps, Docker, Python, Cloud...)...",
         noResults: "No certifications found matching your search."
       },
       objectives: {
