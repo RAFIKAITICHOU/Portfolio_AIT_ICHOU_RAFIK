@@ -22,8 +22,8 @@ export function CertificationsPage({ lang, uiText, certifications }) {
         }
         description={
           isFr
-            ? "Certifications vérifiées : Microsoft Automation & AI Testing, Azure DevOps & Agile, IBM Cloud, Google Agile Project Management, Data Science & Machine Learning, Cognitive Class, UC San Diego."
-            : "Verified certifications: Microsoft Automation & AI Testing, Azure DevOps & Agile, IBM Cloud, Google Agile Project Management, Data Science & Machine Learning, Cognitive Class, UC San Diego."
+            ? "Certifications vérifiées : Spécialisation AZ-400 DevOps, Microsoft Automation & AI Testing, Azure DevOps, IBM Cloud, Google Agile Project Management, Data Science & Machine Learning."
+            : "Verified certifications: AZ-400 DevOps Specialization, Microsoft Automation & AI Testing, Azure DevOps, IBM Cloud, Google Agile Project Management, Data Science & Machine Learning."
         }
         path="/certifications"
         lang={lang}

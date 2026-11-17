@@ -107,14 +107,14 @@ export const portfolioData = {
       }
     },
     {
-      value: "14+",
+      value: "15+",
       label: {
         fr: "Certifications",
         en: "Certifications"
       },
       sub: {
-        fr: "Accréditations vérifiables en Test Logiciel, IA, DevOps & Cloud",
-        en: "Verified credentials in Software Testing, AI, DevOps & Cloud"
+        fr: "Accréditations vérifiables en DevOps AZ-400, Testing, IA & Cloud",
+        en: "Verified credentials in AZ-400 DevOps, Testing, AI & Cloud"
       }
     }
   ],
@@ -822,12 +822,12 @@ export const portfolioData = {
       },
       skills: [
         { name: "Automation, Advanced Testing & AI", level: "Maîtrisé", usedIn: "Certifié Microsoft / Coursera (2026)" },
+        { name: "AZ-400 : Azure DevOps & CI/CD Pipelines", level: "Maîtrisé", usedIn: "Certifié Spécialisation Coursera (6 cours)" },
         { name: "SonarQube & Clean Code", level: "Maîtrisé", usedIn: "86.8% de couverture validée à l'OCP" },
         { name: "JUnit 5 & Mockito", level: "Maîtrisé", usedIn: "164 tests unitaires industriels" },
         { name: "Selenium WebDriver", level: "Maîtrisé", usedIn: "58 tests E2E automatisés" },
-        { name: "Azure DevOps (Pipelines, Boards, Repos)", level: "Maîtrisé", usedIn: "Certifié Coursera LearnKartS & CI/CD" },
+        { name: "Conteneurisation, AKS & IaC", level: "Pratiqué", usedIn: "Parcours AZ-400, Docker & Kubernetes" },
         { name: "Gestion de Projet Agile & Scrum", level: "Maîtrisé", usedIn: "Certifié Coursera & Google, Présidence E-TEAM" },
-        { name: "Docker & Conteneurisation", level: "Pratiqué", usedIn: "Déploiement MinIO & PostgreSQL" },
         { name: "Git, GitHub & CI/CD", level: "Maîtrisé", usedIn: "Gestion de versions & pipelines" }
       ]
     },
@@ -1069,6 +1069,23 @@ export const portfolioData = {
       }
     },
     {
+      id: "az-400-devops-specialization",
+      title: "Spécialisation AZ-400 : DevOps Engineer Preparation",
+      issuer: "LearnKartS / Coursera",
+      org: "coursera",
+      date: "2026",
+      url: "https://www.coursera.org/account/accomplishments/specialization/7O2HVEQ03GRD",
+      verifyUrl: "https://coursera.org/verify/specialization/7O2HVEQ03GRD",
+      credentialId: "7O2HVEQ03GRD",
+      pdfUrl: "/certificates/Coursera-AZ-400-Specialization-7O2HVEQ03GRD.pdf",
+      icon: "azure",
+      category: "DevOps & Cloud",
+      description: {
+        fr: "Spécialisation complète de 6 cours couvrant le parcours AZ-400 : Azure Pipelines (CI/CD), Azure Repos & Git, DevSecOps (conformité & secrets), Infrastructure as Code (IaC), conteneurs, Azure Kubernetes Service (AKS) et monitoring.",
+        en: "Comprehensive 6-course specialization aligned with AZ-400: Azure Pipelines (CI/CD), Azure Repos & Git, DevSecOps (security & secrets), Infrastructure as Code (IaC), containers, Azure Kubernetes Service (AKS), and monitoring."
+      }
+    },
+    {
       id: "azure-devops-agile-pm",
       title: "Azure DevOps Fundamentals & Agile Project Management",
       issuer: "LearnKartS / Coursera",
@@ -1307,14 +1324,14 @@ export const portfolioData = {
       certifications: {
         badge: "Accréditations",
         title: "Certifications Officielles",
-        subtitle: "14 certifications vérifiées auprès de Microsoft, IBM, Google, Coursera, Cognitive Class, UC San Diego et Dubai Future Foundation",
+        subtitle: "15 certifications vérifiées auprès de Microsoft, IBM, Google, Coursera, Cognitive Class, UC San Diego et Dubai Future Foundation",
         verifyCredential: "Vérifier l'accréditation",
-        filterAll: "Toutes (14)",
+        filterAll: "Toutes (15)",
         filterIbm: "IBM (6)",
         filterCognitive: "Cognitive Class (3)",
-        filterCoursera: "Microsoft, Google & Coursera (4)",
+        filterCoursera: "Microsoft, Google & Coursera (5)",
         filterOther: "Autres & Innovation (1)",
-        searchPlaceholder: "Rechercher une certification (Microsoft, Testing, Azure, DevOps, Docker...)...",
+        searchPlaceholder: "Rechercher une certification (AZ-400, Microsoft, Testing, Azure, DevOps, Docker...)...",
         noResults: "Aucune certification trouvée pour cette recherche."
       },
       objectives: {
@@ -1455,14 +1472,14 @@ export const portfolioData = {
       certifications: {
         badge: "Official Credentials",
         title: "Professional Certifications",
-        subtitle: "14 verified credentials through Microsoft, IBM, Google, Coursera, Cognitive Class, UC San Diego, and Dubai Future Foundation",
+        subtitle: "15 verified credentials through Microsoft, IBM, Google, Coursera, Cognitive Class, UC San Diego, and Dubai Future Foundation",
         verifyCredential: "Verify Credential",
-        filterAll: "All (14)",
+        filterAll: "All (15)",
         filterIbm: "IBM (6)",
         filterCognitive: "Cognitive Class (3)",
-        filterCoursera: "Microsoft, Google & Coursera (4)",
+        filterCoursera: "Microsoft, Google & Coursera (5)",
         filterOther: "Other & Innovation (1)",
-        searchPlaceholder: "Search certification (Microsoft, Testing, Azure, DevOps, Docker...)...",
+        searchPlaceholder: "Search certification (AZ-400, Microsoft, Testing, Azure, DevOps, Docker...)...",
         noResults: "No certifications found matching your search."
       },
       objectives: {
