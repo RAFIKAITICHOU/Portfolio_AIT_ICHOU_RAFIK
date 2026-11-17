@@ -20,8 +20,8 @@ export const portfolioData = {
       en: "PFE from Jan 25, 2027"
     },
     bioShort: {
-      fr: "Élève-ingénieur à l'EMSI Marrakech (Promo 2027). Passionné par l'architecture logicielle modulaire, les écosystèmes Spring Boot / Angular / React, le développement mobile Flutter et l'assurance qualité rigoureuse (TDD, SonarQube, Selenium).",
-      en: "Engineering student at EMSI Marrakech (Class of 2027). Passionate about modular software architectures, Spring Boot / Angular / React ecosystems, Flutter mobile development, and rigorous QA (TDD, SonarQube, Selenium)."
+      fr: "Élève-ingénieur à l'EMSI Marrakech (Promo 2027). Passionné par l'architecture logicielle modulaire, les écosystèmes Spring Boot / Angular / React, le développement mobile Flutter et l'assurance qualité rigoureuse (TDD, SonarQube, Selenium, Azure DevOps, AI-driven Testing).",
+      en: "Engineering student at EMSI Marrakech (Class of 2027). Passionate about modular software architectures, Spring Boot / Angular / React ecosystems, Flutter mobile development, and rigorous QA (TDD, SonarQube, Selenium, Azure DevOps, AI-driven Testing)."
     },
     bioLong: {
       fr: "Fort d'une expérience industrielle éprouvée à la DSI du Groupe OCP Safi sur le projet Smart HSE 360 (avec 86,8% de couverture SonarQube et 222 tests automatisés), je combine rigueur d'ingénierie, conception logicielle clean code et esprit d'innovation. Ancien président du club de robotique E-TEAM ENS, j'accorde une importance primordiale au travail collaboratif agile et à l'impact concret des solutions déployées.",
@@ -107,14 +107,14 @@ export const portfolioData = {
       }
     },
     {
-      value: "13+",
+      value: "14+",
       label: {
         fr: "Certifications",
         en: "Certifications"
       },
       sub: {
-        fr: "Accréditations vérifiables en Cloud, DevOps, Agile & Data",
-        en: "Verified credentials in Cloud, DevOps, Agile & Data"
+        fr: "Accréditations vérifiables en Test Logiciel, IA, DevOps & Cloud",
+        en: "Verified credentials in Software Testing, AI, DevOps & Cloud"
       }
     }
   ],
@@ -821,6 +821,7 @@ export const portfolioData = {
         en: "Automated test suites, SonarQube metrics, and containerization."
       },
       skills: [
+        { name: "Automation, Advanced Testing & AI", level: "Maîtrisé", usedIn: "Certifié Microsoft / Coursera (2026)" },
         { name: "SonarQube & Clean Code", level: "Maîtrisé", usedIn: "86.8% de couverture validée à l'OCP" },
         { name: "JUnit 5 & Mockito", level: "Maîtrisé", usedIn: "164 tests unitaires industriels" },
         { name: "Selenium WebDriver", level: "Maîtrisé", usedIn: "58 tests E2E automatisés" },
@@ -1049,7 +1050,24 @@ export const portfolioData = {
       }
     },
 
-    // Coursera (Google, LearnKartS & UC San Diego)
+    // Coursera (Microsoft, LearnKartS, Google & UC San Diego)
+    {
+      id: "microsoft-automation-advanced-testing-ai",
+      title: "Microsoft – Automation, Advanced Testing, and AI",
+      issuer: "Microsoft / Coursera",
+      org: "coursera",
+      date: "2026",
+      url: "https://coursera.org/share/25a0159dccd93363abfca599a00bc75a",
+      verifyUrl: "https://coursera.org/verify/985QBM8FJ9V5",
+      credentialId: "985QBM8FJ9V5",
+      pdfUrl: "/certificates/Coursera-Microsoft-Automation-Advanced-Testing-AI-985QBM8FJ9V5.pdf",
+      icon: "microsoft",
+      category: "Testing & IA",
+      description: {
+        fr: "Automatisation avancée des tests logiciels, stratégies de validation continue, intégration de l'IA générative dans le cycle de test (génération de scénarios, détection de régressions) et ingénierie de la qualité selon les standards Microsoft.",
+        en: "Advanced software test automation, continuous validation strategies, generative AI integration across test lifecycle (scenario generation, regression detection), and quality engineering to Microsoft standards."
+      }
+    },
     {
       id: "azure-devops-agile-pm",
       title: "Azure DevOps Fundamentals & Agile Project Management",
@@ -1289,14 +1307,14 @@ export const portfolioData = {
       certifications: {
         badge: "Accréditations",
         title: "Certifications Officielles",
-        subtitle: "13 certifications vérifiées auprès d'IBM, Google, Coursera, Cognitive Class, UC San Diego et Dubai Future Foundation",
+        subtitle: "14 certifications vérifiées auprès de Microsoft, IBM, Google, Coursera, Cognitive Class, UC San Diego et Dubai Future Foundation",
         verifyCredential: "Vérifier l'accréditation",
-        filterAll: "Toutes (13)",
+        filterAll: "Toutes (14)",
         filterIbm: "IBM (6)",
         filterCognitive: "Cognitive Class (3)",
-        filterCoursera: "Coursera & Google (3)",
+        filterCoursera: "Microsoft, Google & Coursera (4)",
         filterOther: "Autres & Innovation (1)",
-        searchPlaceholder: "Rechercher une certification (Azure, DevOps, Docker, Python, Cloud...)...",
+        searchPlaceholder: "Rechercher une certification (Microsoft, Testing, Azure, DevOps, Docker...)...",
         noResults: "Aucune certification trouvée pour cette recherche."
       },
       objectives: {
@@ -1437,14 +1455,14 @@ export const portfolioData = {
       certifications: {
         badge: "Official Credentials",
         title: "Professional Certifications",
-        subtitle: "13 verified credentials through IBM, Google, Coursera, Cognitive Class, UC San Diego, and Dubai Future Foundation",
+        subtitle: "14 verified credentials through Microsoft, IBM, Google, Coursera, Cognitive Class, UC San Diego, and Dubai Future Foundation",
         verifyCredential: "Verify Credential",
-        filterAll: "All (13)",
+        filterAll: "All (14)",
         filterIbm: "IBM (6)",
         filterCognitive: "Cognitive Class (3)",
-        filterCoursera: "Coursera & Google (3)",
+        filterCoursera: "Microsoft, Google & Coursera (4)",
         filterOther: "Other & Innovation (1)",
-        searchPlaceholder: "Search certification (Azure, DevOps, Docker, Python, Cloud...)...",
+        searchPlaceholder: "Search certification (Microsoft, Testing, Azure, DevOps, Docker...)...",
         noResults: "No certifications found matching your search."
       },
       objectives: {

@@ -6,10 +6,10 @@ export function Certifications({ lang, uiText, certifications }) {
   const [searchQuery, setSearchQuery] = useState("");
 
   const orgFilters = [
-    { id: "all", label: uiText.certifications.filterAll || (lang === "fr" ? "Toutes (13)" : "All (13)") },
+    { id: "all", label: uiText.certifications.filterAll || (lang === "fr" ? "Toutes (14)" : "All (14)") },
     { id: "ibm", label: uiText.certifications.filterIbm || "IBM (6)" },
     { id: "cognitive", label: uiText.certifications.filterCognitive || "Cognitive Class (3)" },
-    { id: "coursera", label: uiText.certifications.filterCoursera || "Coursera & Google (3)" },
+    { id: "coursera", label: uiText.certifications.filterCoursera || "Microsoft, Google & Coursera (4)" },
     { id: "other", label: uiText.certifications.filterOther || (lang === "fr" ? "Autres (1)" : "Other (1)") }
   ];
 
